@@ -1,18 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
 <title>LectureQA Page Demo</title>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://vjs.zencdn.net/7.8.3/video-js.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/tombyrer/videojs-transcript-click@0.8/css/videojs-transcript.css" title="CDN" rel="stylesheet">
+    <style>
+      /* From: video js */ 
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .video-js {
+      margin: 10px auto;
+      }
+      .transcript-body {
+      height: 400px;
+      width: 400px;
+      }
+      .transcript-line:hover {
+        background-color: #A4A4A4;
+       }
+      .transcript-line.is-active {
+         background-color: #FFFFFF;
+      }
+      .transcript-header {
+        display:none;
+      }
+      .transcript-selector {
+        display:none;
+      }
+      /* Until: video js*/
+      /* From: side-by-side resize box */
+      * {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 50%;
+  }
+      }
+      /* Until: side-by-side resize box*/
+    </style>
+     <script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/tombyrer/videojs-transcript-click@1.0/dist/videojs-transcript-click.min.js"></script>
+
 <body>
-
-<!-- Header -->
-<header class="w3-display-container w3-content w3-center" style="max-width:1500px">
-  <div class="w3-display-middle w3-padding-large w3-wide w3-text-grey w3-center">
-     <p> LectureQA Demo Page - Lecture 1 </p> 
-  </div>
-
-</header>
 
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
@@ -21,37 +70,37 @@
   <a href="#" class="w3-bar-item w3-button">Lecture 3</a>
 </div>
 
+<div class="w3-container w3-wide w3-text-grey w3-center">
+  <h1>LectureQA Demo Page</h1>
+</div>
 
-<!-- Page content -->
-<div class="w3-content w3-padding-large w3-margin-top">
 
-<div class="w3-cell-row">
-  <div class="w3-container w3-cell">
-   <video controls width="600" height="500"> 
-     <!-- <source src={{ url_for('static', filename="Lecture1.mp4") }} type="video/mp4"> -->
-          <source src="static/CSS24N-Lecture1.mp4#t=2486,2500" type="video/mp4">
-     <track label="English" kind="subtitles" srclang="en" src="static/CSS24N-Lecture1.en.vtt" default>
-    Your browser does not support the video tag.
-  </video>
-  </div>
-  <div class="w3-container w3-cell">
-      <div class="w3-light-grey w3-padding-large w3-margin-top">
-      <div id="txtPassage" style="height:450px;overflow:auto;scrollbar-base-color:gold;padding:10px;">{{ text }} </div>
-      </div>
-      </div>
-  </div>
-  
-  <!-- Question -->
-  <div class="w3-light-grey w3-padding-large w3-margin-top" width="300" id="question">
+<div class="w3-content w3-margin-top">
+ <div class="w3-cell-row">
+   <div class="w3-container w3-cell">  
+     <div class="video-container">
+      <video id="video" class="video-js vjs-default-skin" width="600" height="500" controls>
+      <!-- <source src={{ url_for('static', filename="Lecture1.mp4") }} type="video/mp4"> -->
+      <source src="static/CSS24N-Lecture1.mp4#t=2487,2500" type="video/mp4">
+      <track label="English" kind="subtitles" srclang="en" src="static/CSS24N-Lecture1.en.vtt" default> Your browser does not support the video tag.
+      </video>
+     </div>
+   </div>
+   <div class="w3-container w3-cell">
+     <div class="w3-light-grey w3-padding-large w3-margin-top" style="height:500px;width:450px">
+       <div id="transcript"></div>
+     </div>
+   </div>
+ </div>
 
+<div class="w3-light-grey w3-padding-large w3-margin-top" style="width:1100px" id="question">
+ 
 <form method="post" action="{{ url_for('question') }}">
-        <div class="w3-section">
+
           <!-- <label for="question">Enter</label> -->
-	  <p class="w3-xlarge" > {{ question }} </p>
-	</div>
-        <div class="w3-section">
-	  <p class="w3-xlarge"> <i> {{ answer }} </i> </p>
-	  </div>
+         <p class="w3-large" > {{ question }} </p>
+         <p class="w3-large"> <i> {{ answer }} </i> </p>
+
         <div>
           <button class="w3-button w3-block w3-dark-grey">Send another question</button>
         </div>
@@ -59,6 +108,19 @@
 </div>
 <!-- End page content -->
 </div>
+
+
+<script>
+    var video = videojs('video')
+    video.ready(function(){
+        // fire up the plugin
+        var transcript = this.transcript();
+        // attach widget to the page
+        var transcriptContainer = document.querySelector('#transcript');
+        transcriptContainer.appendChild(transcript.el());
+    });
+  </script>
+
 </body>
 
 

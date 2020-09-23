@@ -3,6 +3,7 @@
   <head>
 <title>LectureQA Page Demo</title>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://vjs.zencdn.net/7.8.3/video-js.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/gh/tombyrer/videojs-transcript-click@0.8/css/videojs-transcript.css" title="CDN" rel="stylesheet">
@@ -15,12 +16,21 @@
       margin: 10px auto;
       }
       .transcript-body {
-       height: 500px; 
+      height: 400px;
+      width: 400px;
       }
       .transcript-line:hover {
         background-color: #A4A4A4;
        }
-
+      .transcript-line.is-active {
+         background-color: #FFFFFF;
+      }
+      .transcript-header {
+        display:none;
+      }
+      .transcript-selector {
+        display:none;
+      }
       /* Until: video js*/
       /* From: side-by-side resize box */
       * {
@@ -52,29 +62,61 @@
   <script src="https://cdn.jsdelivr.net/gh/tombyrer/videojs-transcript-click@1.0/dist/videojs-transcript-click.min.js"></script>
     </head>
 <body>
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button">Lecture 1</a>
+  <a href="#" class="w3-bar-item w3-button">Lecture 2</a>
+  <a href="#" class="w3-bar-item w3-button">Lecture 3</a>
+</div>
 
-<div class="w3-container w3-padding-large w3-wide w3-text-grey w3-center">
+
+<div class="w3-container w3-wide w3-text-grey w3-center">
   <h1>LectureQA Demo Page</h1>
 </div>
 
 
-
-<div class="w3-container w3-margin">
-<div class="row">
-  <div class="column" style="width:50%">
-   <div class="video-container">
-     <video id="video" class="video-js vjs-default-skin" width="600" height="500" controls>
-     <!-- <source src={{ url_for('static', filename="Lecture1.mp4") }} type="video/mp4"> -->
-     <source src="static/CSS24N-Lecture1.mp4" type="video/mp4">
-     <track label="English" kind="subtitles" srclang="en" src="static/CSS24N-Lecture1.en.vtt" default> Your browser does not support the video tag.
-     </video>
-    </div>
+<div class="w3-content w3-margin-top">
+ <div class="w3-cell-row">
+   <div class="w3-container w3-cell">  
+     <div class="video-container">
+      <video id="video" class="video-js vjs-default-skin" width="600" height="500" controls>
+      <!-- <source src={{ url_for('static', filename="Lecture1.mp4") }} type="video/mp4"> -->
+      <source src="static/CSS24N-Lecture1.mp4" type="video/mp4">
+      <track label="English" kind="subtitles" srclang="en" src="static/CSS24N-Lecture1.en.vtt" default> Your browser does not support the video tag.
+      </video>
+     </div>
    </div>
-  <div class="column" style="width:50%">
-    <div id="transcript"></div>
-  </div>
-</div>
-</div>
+   <div class="w3-container w3-cell">
+     <div class="w3-light-grey w3-padding-large w3-margin-top" style="height:500px;width:450px">
+       <div id="transcript"></div>
+     </div>
+   </div>
+ </div>
+ 
+ <div class="w3-cell-row">
+
+   
+ <div class="w3-light-grey w3-padding-large" style="width:1120px"id="question">
+   <form method="post" action="{{ url_for('question') }}">
+     <div class="w3-cell-row">
+     <div class="w3-container w3-cell">
+          <input class="w3-input w3-border"  name="userName" id="userName" placeholder="Enter your name and surname">
+     </div>
+     <div class="w3-container w3-cell">
+          <input class="w3-input w3-border"  name="studentID" id="studentID" placeholder="Enter your student ID">
+     </div>
+     </div>
+
+
+ <div class="w3-section">
+          <input class="w3-input w3-border"  name="question" id="question" placeholder="Enter your question">
+	</div>
+        <div>
+          <button class="w3-button w3-block w3-dark-grey">Send question</button>
+        </div>
+</form>
+ </div>
+ </div>
 <script>
     var video = videojs('video')
     video.ready(function(){
