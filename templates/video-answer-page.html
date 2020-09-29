@@ -59,8 +59,9 @@
       /* Until: side-by-side resize box*/
     </style>
      <script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/tombyrer/videojs-transcript-click@1.0/dist/videojs-transcript-click.min.js"></script>
-
+     <script src="https://cdn.jsdelivr.net/gh/tombyrer/videojs-transcript-click@1.0/dist/videojs-transcript-click.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.6.1/Youtube.js"></script>
+     </head>
 <body>
 
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
@@ -79,10 +80,10 @@
  <div class="w3-cell-row">
    <div class="w3-container w3-cell">  
      <div class="video-container">
-      <video id="video" class="video-js vjs-default-skin" width="600" height="500" controls>
-      <!-- <source src={{ url_for('static', filename="Lecture1.mp4") }} type="video/mp4"> -->
-      <source src="static/CSS24N-Lecture1.mp4#t=2487,2500" type="video/mp4">
-      <track label="English" kind="subtitles" srclang="en" src="static/CSS24N-Lecture1.en.vtt" default> Your browser does not support the video tag.
+       <video id="video" class="video-js vjs-default-skin" width="600" height="500" controls
+ data-setup='{ "techOrder": ["youtube", "html5"], "sources": [{ "type": "video/youtube", "src":"https://youtu.be/8rXD5-xhemo?t=2489,"}] }'
+	      >
+      <track label="English" kind="subtitles" srclang="en" src="static/CSS24N-Lecture1.en.vtt"> Your browser does not support the video tag.
       </video>
      </div>
    </div>
