@@ -57,17 +57,33 @@
   }
       }
       /* Until: side-by-side resize box*/
+      /* Vertical side-bar buttons */
+     
+.btn-group .button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+.btn-group .button:hover {
+  background-color: #3e8e41;
+      }
+      /* Vertical side-bar buttons*/
+      
     </style>
      <script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
      <script src="https://cdn.jsdelivr.net/gh/tombyrer/videojs-transcript-click@1.0/dist/videojs-transcript-click.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.6.1/Youtube.js"></script>
     </head>
-<body>
+  <body>
+
+     
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
-  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button">Lecture 1</a>
-  <a href="#" class="w3-bar-item w3-button">Lecture 2</a>
-  <a href="#" class="w3-bar-item w3-button">Lecture 3</a>
+  <form method="post" action="{{ url_for('question')}}"
+	
+<div class="btn-group">
+  <button class="w3-button w3-block" name="lecture1" value="lecture1">Lecture 1</button>
+  <button class="w3-button w3-block" name="lecture2" value="lecture2">Lecture2</button>
+</div>
+  </form>
 </div>
 
 
@@ -81,9 +97,9 @@
    <div class="w3-container w3-cell">  
      <div class="video-container">
        <video id="video" class="video-js vjs-default-skin" width="600" height="500" controls
-    data-setup='{ "techOrder": ["youtube", "html5"], "sources": [{ "type": "video/youtube", "src":"https://youtu.be/8rXD5-xhemo"}] }'
+    data-setup='{ "techOrder": ["youtube", "html5"], "sources": [{ "type": "video/youtube", "src":"{{ ylink }}"}] }'
 	      >
-      <track label="English" kind="subtitles" srclang="en" src="static/CSS24N-Lecture1.en.vtt"> Your browser does not support the video tag.
+      <track label="English" kind="subtitles" srclang="en" src="{{ subtitle }}"> Your browser does not support the video tag.
       </video>
      </div>
    </div>
@@ -98,8 +114,10 @@
 
    
  <div class="w3-light-grey w3-padding-large" style="width:1120px"id="question">
-   <form method="post" action="{{ url_for('question') }}">
+   <form method="post" action="{{ url_for('answer') }}">
      <div class="w3-cell-row">
+       <input type="hidden" name="ylink" value="{{ ylink }}">
+       <input type="hidden" name="subtitle" value="{{ subtitle }}">
      <div class="w3-container w3-cell">
           <input class="w3-input w3-border"  name="userName" id="userName" placeholder="Enter your name and surname">
      </div>
