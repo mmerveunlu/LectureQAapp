@@ -102,7 +102,7 @@
      </div>
    </div>
    <div class="w3-container w3-cell">
-     <div class="w3-light-grey w3-padding-large w3-margin-top" style="height:500px;width:450px">
+    <div class="w3-padding-large w3-margin-top" style="height:500px;width:450px;background-color:#c0c0c0">
        <div id="transcript"></div>
      </div>
    </div>
@@ -115,6 +115,8 @@
           <!-- <label for="question">Enter</label> -->
          <p class="w3-large" > {{ question }} </p>
          <p class="w3-large"> <i> {{ answer }} </i> </p>
+       <input type="hidden" name="ylink" value="{{ ylink }}">
+       <input type="hidden" name="subtitle" value="{{ subtitle }}">
 
         <div>
           <button class="w3-button w3-block w3-dark-grey">Send another question</button>
