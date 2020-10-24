@@ -19,6 +19,16 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
+def login():
+    """
+    The function generates the manin page. 
+    Gives a lecture video and the form. 
+    """
+    return render_template('index.html')
+
+
+
+@app.route('/lecture', methods=['GET', 'POST'])
 def form():
     """
     The function generates the manin page. 
