@@ -1,0 +1,148 @@
+WEBVTT
+
+00:00:14.442 --> 00:00:18.658
+hi everyone welcome to signals and systems course
+
+00:00:18.658 --> 00:00:23.478
+in this video I am going to make an introduction to signals and systems
+
+00:00:25.484 --> 00:00:34.166
+signals are defined as functions of one or more independent variables that typically carry some type of information
+
+00:00:34.166 --> 00:00:37.494
+this figure shows a one dimensional signal
+
+00:00:37.494 --> 00:00:44.128
+here x axis is the time and y axis is the value of the function f of t
+
+00:00:44.128 --> 00:00:49.048
+for instance the y axis can represent the temperature or speed
+
+00:00:50.802 --> 00:00:57.933
+voltages and currents as a function of time in an electrical circuit are also examples of signals
+
+00:00:57.933 --> 00:01:06.804
+for instance this plot shows the variation of the inductor current as a function of time which is a one dimensional signal
+
+00:01:08.480 --> 00:01:12.580
+one very common example of a signal is a speech signal
+
+00:01:12.580 --> 00:01:19.667
+you can think of the speech signal as the fluctuations in acoustic pressure as a function of time
+
+00:01:19.667 --> 00:01:23.830
+a typical speech signal looks like as given in the figure
+
+00:01:23.830 --> 00:01:27.570
+here the speech signal corresponds to the word hello
+
+00:01:28.088 --> 00:01:33.062
+speech signal is also an example of one dimensional signals
+
+00:01:35.339 --> 00:01:38.721
+another common example signal is the image signal
+
+00:01:38.721 --> 00:01:46.138
+you can think of the image signal as the variations in brightness as a function of two spatial variables
+
+00:01:46.138 --> 00:01:51.364
+therefore image signal is an example of two dimensional signals
+
+00:01:51.364 --> 00:01:54.888
+this figure shows a binary felix cat image
+
+00:01:54.888 --> 00:02:00.940
+binary image means that the brightness values can be either one or zero
+
+00:02:00.940 --> 00:02:09.972
+you can think of this image as a thirty five by thirty five matrix where each component of the matrix is one or zero
+
+00:02:12.110 --> 00:02:17.710
+this figure also shows a popular gray scale image used in image processing
+
+00:02:19.777 --> 00:02:29.002
+the signals are categorized as continuous time signals and discrete time signals depending on the underlying independent variable
+
+00:02:29.002 --> 00:02:31.779
+in case of continuous time signals
+
+00:02:31.779 --> 00:02:40.179
+the independent variable is continuous and these signals are defined for a continuum of values of the independent variable
+
+00:02:40.179 --> 00:02:46.467
+temperature and speed as a function of time are some examples of continuous time signals
+
+00:02:46.467 --> 00:02:54.281
+however in discrete time signals independent variable takes on only a discrete set of values
+
+00:02:54.281 --> 00:02:59.323
+as a result these signals are defined only at discrete times
+
+00:02:59.323 --> 00:03:06.162
+stock market index as a function of weeks is and example of discrete time signal
+
+00:03:08.880 --> 00:03:12.989
+to distinguish between continuous time and discrete time signals
+
+00:03:12.989 --> 00:03:15.020
+we use different notations
+
+00:03:15.020 --> 00:03:22.568
+the independent variable in continuous time signal is denoted by t and it is enclosed in parenthesis
+
+00:03:22.568 --> 00:03:32.134
+on the other hand the independent variable in discrete time signal is denoted by n and it is enclosed in brackets
+
+00:03:32.134 --> 00:03:37.271
+these figures show continuous and discrete time signals graphically
+
+00:03:37.271 --> 00:03:46.227
+here it is important to note that discrete time signal is defined only for integer values of the independent variable
+
+00:03:46.227 --> 00:03:52.385
+a continuous time signal can be converted into a discrete time signal using sampling
+
+00:03:52.385 --> 00:03:56.469
+you are going to learn more about these concepts throughout the course
+
+00:04:00.064 --> 00:04:03.628
+the next important topic in this course is the systems
+
+00:04:03.628 --> 00:04:06.426
+systems are used to process signals
+
+00:04:06.426 --> 00:04:13.315
+for instance a camera is a system that receives light from different sources and produces a photograph
+
+00:04:13.315 --> 00:04:20.233
+an electrical circuit by itself is a system where it responds to applied voltages and currents
+
+00:04:20.233 --> 00:04:27.785
+also processing an image signal to produce its enhanced version is an example of a system
+
+00:04:30.358 --> 00:04:34.963
+systems are also categorized as continuous time and discrete time
+
+00:04:34.963 --> 00:04:43.286
+a continuous time system is a system where the input is a continuous time signal and this input results in an output
+
+00:04:43.286 --> 00:04:45.526
+which is also a continuous time signal
+
+00:04:45.526 --> 00:04:50.758
+the pictorial representation of such a system is given on the left hand side
+
+00:04:50.758 --> 00:04:58.555
+a discrete time system transforms a discrete time input signal into a discrete time output signal
+
+00:04:58.555 --> 00:05:03.986
+the pictorial representation of a discrete time signal is given on the right hand side
+
+00:05:07.981 --> 00:05:12.582
+in this video I have made an introduction to signals and systems
+
+00:05:12.582 --> 00:05:15.085
+let me know if you have any questions
+
+00:05:15.085 --> 00:05:15.838
+thank you

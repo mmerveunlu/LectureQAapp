@@ -1,0 +1,163 @@
+WEBVTT
+
+00:00:14.737 --> 00:00:18.375
+hi everyone welcome to signals and systems course
+
+00:00:18.375 --> 00:00:27.983
+in this video I am going to explain some important signal transformations that involve simple modifications of the independent variable
+
+00:00:29.679 --> 00:00:36.189
+an important example of transforming the independent variable of a signal is a time shift
+
+00:00:36.189 --> 00:00:43.741
+note that the independent variable is t in continuous time signals and n in discrete time signals
+
+00:00:43.741 --> 00:00:48.227
+this figure shows a discrete time signal and its shifted version
+
+00:00:48.227 --> 00:00:54.509
+here two signals are identical in shape but shifted relative to each other
+
+00:00:54.509 --> 00:00:57.405
+if n zero is greater than zero
+
+00:00:57.405 --> 00:01:04.264
+the signal shifts to the right and the shifted signal is said to be the delayed version of the original signal
+
+00:01:04.264 --> 00:01:06.735
+if n zero is less than zero
+
+00:01:06.735 --> 00:01:14.082
+the signal shifts to the left and the shifted signal is said to be the advanced version of the original signal
+
+00:01:16.131 --> 00:01:20.580
+the same principles apply while shifting a continuous time signal
+
+00:01:20.580 --> 00:01:25.781
+in the figure a continuous time signal and its shifted version are shown
+
+00:01:28.097 --> 00:01:32.594
+a second basic transformation of the time axis is the time reversal
+
+00:01:32.594 --> 00:01:39.186
+the reversed signal is obtained from the original signal by a reflection around n equals zero
+
+00:01:39.186 --> 00:01:43.356
+time reversal on a discrete time signal is shown in the figure
+
+00:01:46.171 --> 00:01:54.714
+for a continuous time signal the reversed signal is obtained from the original signal by a reflection around t equals zero
+
+00:01:54.714 --> 00:02:01.557
+the figure shows the original signal x of t and its reflection around t equals zero
+
+00:02:01.557 --> 00:02:10.050
+if x of t represents audio tape recording then its reflection is the same tape recording played backward
+
+00:02:12.583 --> 00:02:15.523
+another transformation is the time scale
+
+00:02:15.523 --> 00:02:22.097
+this figure shows three signals that are related by linear scale change in the independent variable
+
+00:02:22.097 --> 00:02:32.516
+if we think of x of t as a tape recording then x of two t is the same recording played twice speed of the original recording
+
+00:02:32.516 --> 00:02:40.607
+and x  of t over two is also the same recording played at half speed of the original recording
+
+00:02:42.433 --> 00:02:51.159
+assume that x of t is the original signal and it is transformed to another signal as x of alpha t plus beta
+
+00:02:51.159 --> 00:02:58.084
+depending on the values of alpha and beta the original signal goes through several transformations
+
+00:02:58.084 --> 00:03:03.951
+for instance the signal is stretched if the absolute value of alpha is less than one
+
+00:03:03.951 --> 00:03:07.414
+if it is larger than one the signal is compressed
+
+00:03:07.414 --> 00:03:10.879
+the signal is reversed in time if alpha is negative
+
+00:03:10.879 --> 00:03:15.544
+and it is shifted in time if beta is not equal to zero
+
+00:03:15.544 --> 00:03:18.036
+if there is more than one transformation
+
+00:03:18.036 --> 00:03:28.256
+the systematic approach is to delay or advance the signal in accordance with the value of beta first and than do the time scaling and reversal
+
+00:03:30.433 --> 00:03:39.825
+the plot on the right hand side shows the original signal x of t and the plots on the left hand side show various transformations
+
+00:03:42.269 --> 00:03:48.101
+the first transformation is the time shift where the original signal is advanced by one unit
+
+00:03:48.101 --> 00:03:50.587
+in other words it is shifted to left
+
+00:03:52.136 --> 00:03:56.757
+the second one is the time reversed version of x of t plus one
+
+00:03:58.642 --> 00:04:02.768
+the third one is the time scaled version of the original signal
+
+00:04:02.768 --> 00:04:07.488
+here the original signal is compressed by a factor of two over three
+
+00:04:09.978 --> 00:04:15.321
+and the last one is the time scaled version of of x of t plus one
+
+00:04:17.540 --> 00:04:23.076
+an important class of signals that we are going to use in this course is the periodic signals
+
+00:04:23.076 --> 00:04:28.386
+periodic continuous time and discrete time signals hold the given property
+
+00:04:28.386 --> 00:04:36.575
+in words a periodic signal has the property that it is unchanged by a time shift of t for continuous time signals
+
+00:04:36.575 --> 00:04:40.620
+and by a time shift of n for discrete time signals
+
+00:04:40.620 --> 00:04:48.077
+fundamental period is the smallest positive value of t or n for which the given equality holds
+
+00:04:48.077 --> 00:04:52.725
+here examples of continuous and discrete time signals are given
+
+00:04:52.725 --> 00:05:01.111
+fundamental period of the continuous time signal is t and fundamental period of the discrete time signal is three
+
+00:05:03.083 --> 00:05:09.612
+the property of being even or odd relates to the symmetry of signals under time reversal
+
+00:05:09.612 --> 00:05:16.611
+a signal is referred to as an even signal if it is identical to its time reversed counterpart
+
+00:05:16.611 --> 00:05:23.679
+a signal is referred to as an odd signal if it holds the given equality on the right hand side
+
+00:05:23.679 --> 00:05:29.463
+an odd signal must necessarily be zero at t or n equals zero
+
+00:05:29.463 --> 00:05:33.426
+examples of even and odd signals are given here
+
+00:05:35.087 --> 00:05:45.186
+in this video I first explained some important transformations of the independent variable such as time shift time reversal and time scaling
+
+00:05:45.186 --> 00:05:50.292
+these transformations will be useful in analyzing the properties of systems
+
+00:05:50.292 --> 00:05:57.285
+I also explained some important class of signals such as periodic signals and even and odd signals
+
+00:05:57.285 --> 00:05:59.692
+let me know if you have any question
+
+00:05:59.692 --> 00:06:00.480
+thank you
