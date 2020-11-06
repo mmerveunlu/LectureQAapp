@@ -15,6 +15,10 @@ from flask import Flask, render_template, request
 from utils import get_questions, save_asked_questions
 import statics
 
+import sys
+sys.path.insert(1, '/sockets/')
+from sockets.appclient import run_client
+
 app = Flask(__name__)
 
 
@@ -31,7 +35,7 @@ def login():
 @app.route('/lecture', methods=['GET', 'POST'])
 def form():
     """
-    The function generates the manin page. 
+    The function generates the main page. 
     Gives a lecture video and the form. 
     """
     # Init page will be lecture 1
@@ -77,14 +81,25 @@ def answer():
     """
     The function generates the page after a question is asked. 
     """
-    # TODO: answer will come from QA-server
     ylink = request.form['ylink']
     subtitle = request.form['subtitle']
     # find the chapter key from dict
     for k,v in statics.lectures.items():
         if v['ylink'] == ylink:
             chapter = v["key"]
-    answer_text = "NLP people call a large pile of text a corpus"
+
+    # Run the client app to get the answer from the server
+    # HOST, PORT comes from statics file
+    response = run_client(statics.HOST,statics.PORT,subtitle,request.form['question'])
+    # Check if returned response is None
+    if not response:
+        # TODO Error
+        print("No response")
+        answer_text = "--"
+    else:
+        answer_text = response
+    
+    # answer_text = "NLP people call a large pile of text a corpus"
     # save asked questions into a file
     save_asked_questions(chapter,
                          request.form['question'],
