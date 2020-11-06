@@ -11,3 +11,6 @@ lectures = {
     'lecture2': {"ylink": "https://youtu.be/nZAvdNK0d74", "subtitle": "static/ENG_001_20151602_01204_ch01_1.en.vtt/", "key":"_ch01_1"}}
 
 SEP=","
+
+HOST=""
+PORT= 65432
