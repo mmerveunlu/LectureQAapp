@@ -5,7 +5,7 @@ import socket
 import selectors
 import traceback
 
-import libclient
+from sockets.libclient import Message
 
 sel = selectors.DefaultSelector()
 
@@ -49,39 +49,39 @@ def start_connection(host, port, request):
     sock.connect_ex(addr)
     # The scoket is initially set to both read/write events
     events = selectors.EVENT_READ | selectors.EVENT_WRITE
-    message = libclient.Message(sel, sock, addr, request)
+    message = Message(sel, sock, addr, request)
     sel.register(sock, events, data=message)
 
 
-if len(sys.argv) != 5:
-    print("usage:", sys.argv[0], "<host> <port> <action> <value>")
-    sys.exit(1)
-    
-# get the parameters from command line
-host, port = sys.argv[1], int(sys.argv[2])
-action = "search"
-passage = "This will be passage"
-question = "This will be question"
-request = create_request(action, passage, question)
-start_connection(host, port, request)
+def run_client(host,port,passage,question):
+    """runs the client app with a given passage and question""" 
+    # get the parameters from command line
+    response = None
+    action = "search"
+    request = create_request(action, passage, question)
+    start_connection(host, port, request)
+    try:
+        while True:
+            events = sel.select(timeout=1)
+            for key, mask in events:
+                message = key.data
+                try:
+                    message.process_events(mask)
+                    if message.response and message.response.get('result') is not None:
+                        # print("Run ", message.response.get('result'))
+                        response = message.response.get('result')
+                except Exception:
+                    print(
+                        "main: error: exception for",
+                        f"{message.addr}:\n{traceback.format_exc()}",
+                       )
+                    message.close()
+            # Check for a socket being monitored to continue.
+            if not sel.get_map():
+                break
+    except KeyboardInterrupt:
+        print("caught keyboard interrupt, exiting")
+    finally:
+        sel.close()
+    return response
 
-try:
-    while True:
-        events = sel.select(timeout=1)
-        for key, mask in events:
-            message = key.data
-            try:
-                message.process_events(mask)
-            except Exception:
-                print(
-                    "main: error: exception for",
-                    f"{message.addr}:\n{traceback.format_exc()}",
-                )
-                message.close()
-        # Check for a socket being monitored to continue.
-        if not sel.get_map():
-            break
-except KeyboardInterrupt:
-    print("caught keyboard interrupt, exiting")
-finally:
-    sel.close()
