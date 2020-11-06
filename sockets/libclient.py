@@ -85,6 +85,7 @@ class Message:
         result = content.get("result")
         print(f"got result: {result}")
 
+
     def _process_response_binary_content(self):
         content = self.response
         print(f"got response: {repr(content)}")
@@ -94,10 +95,9 @@ class Message:
             self.read()
         if mask & selectors.EVENT_WRITE:
             self.write()
-
+    
     def read(self):
         self._read()
-
         if self._jsonheader_len is None:
             self.process_protoheader() 
 
@@ -192,8 +192,9 @@ class Message:
                 if reqhdr not in self.jsonheader:
                     raise ValueError(f'Missing required header "{reqhdr}".')
 
-    def process_response(self):
+    def process_response(self,):
         """process the responses """
+        result = "" 
         content_len = self.jsonheader["content-length"]
         if not len(self._recv_buffer) >= content_len:
             return
