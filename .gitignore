@@ -1,0 +1,5 @@
+__pycache__
+*.*~
+*/*.*~
+static/data-eval-subtitles
+static/asked-questions.txt
