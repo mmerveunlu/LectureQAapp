@@ -1,4 +1,4 @@
-# LectureQAInterface
+# LectureQAapp
 Web interface for LectureQA
 To run the server on localhost:
   >> python run_app.py
