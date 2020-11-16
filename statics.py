@@ -1,6 +1,6 @@
 # Define constant file path
-DATAPATH = "static/example-questions.json"
-QPATH = "static/asked-questions.txt"
+DATAPATH = "/var/www/LectureQAapp/LectureQAapp/static/example-questions.json"
+QPATH = "/var/www/LectureQAapp/LectureQAapp/static/asked-questions.txt"
 
 chapter_keys = ['_ch03_2','_ch07_1','_ch05_1','_ch09_2','_ch01_5',
                 '_ch01_3','_ch02_2','_ch03_1','_ch03_4','_ch01_4',
@@ -8,7 +8,7 @@ chapter_keys = ['_ch03_2','_ch07_1','_ch05_1','_ch09_2','_ch01_5',
 
 lectures = {
     'lecture1': {"ylink": "https://youtu.be/eh2yO5YtqRM", "subtitle": "static/ENG_001_20151602_01204_ch01_0.en.vtt", "key":"_ch01_0"},
-    'lecture2': {"ylink": "https://youtu.be/nZAvdNK0d74", "subtitle": "static/ENG_001_20151602_01204_ch01_1.en.vtt/", "key":"_ch01_1"}}
+    'lecture2': {"ylink": "https://youtu.be/nZAvdNK0d74", "subtitle": "static/ENG_001_20151602_01204_ch01_1.en.vtt", "key":"_ch01_1"}}
 
 SEP=","
 
