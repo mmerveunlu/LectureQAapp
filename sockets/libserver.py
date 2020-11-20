@@ -3,6 +3,7 @@ import selectors
 import json
 import io
 import struct
+import utils 
 
 request_search = {
     "morpheus": "Follow the white rabbit. \U0001f430",
@@ -13,10 +14,14 @@ request_search = {
 
 
 def request_search(passage,question):
-    """ """
-    #TODO: make the prediction 
-    answer = "This will be answer"
-    #TODO: save passage, question,answer
+    """runs the model for given passage and question
+    Args: 
+     @passage: string,the title of the lecture
+     @question: string, the question
+    Returns:
+     @answer: string, the predicted answer
+    """
+    answer = run_model(passage,question)
     return answer
 
 class Message:
@@ -116,13 +121,6 @@ class Message:
             "content_encoding": content_encoding,
         }
         return response
-
-    def _request_search(self,passage,question):
-        """ """
-        #TODO: make the prediction 
-        answer = "This will be answer"
-        #TODO: save passage, question,answer
-        return answer
 
     def _create_response_binary_content(self):
         response = {
