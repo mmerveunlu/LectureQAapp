@@ -11,14 +11,15 @@ Contact: Merve Unlu Menevse (m.merve.unlu@gmail.com)
 
 """
 
+import sys
+sys.path.insert(1,'/var/www/LectureQAapp/LectureQAapp/sockets/')
+sys.path.insert(1,'/var/www/LectureQAapp/LectureQAapp/')
+
 from flask import Flask, render_template, request
 from utils import get_questions, save_asked_questions
 import statics
 
-import sys
-#sys.path.insert(1, '/sockets/')
-sys.path.insert(0,'/')
-#from sockets.appclient import run_client
+from sockets.appclient import run_client
 
 app = Flask(__name__)
 
@@ -91,9 +92,9 @@ def answer():
 
     # Run the client app to get the answer from the server
     # HOST, PORT comes from statics file
-    #response = run_client(statics.HOST,statics.PORT,subtitle,request.form['question'])
+    response = run_client(statics.HOST,statics.PORT,subtitle,request.form['question'])
     # TODO changed to test the app 09/11
-    response="Answer will come from server please wait!"
+    # response="Answer will come from server please wait!"
     # Check if returned response is None
     if not response:
         # TODO Error
