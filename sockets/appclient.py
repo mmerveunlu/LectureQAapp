@@ -71,10 +71,7 @@ def run_client(host,port,passage,question):
                         # print("Run ", message.response.get('result'))
                         response = message.response.get('result')
                 except Exception:
-                    print(
-                        "main: error: exception for",
-                        f"{message.addr}:\n{traceback.format_exc()}",
-                       )
+                    print("main: error: exception for: ", "{message.addr}:\n{traceback.format_exc()}")
                     message.close()
             # Check for a socket being monitored to continue.
             if not sel.get_map():
@@ -82,6 +79,7 @@ def run_client(host,port,passage,question):
     except KeyboardInterrupt:
         print("caught keyboard interrupt, exiting")
     finally:
-        sel.close()
+        #sel.close()
+        print("Not closing")
     return response
 
