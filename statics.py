@@ -1,6 +1,11 @@
 # Define constant file path
+# On the client 
 DATAPATH = "/var/www/LectureQAapp/LectureQAapp/static/example-questions.json"
 QPATH = "/var/www/LectureQAapp/LectureQAapp/static/asked-questions.txt"
+
+# On the Server
+SERVERDPATH = "/work/merve/dataFromClient/"
+PREVPATH = ".."
 
 chapter_keys = ['_ch03_2','_ch07_1','_ch05_1','_ch09_2','_ch01_5',
                 '_ch01_3','_ch02_2','_ch03_1','_ch03_4','_ch01_4',
