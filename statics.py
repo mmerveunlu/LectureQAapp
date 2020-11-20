@@ -12,5 +12,5 @@ lectures = {
 
 SEP=","
 
-HOST=""
+HOST="10.2.1.55"
 PORT= 65432
