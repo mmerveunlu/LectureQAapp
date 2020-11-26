@@ -1,15 +1,30 @@
 import torch
+import os
+from os.path import join
 
+from transformers import (
+        BertConfig,
+        BertForQuestionAnswering,
+        BertTokenizer,
+        squad_convert_examples_to_features
+)
+
+import timeit
+from tqdm import tqdm,trange 
+import logging
+logger = logging.getLogger(__name__)
 
 MODEL_CLASSES = {
     "bert": (BertConfig, BertForQuestionAnswering, BertTokenizer),
-    "camembert": (CamembertConfig, CamembertForQuestionAnswering, CamembertTokenizer),
-    "roberta": (RobertaConfig, RobertaForQuestionAnswering, RobertaTokenizer),
-    "xlnet": (XLNetConfig, XLNetForQuestionAnswering, XLNetTokenizer),
-    "xlm": (XLMConfig, XLMForQuestionAnswering, XLMTokenizer),
-    "distilbert": (DistilBertConfig, DistilBertForQuestionAnswering, DistilBertTokenizer),
-    "albert": (AlbertConfig, AlbertForQuestionAnswering, AlbertTokenizer),
 }
+
+from transformers.data.processors.squad import SquadResult, SquadV1Processor, SquadV2Processor
+from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
+
+from transformers.data.metrics.squad_metrics import (
+        compute_predictions_log_probs,
+        compute_predictions_logits
+    )
 
 
 class MyArguments():
@@ -28,23 +43,32 @@ class MyArguments():
         self.eval_batch_size = args_dict["eval_batch_size"]
         self.output_dir = args_dict["output_dir"]
         self.model_type = args_dict["model_type"]
-        
+        self.do_lower_case = args_dict["do_lower_case"]
+        self.device = args_dict["device"]
+        self.n_best_size = args_dict["n_best_size"]
+        self.max_answer_length = args_dict["max_answer_length"]
+        self.verbose_logging = False
+        self.null_score_diff_threshold = 0.0
+
+def to_list(tensor):
+    return tensor.detach().cpu().tolist()
+    
 
 def load_and_cache_examples(args, tokenizer):
     """ """ 
-
+    print("Loading data")
     # Load data features from cache or dataset file
     input_dir = args.data_dir if args.data_dir else "."
     cached_features_file = os.path.join(
         input_dir,
         "cached_{}_{}_{}".format(
-            "dev" if evaluate else "train",
+            "predict",
             list(filter(None, args.model_name_or_path.split("/"))).pop(),
             str(args.max_seq_length),
         ),
     )
 
-    logger.info("Creating features from dataset file at %s", input_dir)
+    print("Creating features from dataset file at %s", input_dir)
 
     processor = SquadV2Processor() if args.version_2_with_negative else SquadV1Processor()
 
@@ -57,20 +81,21 @@ def load_and_cache_examples(args, tokenizer):
         max_seq_length=args.max_seq_length,
         doc_stride=args.doc_stride,
         max_query_length=args.max_query_length,
-        is_training=not evaluate,
+        is_training=False,
         return_dataset="pt",
         threads=args.threads,
     )
 
-    logger.info("Saving features into cached file %s", cached_features_file)
+    print("Saving features into cached file %s", cached_features_file)
     torch.save({"features": features, "dataset": dataset, "examples": examples}, cached_features_file)
 
-    return dataset
+    return dataset,examples,features
 
 
 def predict_on(args, model, tokenizer, prefix=""):
     """ """ 
 
+    print("Run predict on")
     dataset, examples, features = load_and_cache_examples(args, tokenizer)
 
     if not os.path.exists(args.output_dir) and args.local_rank in [-1, 0]:
@@ -106,12 +131,12 @@ def predict_on(args, model, tokenizer, prefix=""):
 
             feature_indices = batch[3]
             outputs = model(**inputs)
-
+        
         for i, feature_index in enumerate(feature_indices):
             eval_feature = features[feature_index.item()]
             unique_id = int(eval_feature.unique_id)
 
-            output = [to_list(output[i]) for output in outputs.to_tuple()]
+            output = [to_list(output[i]) for output in outputs]
 
             start_logits, end_logits = output
             result = SquadResult(unique_id, start_logits, end_logits)
@@ -152,21 +177,25 @@ def predict_on(args, model, tokenizer, prefix=""):
     return 
 
 
-def run_predict_on_model():
-    args_dict = { "data_dir":"",
-                  "model_name_or_path":"experiments/bert-large-cased-whole-word-masking-finetuned-squad_batch4_epoch16_seq256-eng-exp1",
+def run_predict_on_model(data_dir,model_path,output_dir,predict_file):
+    args_dict = { "data_dir":data_dir,
+                  "model_name_or_path":model_path,
                   "max_seq_length":256,
-                  "predict_file":"",
+                  "predict_file":predict_file,
                   "version_2_with_negative":False,
                   "max_query_length":64,
                   "threads":1,
                   "doc_stride":128,
-                  "local_rank":"",
+                  "local_rank":-1,
                   "n_gpu":1,
                   "per_gpu_eval_batch_size":1,
                   "eval_batch_size":1,
-                  "output_dir":"",
-                  "model_type":"bert"
+                  "output_dir":output_dir,
+                  "model_type":"bert",
+                  "do_lower_case":False,
+                  "device":"cpu",
+                  "n_best_size":20,
+                  "max_answer_length":96
     }
     
     args = MyArguments(args_dict)
@@ -181,11 +210,14 @@ def run_predict_on_model():
         args.model_name_or_path,
         from_tf=bool(".ckpt" in args.model_name_or_path),
         config=config)
+    
+    prefix = predict_file.split("/")[-1].split(".")[0]
+    predict_on(args, model, tokenizer,prefix)
 
-    args_dict["data_dir"]
 
-    predict_on(args, model, tokenizer)
-
-
-if __name__ == "__init__":
-    run_predict_on_model()
+if __name__ == "__main__":
+    data_dir = "/work/merve/dataFromClient/"
+    predict_file = join(data_dir,"data-20201126_1544_08.json")
+    output_dir = "/work/merve/responses/"
+    model_path = "/work/merve/merve-tezboun-qa/bert-model/experiments/bert-large-cased-whole-word-masking-finetuned-squad_batch4_epoch16_seq256-eng-exp1"
+    run_predict_on_model(data_dir,model_path,output_dir,predict_file)
