@@ -3,7 +3,8 @@ import selectors
 import json
 import io
 import struct
-import utils 
+from datetime import datetime
+from utils import run_model
 
 request_search = {
     "morpheus": "Follow the white rabbit. \U0001f430",

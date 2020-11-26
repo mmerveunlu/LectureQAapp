@@ -1,10 +1,12 @@
 import json
 import sys
-sys.path.insert(1,'/var/www/LectureQAapp/LectureQAapp/')
 from os.path import join
 import webvtt
+from datetime import datetime
+from appmodel import run_predict_on_model
 
-import statics
+PREVPATH = "../"
+SERVERDPATH = "../../dataFromClient/"
 
 def generate_json(ppath,question,path):
     """ from given passage and question generates json format
@@ -19,7 +21,7 @@ def generate_json(ppath,question,path):
     """
     # finds the related passage from statics
     # get the content as text 
-    vtt = webvtt.read(join(statics.PREVPATH,ppath)) 
+    vtt = webvtt.read(join(PREVPATH,ppath)) 
     lines = []
     for line in vtt: 
         lines.extend(line.text.strip().splitlines())
@@ -29,18 +31,18 @@ def generate_json(ppath,question,path):
     # form json-type dict for the input
     data = {"version":"1.0"}
     with open(path,"a+") as fp:
-        qa = {"question":question, "answers"=[]}
-        p = {"context":passage, "qas"=[qa]}
-        article = {"title":lecture,"passages":[p]}
+        qaid = ppath.split("/")[1].split(".")[0] + "_" + path.split("/")[1][4:]
+        qa = {"question":question,"id":qaid, "answers":[]}
+        p = {"context":passage, "qas":[qa]}
+        article = {"title":ppath,"paragraphs":[p]}
         data['data'] = [article]
         json.dump(data,fp)
 
 def get_predicted_answer(path):
     """reads and returns predicted answer from given path """
-    
-    return 
-    
-
+    with open(path) as fp:
+        return json.load(fp)
+   
 
         
 def run_model(passage,question):
@@ -49,12 +51,20 @@ def run_model(passage,question):
     # use datetime to name the input file
     dt = datetime.now().strftime("%Y%m%d_%H%M_%S")
     # where to save the passage+question pair
-    path = join(statics.SERVERDPATH,"data-"+dt+".json")
+    path = join(SERVERDPATH,"data-"+dt+".json")
     generate_json(passage,question,path)
-
     # run the model to get the prediction
-    
-    return
+
+    predict_file = path.split("/")[-1]
+    # TODO: change output dir
+    data_dir = SERVERDPATH
+    output_dir = "/work/merve/responses/"
+    model_path = "/work/merve/merve-tezboun-qa/bert-model/experiments/bert-large-cased-whole-word-masking-finetuned-squad_batch4_epoch16_seq256-eng-exp1"
+    run_predict_on_model(data_dir,model_path,output_dir,predict_file)
+
+    answer_path = join(output_dir,"predictions_"+predict_file)
+    return get_predicted_answer(answer_path)
+
             
 
 
