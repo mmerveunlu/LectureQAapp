@@ -16,7 +16,7 @@ sys.path.insert(1,'/var/www/LectureQAapp/LectureQAapp/sockets/')
 sys.path.insert(1,'/var/www/LectureQAapp/LectureQAapp/')
 
 from flask import Flask, render_template, request
-from utils import get_questions, save_asked_questions
+from utils import get_questions, save_asked_questions, find_answer_in_video
 import statics
 
 from sockets.appclient import run_client
@@ -96,19 +96,26 @@ def answer():
     # TODO changed to test the app 09/11
     # response="Answer will come from server please wait!"
     # Check if returned response is None
+
+    # TODO: Test response remove before git
+    # response = "a continuous time system is a system where the input is a continuous time signal and this input results in an output"
+    
     if not response:
         # TODO Error
         print("No response")
         answer_text = "--"
     else:
         answer_text = response
-    # answer_text = "NLP people call a large pile of text a corpus"
+        start_second = find_answer_in_video(subtitle,answer_text)
+        ylink = ylink+"&start="+str(start_second)
+
     # save asked questions into a file
     save_asked_questions(chapter,
                          request.form['question'],
                          request.form['userName'],
                          request.form['studentID'],
                          statics.QPATH)
+    
     return render_template('video-answer-page.html',
                            question=request.form['question'],
                            answer=answer_text,
