@@ -1,6 +1,8 @@
 import torch
 import os
+import json
 from os.path import join
+
 
 from transformers import (
         BertConfig,
@@ -30,6 +32,7 @@ from transformers.data.metrics.squad_metrics import (
 class MyArguments():
     def __init__(self,args_dict):
         self.data_dir = args_dict["data_dir"]
+        self.data = args_dict["data"]
         self.model_name_or_path = args_dict["model_name_or_path"]
         self.max_seq_length = args_dict["max_seq_length"]
         self.predict_file = args_dict["predict_file"]
@@ -72,8 +75,10 @@ def load_and_cache_examples(args, tokenizer):
 
     processor = SquadV2Processor() if args.version_2_with_negative else SquadV1Processor()
 
-    examples = processor.get_dev_examples(args.data_dir, filename=args.predict_file)
-
+    if args.data:
+        examples = processor._create_examples(args.data,"dev")
+    elif args.data_dir:
+        examples = processor.get_dev_examples(args.data_dir, filename=args.predict_file)        
 
     features, dataset = squad_convert_examples_to_features(
         examples=examples,
@@ -177,8 +182,9 @@ def predict_on(args, model, tokenizer, prefix=""):
     return 
 
 
-def run_predict_on_model(data_dir,model_path,output_dir,predict_file):
+def run_predict_on_model(data_dir,model_path,output_dir,predict_file,data):
     args_dict = { "data_dir":data_dir,
+                  "data":data,
                   "model_name_or_path":model_path,
                   "max_seq_length":256,
                   "predict_file":predict_file,
@@ -188,13 +194,13 @@ def run_predict_on_model(data_dir,model_path,output_dir,predict_file):
                   "doc_stride":128,
                   "local_rank":-1,
                   "n_gpu":1,
-                  "per_gpu_eval_batch_size":1,
-                  "eval_batch_size":1,
+                  "per_gpu_eval_batch_size":8,
+                  "eval_batch_size":8,
                   "output_dir":output_dir,
                   "model_type":"bert",
                   "do_lower_case":False,
                   "device":"cpu",
-                  "n_best_size":20,
+                  "n_best_size":2,
                   "max_answer_length":96
     }
     
@@ -214,10 +220,11 @@ def run_predict_on_model(data_dir,model_path,output_dir,predict_file):
     prefix = predict_file.split("/")[-1].split(".")[0]
     predict_on(args, model, tokenizer,prefix)
 
-
-if __name__ == "__main__":
-    data_dir = "/work/merve/dataFromClient/"
-    predict_file = join(data_dir,"data-20201126_1544_08.json")
-    output_dir = "/work/merve/responses/"
-    model_path = "/work/merve/merve-tezboun-qa/bert-model/experiments/bert-large-cased-whole-word-masking-finetuned-squad_batch4_epoch16_seq256-eng-exp1"
-    run_predict_on_model(data_dir,model_path,output_dir,predict_file)
+#if __name__ == "__main__":
+#    data_dir = "/work/merve/dataFromClient/"
+#    predict_file = join(data_dir,"data-20201126_1544_08.json")
+#    with open(predict_file) as fp:
+#        data = json.load(fp)["data"]
+#    output_dir = "/work/merve/responses/"
+#    model_path = "/work/merve/merve-tezboun-qa/bert-model/experiments/bert-large-cased-whole-word-masking-finetuned-squad_batch4_epoch16_seq256-eng-exp1"
+#    run_predict_on_model(data_dir,model_path,output_dir,predict_file,data)
