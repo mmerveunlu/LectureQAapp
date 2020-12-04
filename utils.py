@@ -2,6 +2,7 @@ import json
 from datetime import datetime
 import statics
 import webvtt
+from os.path import join
 
 def find_answer_in_video(subtitle,answer):
     """ 
@@ -14,7 +15,7 @@ def find_answer_in_video(subtitle,answer):
         ; float, seconds where the answer starts
     """
     # only checks where the start of the answer occurs
-    for caption in webvtt.read(subtitle):
+    for caption in webvtt.read(join(statics.SPATH,subtitle)):
         if answer[:len(answer)//2] in caption.text:
             return caption.start_in_seconds
 
