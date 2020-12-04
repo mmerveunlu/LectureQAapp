@@ -65,6 +65,11 @@ def question():
         subtitle = request.form['subtitle']
         # find the chapter key from dict
         for k,v in statics.lectures.items():
+            # start is a substring added to the youtube links
+            # to find the chkey, we need to remove &start= part
+            # from the youtube links
+            if "start" in ylink:
+                ylink = ylink.split("start")[0][:-1]
             if v['ylink'] == ylink:
                 chkey = v["key"]
     questions = get_questions(chkey,statics.DATAPATH)
@@ -93,8 +98,6 @@ def answer():
     # Run the client app to get the answer from the server
     # HOST, PORT comes from statics file
     response = run_client(statics.HOST,statics.PORT,subtitle,request.form['question'])
-    # TODO changed to test the app 09/11
-    # response="Answer will come from server please wait!"
     # Check if returned response is None
 
     # TODO: Test response remove before git
