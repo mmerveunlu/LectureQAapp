@@ -41,7 +41,7 @@ def generate_json(ppath,question,path):
 def get_predicted_answer(path):
     """reads and returns predicted answer from given path """
     with open(path) as fp:
-        return json.load(fp)
+        return list(json.load(fp).values())[0]
    
 
         
