@@ -1,6 +1,22 @@
 import json
 from datetime import datetime
 import statics
+import webvtt
+
+def find_answer_in_video(subtitle,answer):
+    """ 
+    returns the seconds where the answer starts in the video 
+    searchs it in the subtitle
+    Args: 
+        subtitle: string, path of the subtitle file 
+        answer: string, the predicted answer
+    Returns: 
+        ; float, seconds where the answer starts
+    """
+    # only checks where the start of the answer occurs
+    for caption in webvtt.read(subtitle):
+        if answer[:len(answer)//2] in caption.text:
+            return caption.start_in_seconds
 
 
 def get_questions(chapter_name, qpath):
