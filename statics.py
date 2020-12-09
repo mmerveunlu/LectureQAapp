@@ -1,7 +1,9 @@
 # Define constant file path
 # On the client 
+SPATH = "/var/www/LectureQAapp/LectureQAapp/"
 DATAPATH = "/var/www/LectureQAapp/LectureQAapp/static/example-questions.json"
 QPATH = "/var/www/LectureQAapp/LectureQAapp/static/asked-questions.txt"
+
 
 # On the Server
 SERVERDPATH = "/work/merve/dataFromClient/"
