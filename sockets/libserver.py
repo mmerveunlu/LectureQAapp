@@ -4,9 +4,10 @@ import json
 import io
 import struct
 from datetime import datetime
-from utils import run_model
+from utils import run_model, load_model, run_loaded_model
+from appmodel import MyArguments, MODEL_CLASSES
 
-def request_search(passage,question):
+def request_search(passage,question,pretrained):
     """runs the model for given passage and question
     Args: 
      @passage: string,the title of the lecture
@@ -14,11 +15,48 @@ def request_search(passage,question):
     Returns:
      @answer: string, the predicted answer
     """
-    answer = run_model(passage,question)
+    # answer = run_model(passage,question)
+    answer = run_loaded_model(passage, question,pretrained)
+
     return answer
 
+class PreTrainedModel:
+    def __init__(self,model_path):
+        # pre-trained model parameters
+        args_dict = { "data_dir":"",
+                  "data":"",
+                  "model_name_or_path":model_path,
+                  "max_seq_length":256,
+                  "predict_file":"",
+                  "version_2_with_negative":False,
+                  "max_query_length":64,
+                  "threads":1,
+                  "doc_stride":128,
+                  "local_rank":-1,
+                  "n_gpu":1,
+                  "per_gpu_eval_batch_size":8,
+                  "eval_batch_size":8,
+                  "output_dir":"",
+                  "model_type":"bert",
+                  "do_lower_case":False,
+                  "device":"cpu",
+                  "n_best_size":2,
+                  "max_answer_length":96
+        }
+        self.args = MyArguments(args_dict)
+        args.model_type = args.model_type.lower()
+        config_class, model_class, tokenizer_class = MODEL_CLASSES[args.model_type]
+        config = config_class.from_pretrained(args.model_name_or_path)
+    
+        self.tokenizer = tokenizer_class.from_pretrained(args.model_name_or_path,
+                                                 do_lower_case=args.do_lower_case)
+        self.model = model_class.from_pretrained(args.model_name_or_path,
+                                                 from_tf=bool(".ckpt" in args.model_name_or_path),
+                                                 config=config)
+        
+
 class Message:
-    def __init__(self, selector, sock, addr):
+    def __init__(self, selector, sock, addr, pretrained):
         self.selector = selector
         self.sock = sock
         self.addr = addr
@@ -28,6 +66,7 @@ class Message:
         self.jsonheader = None
         self.request = None
         self.response_created = False
+        self.pretrained = pretrained
 
     def _set_selector_events_mask(self, mode):
         """Set selector to listen for events: mode is 'r', 'w', or 'rw'."""
@@ -103,7 +142,7 @@ class Message:
         if action == "search":
             passage = self.request.get("passage")
             question = self.request.get("question")
-            answer = request_search(passage,question)
+            answer = request_search(passage, question, pretrained)
             content = {"result": answer}
         else:
             content = {"result": f'Error: invalid action "{action}".'}
