@@ -186,7 +186,7 @@ def run_predict_on_loaded_model(args,model,tokenizer):
     """
     Uses a loaded model
     """
-    prefix = predict_file.split("/")[-1].split(".")[0]
+    prefix = args.predict_file.split("/")[-1].split(".")[0]
     predict_on(args, model, tokenizer,prefix)
 
 
