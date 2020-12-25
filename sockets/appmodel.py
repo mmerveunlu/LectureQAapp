@@ -182,7 +182,19 @@ def predict_on(args, model, tokenizer, prefix=""):
     return 
 
 
+def run_predict_on_loaded_model(args,model,tokenizer):
+    """
+    Uses a loaded model
+    """
+    prefix = predict_file.split("/")[-1].split(".")[0]
+    predict_on(args, model, tokenizer,prefix)
+
+
 def run_predict_on_model(data_dir,model_path,output_dir,predict_file,data):
+    """
+    Loads the model at each time  
+    """
+ 
     args_dict = { "data_dir":data_dir,
                   "data":data,
                   "model_name_or_path":model_path,
@@ -216,7 +228,6 @@ def run_predict_on_model(data_dir,model_path,output_dir,predict_file,data):
         args.model_name_or_path,
         from_tf=bool(".ckpt" in args.model_name_or_path),
         config=config)
-    
     prefix = predict_file.split("/")[-1].split(".")[0]
     predict_on(args, model, tokenizer,prefix)
 
