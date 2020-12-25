@@ -10,19 +10,22 @@ import libserver
 sel = selectors.DefaultSelector()
 
 
-def accept_wrapper(sock):
+
+def accept_wrapper(sock,pretrained):
     """ 
     gets the new socket object and 
     registers it with the selector
 
     @sock:
+    @pretrained: loaded model object
     """
+    
     conn, addr = sock.accept()  # Should be ready to read
     print("accepted connection from", addr)
     # put the socket non-blocking mode
     conn.setblocking(False)
     # after a message is created, it's associated with a socket
-    message = libserver.Message(sel, conn, addr)
+    message = libserver.Message(sel, conn, addr,pretrained)
     # sel.register is initially set to be monitored for read events
     # Once the request has been read, it will listen for write events
     sel.register(conn, selectors.EVENT_READ, data=message)
@@ -32,6 +35,13 @@ if len(sys.argv) != 3:
     print("usage:", sys.argv[0], "<host> <port>")
     sys.exit(1)
 
+print("Load the pre-trained model")
+# arguments
+# TODO: change model path 
+model_path = "/work/merve/merve-tezboun-qa/bert-model/experiments/bert-large-cased-whole-word-masking-finetuned-squad_batch4_epoch16_seq256-eng-exp1"
+pretrained = libserver.PreTrainedModel(model_path)
+
+# Set up port and host 
 host, port = sys.argv[1], int(sys.argv[2])
 # socket.socket creates a socket object
 lsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -61,7 +71,7 @@ try:
             if key.data is None:
                 # if key.data is None, it is from listening socket
                 # accept it
-                accept_wrapper(key.fileobj)
+                accept_wrapper(key.fileobj,pretrained)
             else:
                 # if key.data is not None,
                 # it's a client socket, already accepted
