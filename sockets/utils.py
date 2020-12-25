@@ -3,7 +3,7 @@ import sys
 from os.path import join
 import webvtt
 from datetime import datetime
-from appmodel import run_predict_on_model
+from appmodel import run_predict_on_model,run_predict_on_loaded_model
 
 PREVPATH = "../"
 SERVERDPATH = "../../dataFromClient/"
@@ -47,7 +47,16 @@ def get_predicted_answer(path):
     """reads and returns predicted answer from given path """
     with open(path) as fp:
         return list(json.load(fp).values())[0]
-   
+    
+    
+def run_loaded_model(passage,question,pretrained):
+    """runs a loaded model and returns predicted answers """
+    
+    run_predict_on_loaded_model(pretrained.args,pretrained.model,pretrained.tokenizer)
+    answer_path = join(args['output_dir'],"predictions_"+predict_file)
+    
+    return get_predicted_answer(answer_path)
+
         
 def run_model(passage,question):
     """runs the model and returns predicted answers """
