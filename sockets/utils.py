@@ -51,9 +51,27 @@ def get_predicted_answer(path):
     
 def run_loaded_model(passage,question,pretrained):
     """runs a loaded model and returns predicted answers """
+    # first generate json for 1-sample
+    # use datetime to name the input file
+    dt = datetime.now().strftime("%Y%m%d_%H%M_%S")
+    # where to save the passage+question pair
+    path = join(SERVERDPATH,"data-"+dt+".json")
+    data = generate_json(passage,question,path)
+
+    predict_file = path.split("/")[-1]
+    # TODO: change output dir
+    data_dir = SERVERDPATH
+    output_dir = "/work/merve/responses/"
+
+    pretrained.args.data = data
+    pretrained.args.data_dir = data_dir
+    pretrained.args.predict_file = predict_file
+    pretrained.args.output_dir = output_dir
     
-    run_predict_on_loaded_model(pretrained.args,pretrained.model,pretrained.tokenizer)
-    answer_path = join(args['output_dir'],"predictions_"+predict_file)
+    run_predict_on_loaded_model(pretrained.args,
+                                pretrained.model,
+                                pretrained.tokenizer)
+    answer_path = join(pretrained.args.output_dir,"predictions_"+predict_file)
     
     return get_predicted_answer(answer_path)
 
