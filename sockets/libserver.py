@@ -4,7 +4,7 @@ import json
 import io
 import struct
 from datetime import datetime
-from utils import run_model, load_model, run_loaded_model
+from utils import run_model, run_loaded_model
 from appmodel import MyArguments, MODEL_CLASSES
 
 def request_search(passage,question,pretrained):
@@ -16,6 +16,7 @@ def request_search(passage,question,pretrained):
      @answer: string, the predicted answer
     """
     # answer = run_model(passage,question)
+
     answer = run_loaded_model(passage, question,pretrained)
 
     return answer
@@ -44,14 +45,14 @@ class PreTrainedModel:
                   "max_answer_length":96
         }
         self.args = MyArguments(args_dict)
-        args.model_type = args.model_type.lower()
-        config_class, model_class, tokenizer_class = MODEL_CLASSES[args.model_type]
-        config = config_class.from_pretrained(args.model_name_or_path)
+        self.args.model_type = self.args.model_type.lower()
+        config_class, model_class, tokenizer_class = MODEL_CLASSES[self.args.model_type]
+        config = config_class.from_pretrained(self.args.model_name_or_path)
     
-        self.tokenizer = tokenizer_class.from_pretrained(args.model_name_or_path,
-                                                 do_lower_case=args.do_lower_case)
-        self.model = model_class.from_pretrained(args.model_name_or_path,
-                                                 from_tf=bool(".ckpt" in args.model_name_or_path),
+        self.tokenizer = tokenizer_class.from_pretrained(self.args.model_name_or_path,
+                                                 do_lower_case=self.args.do_lower_case)
+        self.model = model_class.from_pretrained(self.args.model_name_or_path,
+                                                 from_tf=bool(".ckpt" in self.args.model_name_or_path),
                                                  config=config)
         
 
@@ -142,7 +143,7 @@ class Message:
         if action == "search":
             passage = self.request.get("passage")
             question = self.request.get("question")
-            answer = request_search(passage, question, pretrained)
+            answer = request_search(passage, question, self.pretrained)
             content = {"result": answer}
         else:
             content = {"result": f'Error: invalid action "{action}".'}
