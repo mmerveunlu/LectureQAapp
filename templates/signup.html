@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="w3-display-middle">
+  <div class="w3-container w3-wide w3-text-grey w3-center">
+   <h1>Sign Up</h1>
+  </div>
+  {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+            </div>
+        {% endif %}
+        {% endwith %}
+  <form method="POST" action="/signup" class="w3-container w3-card-4  w3-center w3-margin w3-light-grey w3-padding-large" style="width:1000px;" >   
+  <input class="w3-input w3-border" placeholder="Enter Email" name="email" type="text"></p>
+  <input class="w3-input w3-border" placeholder="Enter Name" name="Name" type="text"></p>
+  <input class="w3-input w3-border" placeholder="Enter Password" name="psw" type="text"></p>
+  <button class="w3-button w3-block w3-teal">Sign Up</button>
+</form>
+</div>
+  
+{% endblock %}
+
+
