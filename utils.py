@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-import statics
+from .statics import * 
 import webvtt
 from os.path import join
 
@@ -15,7 +15,7 @@ def find_answer_in_video(subtitle,answer):
         ; float, seconds where the answer starts
     """
     # only checks where the start of the answer occurs
-    for caption in webvtt.read(join(statics.SPATH,subtitle)):
+    for caption in webvtt.read(join(SPATH,subtitle)):
         if answer[:len(answer)//2] in caption.text:
             return caption.start_in_seconds
 
@@ -46,7 +46,7 @@ def save_asked_questions(chapter,question,username,userID,qpath):
       qpath: string, the path of the question file
     """
     with open(qpath,"a+") as fp:
-        line = statics.SEP.join([datetime.now().strftime(format="%d:%m:%Y-%H:%M:%S"),
+        line = SEP.join([datetime.now().strftime(format="%d:%m:%Y-%H:%M:%S"),
                         question,username,userID,"\n"])
         fp.write(line)
 
@@ -61,7 +61,7 @@ def save_questions(datapath):
     with open(datapath) as fp:
         data = json.load(fp)['data']
     # for each chapter key find questions
-    chapter_dict = {key:[] for key in statics.chapter_keys}
+    chapter_dict = {key:[] for key in chapter_keys}
     for a in data: 
         for p in a['paragraphs']: 
             for qa in p['qas']: 
