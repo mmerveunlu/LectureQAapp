@@ -11,119 +11,38 @@ Contact: Merve Unlu Menevse (m.merve.unlu@gmail.com)
 
 """
 
-import sys
-sys.path.insert(1,'/var/www/LectureQAapp/LectureQAapp/sockets/')
-sys.path.insert(1,'/var/www/LectureQAapp/LectureQAapp/')
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 
-from flask import Flask, render_template, request
-from utils import get_questions, save_asked_questions, find_answer_in_video
-import statics
+# init SQLAlchemy so we can use it later in our models
+db = SQLAlchemy()
 
-from sockets.appclient import run_client
+def create_app():
+    app = Flask(__name__)
 
-app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'secret-key-goes-here'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
+    db.init_app(app)
 
-@app.route('/', methods=['GET', 'POST'])
-def login():
-    """
-    The function generates the manin page.
-    Gives a lecture video and the form.
-    """
-    return render_template('index.html')
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
 
+    from .models import User
 
-
-@app.route('/lecture', methods=['GET', 'POST'])
-def form():
-    """
-    The function generates the main page.
-    Gives a lecture video and the form.
-    """
-    # Init page will be lecture 1
-    ylink = statics.lectures["lecture1"]["ylink"]
-    subtitle = statics.lectures["lecture1"]["subtitle"]
-    chkey = statics.lectures["lecture1"]["key"]
-    questions = get_questions(chkey,statics.DATAPATH)
-    return render_template('video-question-page.html', ylink=ylink, subtitle=subtitle, questions=questions)
-
-
-@app.route('/question', methods=['GET', 'POST'])
-def question():
-    """
-    The function generates the page after
-    clicking to ask another question.
-    """
-    if not request.form.get('ylink'):
-        # Init page will be lecture 1
-        ylink = statics.lectures["lecture1"]["ylink"]
-        subtitle = statics.lectures["lecture1"]["subtitle"]
-        chkey = statics.lectures["lecture1"]["key"]
-
-    else:
-        ylink = request.form['ylink']
-        subtitle = request.form['subtitle']
-        # find the chapter key from dict
-        for k,v in statics.lectures.items():
-            # start is a substring added to the youtube links
-            # to find the chkey, we need to remove &start= part
-            # from the youtube links
-            if "start" in ylink:
-                ylink = ylink.split("start")[0][:-1]
-            if v['ylink'] == ylink:
-                chkey = v["key"]
-    questions = get_questions(chkey,statics.DATAPATH)
-    # if a lecture is selected render page
-    for lecture in statics.lectures.keys():
-        if request.form.get(lecture):
-            ylink = statics.lectures[lecture]["ylink"]
-            subtitle = statics.lectures[lecture]["subtitle"]
-            # get the example questions for the lecture
-            chkey = statics.lectures[lecture]["key"]
-            questions = get_questions(chkey,statics.DATAPATH)
-    return render_template('video-question-page.html', ylink=ylink, subtitle=subtitle, questions=questions)
-
-@app.route('/answer', methods=['GET', 'POST'])
-def answer():
-    """
-    The function generates the page after a question is asked. 
-    """
-    ylink = request.form['ylink']
-    subtitle = request.form['subtitle']
-    # find the chapter key from dict
-    for k,v in statics.lectures.items():
-        if v['ylink'] == ylink:
-            chapter = v["key"]
-
-    # Run the client app to get the answer from the server
-    # HOST, PORT comes from statics file
-    response = run_client(statics.HOST,statics.PORT,subtitle,request.form['question'])
-    # Check if returned response is None
-
-    # TODO: Test response remove before git
-    # response = "a continuous time system is a system where the input is a continuous time signal and this input results in an output"
+    @login_manager.user_loader
+    def load_user(user_id):
+        # since the user_id is just the primary key of our user table, use it in the query for the user
+        return User.query.get(int(user_id))
     
-    if not response:
-        # TODO Error
-        print("No response")
-        answer_text = "--"
-    else:
-        answer_text = response
-        start_second = find_answer_in_video(subtitle,answer_text)
-        ylink = ylink+"&start="+str(start_second)
+    # blueprint for auth routes in our app
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint)
 
-    # save asked questions into a file
-    save_asked_questions(chapter,
-                         request.form['question'],
-                         request.form['userName'],
-                         request.form['studentID'],
-                         statics.QPATH)
-    
-    return render_template('video-answer-page.html',
-                           question=request.form['question'],
-                           answer=answer_text,
-                           ylink=ylink,
-                           subtitle=subtitle)
+    # blueprint for non-auth parts of app
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
 
-if __name__ == "__main__":
-    app.run()
+    return app
