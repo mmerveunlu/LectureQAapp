@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-<title>LectureQA Page Demo</title>
-<meta charset="utf-8">
+  <title>LectureQA Main Page</title>
+  <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-    </style>
-    </head>
-  <body>
+<body class="w3-content" style="max-width:1600px">
 
-    <div class="w3-display-middle">
-<div class="w3-container w3-wide w3-text-grey w3-center">
-  <h1>LectureQA Demo Page</h1>
+
+<div class="w3-display-middle">
+  <div class="w3-container w3-wide w3-text-grey w3-center">
+    <h1>Welcome to LectureQA Page</h1>
+    <p> If you have an account, please login. </p>
+    <p> If you want to create an account, please sign up. </p>
+  </div>
+  <div class="bgimg w3-display-container w3-text-white">
+
+  <div class="w3-container w3-center w3-xlarge">
+    <a href="{{ url_for('auth.login') }}" class="w3-button w3-teal">Login</a>
+    <a href="{{ url_for('auth.signup') }}" class="w3-button w3-teal">Sign Up</a>
+  </div>
+ 
 </div>
 
-<form class="w3-container w3-card-4  w3-center w3-margin w3-light-grey w3-padding-large" style="width:1000px;" >
-  <input class="w3-input w3-border" placeholder="Enter Username" name="username" type="text"></p>
-
-  <input class="w3-input w3-border" placeholder="Enter Password" name="psw" type="text"></p>
-  <button class="w3-button w3-block w3-teal" disabled>Login</button>
-
-</form>
-</div>
 </body>
-
-
 </html>
