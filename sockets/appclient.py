@@ -5,7 +5,7 @@ import socket
 import selectors
 import traceback
 
-from sockets.libclient import Message
+from .libclient import Message
 
 sel = selectors.DefaultSelector()
 
