@@ -12,7 +12,7 @@ https://flask.palletsprojects.com/en/1.1.x/deploying/
 
 Necessary libraries:
    1. Python 3.6.8
-   2. Flask 1.1.2
+   2. Flask 1.1.2: flask-login, flask-sqlalchemy
   
 The folders:
   __static__ :  contains subtitles
