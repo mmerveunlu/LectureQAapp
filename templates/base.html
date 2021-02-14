@@ -8,32 +8,28 @@
     <title>LectureQA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <section class="hero is-primary is-fullheight">
 
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
 
-                    <div id="navbarMenuHeroA" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a href="{{ url_for('index') }}" class="navbar-item">
-                                Home
-                            </a>
-                            <a href="{{ url_for('auth.login') }}" class="navbar-item">
-                                Login
-                            </a>
-                            <a href="{{ url_for('auth.signup') }}" class="navbar-item">
-                                Sign Up
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
 
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-right w3-border-right  w3-light-grey" style="display:none;right:0" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+  <a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Home</a>
+  <a href="{{ url_for('main.list') }}" class="w3-bar-item w3-button">Courses</a>
+  <a href="#" class="w3-bar-item w3-button">How To</a>
+  <a href="{{ url_for('auth.login') }}" class="w3-bar-item w3-button">Login</a>
+  <a href="#" class="w3-bar-item w3-button">Log Out</a>
+</div>
+
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge w3-right" onclick="w3_open()">☰</button>
+    <div class="w3-container">
+  </div>
+</div>
         <div class="hero-body">
             <div class="container has-text-centered">
                {% block content %}
@@ -41,6 +37,16 @@
             </div>
         </div>
     </section>
+
+    <script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
 </body>
 
 </html>
