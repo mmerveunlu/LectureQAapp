@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-<title>LectureQA Page Demo</title>
+<title>Lecture Page</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -71,7 +71,10 @@
   background-color: #3e8e41;
       }
       /* Vertical side-bar buttons*/
-      
+
+
+
+
     </style>
      <script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
      <script src="https://cdn.jsdelivr.net/gh/tombyrer/videojs-transcript-click@1.0/dist/videojs-transcript-click.min.js"></script>
@@ -83,8 +86,8 @@
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
   <form method="post" action="{{ url_for('main.question')}}"
   <div class="btn-group">
-  <button class="w3-button w3-block" name="lecture1" value="lecture1">Lecture 1</button>
-  <button class="w3-button w3-block" name="lecture2" value="lecture2">Lecture2</button>
+  <button class="w3-button w3-block w3-xlarge" title="Intro. Signal and Systems" name="lecture1" value="lecture1">Lecture 1</button>
+  <button class="w3-button w3-block w3-xlarge" title="Transformation of the Independent Variable" name="lecture2" value="lecture2">Lecture2</button>
   </div>
   </form>
 </div>
@@ -92,7 +95,7 @@
 
 
 <div class="w3-container w3-wide w3-text-grey w3-center">
-  <h1>LectureQA Demo Page</h1>
+  <h1>{{ title }}</h1>
 </div>
 
 
