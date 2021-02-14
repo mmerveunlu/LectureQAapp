@@ -46,7 +46,11 @@ def form():
     subtitle = lectures["lecture1"]["subtitle"]
     chkey = lectures["lecture1"]["key"]
     questions = get_questions(chkey,DATAPATH)
-    return render_template('video-question-page.html', ylink=ylink, subtitle=subtitle, questions=questions)
+    return render_template('video-question-page.html',
+                           ylink=ylink,
+                           subtitle=subtitle,
+                           questions=questions,
+                           title=lectures["lecture1"]["title"])
 
 
 @main.route('/question', methods=['GET', 'POST'])
@@ -61,6 +65,7 @@ def question():
         ylink = lectures["lecture1"]["ylink"]
         subtitle = lectures["lecture1"]["subtitle"]
         chkey = lectures["lecture1"]["key"]
+        title = lectures["lecture1"]["title"]
 
     else:
         ylink = request.form['ylink']
@@ -74,6 +79,7 @@ def question():
                 ylink = ylink.split("start")[0][:-1]
             if v['ylink'] == ylink:
                 chkey = v["key"]
+                title = v["title"]
     questions = get_questions(chkey,DATAPATH)
     # if a lecture is selected render page
     for lecture in lectures.keys():
@@ -82,8 +88,13 @@ def question():
             subtitle = lectures[lecture]["subtitle"]
             # get the example questions for the lecture
             chkey = lectures[lecture]["key"]
+            title = lectures[lecture]["title"]
             questions = get_questions(chkey,DATAPATH)
-    return render_template('video-question-page.html', ylink=ylink, subtitle=subtitle, questions=questions)
+    return render_template('video-question-page.html',
+                           ylink=ylink,
+                           subtitle=subtitle,
+                           questions=questions,
+                           title = title)
 
 @main.route('/answer', methods=['GET', 'POST'])
 @login_required
@@ -97,15 +108,16 @@ def answer():
     for k,v in lectures.items():
         if v['ylink'] == ylink:
             chapter = v["key"]
+            title = v["title"]
 
     # Run the client app to get the answer from the server
     # HOST, PORT comes from statics file
-    # response = run_client(HOST,PORT,subtitle,request.form['question'])
-    # Check if returned response is None
-
-    # TODO: Test response remove before git
-    response = "a continuous time system is a system where the input is a continuous time signal and this input results in an output"
+    response = run_client(HOST,PORT,subtitle,request.form['question'])
     
+    # TODO: Test response remove before git
+    # response = "a continuous time system is a system where the input is a continuous time signal and this input results in an output"
+
+    # Check if returned response is None    
     if not response:
         # TODO Error
         print("No response")
@@ -126,4 +138,5 @@ def answer():
                            question=request.form['question'],
                            answer=answer_text,
                            ylink=ylink,
-                           subtitle=subtitle)
+                           subtitle=subtitle,
+                           title=title)
