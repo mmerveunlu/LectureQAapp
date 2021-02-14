@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -78,13 +82,13 @@
      
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
   <form method="post" action="{{ url_for('main.question')}}"
-	
-<div class="btn-group">
+  <div class="btn-group">
   <button class="w3-button w3-block" name="lecture1" value="lecture1">Lecture 1</button>
   <button class="w3-button w3-block" name="lecture2" value="lecture2">Lecture2</button>
-</div>
+  </div>
   </form>
 </div>
+
 
 
 <div class="w3-container w3-wide w3-text-grey w3-center">
@@ -157,3 +161,5 @@
 
 
 </html>
+
+{% endblock %}
