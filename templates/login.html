@@ -9,8 +9,9 @@
   </div>
   {% with messages = get_flashed_messages() %}
   {% if messages %}
-    <div class="notification is-danger">
-        {{ messages[0] }}
+  
+    <div class="w3-panel w3-red w3-card-4">
+        <p> {{ messages[0] }} </p> 
     </div>
    {% endif %}
    {% endwith %}
