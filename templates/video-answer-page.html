@@ -81,10 +81,12 @@
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
   <form method="post" action="{{ url_for('main.question')}}"
 	
-<div class="btn-group">
-  <button class="w3-button w3-block" name="lecture1" value="lecture1">Lecture 1</button>
-  <button class="w3-button w3-block" name="lecture2" value="lecture2">Lecture2</button>
-</div>
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+  <form method="post" action="{{ url_for('main.question')}}"
+  <div class="btn-group">
+  <button class="w3-button w3-block w3-large" title="Introduction Signal and Systems" name="lecture1" value="lecture1">Video 1</button>
+  <button class="w3-button w3-block w3-large" title="Transformation of the Independent Variable" name="lecture2" value="lecture2">Video 2</button>
+  </div>
   </form>
 </div>
 
@@ -112,20 +114,18 @@
  </div>
 
 <div class="w3-light-grey w3-padding-large w3-margin-top" style="width:1100px" id="question">
- 
-<form method="post" action="{{ url_for('main.question') }}">
-
-          <!-- <label for="question">Enter</label> -->
-         <p class="w3-large" > {{ question }} </p>
+  	  <p class="w3-opacity"> <i> Please click the video to watch the answer. </i> </p>
+          <p class="w3-large" > {{ question }} </p>
           <p class="w3-large"> <i> {{ answer }} </i> </p>
-	  <p class="w3-opacity"> <i> Please click the video to watch the answer. </i> </p>
+  <form method="post" action="{{ url_for('main.question') }}">
+  <!-- <label for="question">Enter</label> -->
        <input type="hidden" name="ylink" value="{{ ylink }}">
        <input type="hidden" name="subtitle" value="{{ subtitle }}">
-
         <div>
           <button class="w3-button w3-block w3-dark-grey">Send another question</button>
         </div>
-      </form>
+  </form>
+
 </div>
 <!-- End page content -->
 </div>
