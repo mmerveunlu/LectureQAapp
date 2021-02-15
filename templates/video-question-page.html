@@ -72,9 +72,6 @@
       }
       /* Vertical side-bar buttons*/
 
-
-
-
     </style>
      <script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
      <script src="https://cdn.jsdelivr.net/gh/tombyrer/videojs-transcript-click@1.0/dist/videojs-transcript-click.min.js"></script>
@@ -86,8 +83,8 @@
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
   <form method="post" action="{{ url_for('main.question')}}"
   <div class="btn-group">
-  <button class="w3-button w3-block w3-xlarge" title="Intro. Signal and Systems" name="lecture1" value="lecture1">Lecture 1</button>
-  <button class="w3-button w3-block w3-xlarge" title="Transformation of the Independent Variable" name="lecture2" value="lecture2">Lecture2</button>
+  <button class="w3-button w3-block w3-large" title="Introduction Signal and Systems" name="lecture1" value="lecture1">Video 1</button>
+  <button class="w3-button w3-block w3-large" title="Transformation of the Independent Variable" name="lecture2" value="lecture2">Video 2</button>
   </div>
   </form>
 </div>
@@ -99,6 +96,7 @@
 </div>
 
 
+ 
 <div class="w3-content w3-margin-top">
  <div class="w3-cell-row">
    <div class="w3-container w3-cell">  
@@ -116,6 +114,7 @@
      </div>
    </div>
  </div>
+
  
 
  <div class="w3-light-grey w3-padding-large" style="width:1120px"id="question">
@@ -140,6 +139,7 @@
       </div>
    </form>
   </div>
+
 
 <script>
     var video = videojs('video')
