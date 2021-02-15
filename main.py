@@ -134,6 +134,7 @@ def answer():
     save_asked_questions(chapter,
                          request.form['question'],
                          current_user.email,
+                         answer_text,
                          QPATH)
     
     return render_template('video-answer-page.html',
