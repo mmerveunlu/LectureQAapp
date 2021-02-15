@@ -35,7 +35,7 @@ def get_questions(chapter_name, qpath):
         data = json.load(fp)
     return data[chapter_name]
 
-def save_asked_questions(chapter,question,username,userID,qpath):
+def save_asked_questions(chapter,question,userEmail,qpath):
     """
     saves asked questions into a file 
     Args:
@@ -47,7 +47,7 @@ def save_asked_questions(chapter,question,username,userID,qpath):
     """
     with open(qpath,"a+") as fp:
         line = SEP.join([datetime.now().strftime(format="%d:%m:%Y-%H:%M:%S"),
-                        question,username,userID,"\n"])
+                        question,userEmail,"\n"])
         fp.write(line)
 
 def save_questions(datapath):
