@@ -117,38 +117,30 @@
    </div>
  </div>
  
- <div class="w3-cell-row">
 
-   
  <div class="w3-light-grey w3-padding-large" style="width:1120px"id="question">
    <form method="post" action="{{ url_for('main.answer') }}">
-     <div class="w3-cell-row">
+     <div class="w3-section">
        <input type="hidden" name="ylink" value="{{ ylink }}">
        <input type="hidden" name="subtitle" value="{{ subtitle }}">
-     <div class="w3-container w3-cell">
-          <input class="w3-input w3-border"  name="userName" id="userName" placeholder="Enter your name and surname">
+       <!-- <p type="hidden"><b><label for="useremail">Your username is</label></b></p> 
+       <input type="hidden" class="w3-input w3-border"  name="userEmail" id="userEmail" placeholder="{{email}}"> -->
      </div>
-     <div class="w3-container w3-cell">
-          <input class="w3-input w3-border"  name="studentID" id="studentID" placeholder="Enter your student ID">
-     </div>
-     </div>
-
-
- <div class="w3-section">
+     <div class="w3-section">
     <!-- <input class="w3-input w3-border"  name="question" id="question" placeholder="Enter your question"> -->
    <input list="questions" class="w3-input w3-border" name="question" id="question" placeholder="Enter your question">
    <datalist id="questions">
      {% for question in questions %}
      <option value="{{question}}">{{question}}</option>
      {% endfor %}
-  </datalist>
-	</div>
-        <div>
-          <button class="w3-button w3-block w3-dark-grey">Send question</button>
-        </div>
-</form>
- </div>
- </div>
+   </datalist>
+    </div>
+    <div>
+     <button class="w3-button w3-block w3-dark-grey">Send question</button>
+      </div>
+   </form>
+  </div>
+
 <script>
     var video = videojs('video')
     video.ready(function(){
