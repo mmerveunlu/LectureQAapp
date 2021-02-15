@@ -15,8 +15,7 @@
     <section class="hero is-primary is-fullheight">
 
 
-
-<div class="w3-sidebar w3-bar-block w3-card w3-animate-right w3-border-right  w3-light-grey" style="display:none;right:0" id="mySidebar">
+      <div class="w3-sidebar w3-bar-block w3-card w3-animate-right w3-border-right  w3-light-grey" style="display:none;right:0" id="mySidebar">
   <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
   <a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Home</a>
   {% if current_user.is_authenticated %}
@@ -29,11 +28,12 @@
   <a href="{{ url_for('auth.logout') }}" class="w3-bar-item w3-button">Logout</a>
 </div>
 
-<div class="w3-teal">
-  <button class="w3-button w3-teal w3-xlarge w3-right" onclick="w3_open()">☰</button>
-    <div class="w3-container">
-  </div>
-</div>
+   <div class="w3-teal">	
+     <button class="w3-button w3-teal w3-xlarge w3-right" onclick="w3_open()">☰</button>
+       {% if current_user.is_authenticated %}
+     <div class="w3-margin-left"> <h1> Welcome {{name}}! </h1> </div>
+       {% endif %}
+   </div>
         <div class="hero-body">
             <div class="container has-text-centered">
                {% block content %}
