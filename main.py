@@ -31,7 +31,7 @@ def list():
     The function generates the manin page.
     Gives a lecture video and the form.
     """
-    return render_template('list.html')
+    return render_template('list.html',name=current_user.name)
 
 
 @main.route('/lecture', methods=['GET', 'POST'])
@@ -50,7 +50,8 @@ def form():
                            ylink=ylink,
                            subtitle=subtitle,
                            questions=questions,
-                           title=lectures["lecture1"]["title"])
+                           title=lectures["lecture1"]["title"],
+                           name=current_user.name)
 
 
 @main.route('/question', methods=['GET', 'POST'])
@@ -90,11 +91,13 @@ def question():
             chkey = lectures[lecture]["key"]
             title = lectures[lecture]["title"]
             questions = get_questions(chkey,DATAPATH)
+            
     return render_template('video-question-page.html',
                            ylink=ylink,
                            subtitle=subtitle,
                            questions=questions,
-                           title = title)
+                           title = title,
+                           name=current_user.name)
 
 @main.route('/answer', methods=['GET', 'POST'])
 @login_required
@@ -130,8 +133,7 @@ def answer():
     # save asked questions into a file
     save_asked_questions(chapter,
                          request.form['question'],
-                         request.form['userName'],
-                         request.form['studentID'],
+                         current_user.email,
                          QPATH)
     
     return render_template('video-answer-page.html',
@@ -139,4 +141,5 @@ def answer():
                            answer=answer_text,
                            ylink=ylink,
                            subtitle=subtitle,
-                           title=title)
+                           title=title,
+                           name=current_user.name)
