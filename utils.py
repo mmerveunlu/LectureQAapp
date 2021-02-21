@@ -71,3 +71,30 @@ def save_questions(datapath):
     
 
 
+def process_example_questions(file_path):
+    """for a given path, read the questions 
+    adds punctuations and capitalize 
+    saves the dict to the same file 
+    """
+    with open(file_path) as fp:
+        data = json.load(fp)
+    # question words    
+    q_words = ['how','what','when','which','why']
+    # question verbs 
+    q_tuple = ('can','are','is','do','does') 
+    new_data = dict() 
+    for key,value in data.items(): 
+        new_data[key] = [] 
+        for q in value: 
+            if any(x in q for x in q_words): 
+                q = q+ "?"
+                new_data[key].append(q.capitalize())
+            elif q.startswith(q_tuple):
+                q = q+ "?"
+                new_data[key].append(q.capitalize())
+            else:
+                q = q + "."
+                new_data[key].append(q.capitalize())
+                
+    with open("example-questions.json","w") as fp: 
+        json.dump(new_data,fp)
