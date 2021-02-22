@@ -81,12 +81,10 @@
 
      
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
-  <form method="post" action="{{ url_for('main.question')}}"
   <div class="btn-group">
-  <button class="w3-button w3-block w3-large" title="Introduction Signal and Systems" name="lecture1" value="lecture1">Video 1</button>
-  <button class="w3-button w3-block w3-large" title="Transformation of the Independent Variable" name="lecture2" value="lecture2">Video 2</button>
+  <a href={{ url_for('main.question',lecture_id='lecture1')}}><button class="w3-button w3-block w3-large" title="Introduction Signal and Systems" name="lecture1" value="lecture1">Video 1</button></a>
+  <a href={{ url_for('main.question',lecture_id='lecture2')}}><button class="w3-button w3-block w3-large" title="Transformation of the Independent Variable" name="lecture2" value="lecture2">Video 2</button></a>
   </div>
-  </form>
 </div>
 
 
