@@ -2,87 +2,76 @@
 
 {% block content %}
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:100px;margin-right:100px">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.collapsible {
+  background-color: #C0C0C0;
+  color: black;
+  cursor: pointer;
+  padding: 24px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+}
 
-  <div class="w3-container w3-wide w3-text-grey w3-center">
-  <h1>Lectures</h1>
+.active, .collapsible:hover {
+  background-color: gray;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+  </head>
+
+
+<div class="w3-main" style="margin-left:200px;margin-right:200px">
+ 
+ 
+ <div class="w3-container w3-wide w3-text-dark-gray w3-center">
+  <h1>Chapters</h1>
 </div>
 
-
- <div class="w3-container w3-padding-large w3-margin w3-center w3-card">
-
-  <!-- First  Grid-->
-  <div class="w3-row-padding">
-    <a href="{{ url_for('main.form') }}"> 
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="/home/matmazel/Documents/Boun/LectureQAInterface/imgs/main-title.png" alt="Lecture1" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-light-grey">
-        <p><b>Lecture 1 </b></p>
-        <p>Introduction to Signal and Systems</p>
-      </div>
-    </div>
-    </a>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="/home/matmazel/Documents/Boun/LectureQAInterface/imgs/main-title.png" alt="Lecture1" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-light-grey">
-        <p><b>Lecture 1 </b></p>
-        <p>Introduction to Signal and Systems</p>
-      </div>
-    </div>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="/home/matmazel/Documents/Boun/LectureQAInterface/imgs/main-title.png" alt="Lecture1" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-light-grey">
-        <p><b>Lecture 1 </b></p>
-        <p>Introduction to Signal and Systems</p>
-      </div>
-    </div> 
-  </div>
-  <!-- Second Grid --> 
-  <div class="w3-row-padding">
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="/home/matmazel/Documents/Boun/LectureQAInterface/imgs/main-title2.png" alt="Lecture1" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-light-grey">
-        <p><b>Lecture 2 </b></p>
-        <p>Transformation of the Independent Variable</p>
-      </div>
-    </div>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="/home/matmazel/Documents/Boun/LectureQAInterface/imgs/main-title2.png" alt="Lecture1" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-light-grey">
-        <p><b>Lecture 2 </b></p>
-        <p>Transformation of the Independent Variable</p>
-      </div>
-    </div>
-    <div class="w3-third w3-container w3-margin-bottom">
-      <img src="/home/matmazel/Documents/Boun/LectureQAInterface/imgs/main-title2.png" alt="Lecture1" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-light-grey">
-        <p><b>Lecture 2 </b></p>
-        <p>Transformation of the Independent Variable</p>
-      </div>
-    </div>
-  </div> 
+<button class="collapsible">Chapter 1 </button>
+<div class="content">
+  <ul class="w3-ul">
+    <li><a href={{ url_for('main.question',lecture_id='lecture1')}}> Lecture 1 : Introduction to Signals and Systems</a></li>
+    <li><a href={{ url_for('main.question',lecture_id='lecture2')}}> Lecture 2 : Transformation of the Independent Variable</a></li>
+  </ul>
 </div>
-
-<!-- Contact Modal -->
-<div id="contact" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-teal">
-      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1>Contact</h1>
-    </div>
-    <div class="w3-container">
-      <p>Please fill the form:</p>
-      <form action="/action_page.php" target="_blank">
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name and Surname" required name="Name"></p>
-	<p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
-        <p><button class="w3-button w3-light-grey" type="submit">Send Message</button></p>
-      </form>
-    </div>
-  </div>
+<button class="collapsible">Chapter 2</button>
+<div class="content">
+  <p></p>
 </div>
-
+<!-- <button class="collapsible">Chapter 3</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
+-->
+</div> 
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 
 {% endblock %}
