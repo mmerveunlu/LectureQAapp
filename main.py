@@ -36,39 +36,24 @@ def list():
 
 @main.route('/lecture', methods=['GET', 'POST'])
 @login_required
-def form():
-    """
-    The function generates the main page.
-    Gives a lecture video and the form.
-    """
-    # Init page will be lecture 1
-    ylink = lectures["lecture1"]["ylink"]
-    subtitle = lectures["lecture1"]["subtitle"]
-    chkey = lectures["lecture1"]["key"]
-    questions = get_questions(chkey,DATAPATH)
-    return render_template('video-question-page.html',
-                           ylink=ylink,
-                           subtitle=subtitle,
-                           questions=questions,
-                           title=lectures["lecture1"]["title"],
-                           name=current_user.name)
-
-
-@main.route('/question', methods=['GET', 'POST'])
-@login_required
 def question():
     """
     The function generates the page after
     clicking to ask another question.
     """
     if not request.form.get('ylink'):
+        # if the page is accessed from list
+        #  request.form will be empty
+        lecture_id = request.url.split("=")[1]
         # Init page will be lecture 1
-        ylink = lectures["lecture1"]["ylink"]
-        subtitle = lectures["lecture1"]["subtitle"]
-        chkey = lectures["lecture1"]["key"]
-        title = lectures["lecture1"]["title"]
+        ylink = lectures[lecture_id]["ylink"]
+        subtitle = lectures[lecture_id]["subtitle"]
+        chkey = lectures[lecture_id]["key"]
+        title = lectures[lecture_id]["title"]
 
     else:
+        # if the apge is accessed from send another question button
+        # url. will be empty
         ylink = request.form['ylink']
         subtitle = request.form['subtitle']
         # find the chapter key from dict
