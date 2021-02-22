@@ -19,7 +19,7 @@
   <button onclick="w3_close()" class="w3-bar-item w3-button w3-padding-32 w3-center w3-large">Close &times;</button>
   <a href="{{ url_for('index') }}" class="w3-bar-item w3-button w3-center w3-padding-16">Home</a>
   {% if current_user.is_authenticated %}
-  <a href="{{ url_for('main.list') }}" class="w3-bar-item w3-button w3-center w3-padding-16">Lectures</a>
+  <a href="{{ url_for('main.list') }}" class="w3-bar-item w3-button w3-center w3-padding-16">Chapters</a>
   <a href="#" class="w3-bar-item w3-button w3-center w3-padding-16">How To</a>
   {% endif %}
   {% if not current_user.is_authenticated %}
