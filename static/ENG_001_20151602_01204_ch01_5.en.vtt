@@ -1,0 +1,157 @@
+WEBVTT
+
+00:00:13.412 --> 00:00:17.377
+hi everyone welcome to signals and systems course
+
+00:00:17.377 --> 00:00:23.789
+in this video I am going to explain basic properties of continuous time and discrete time systems
+
+00:00:23.789 --> 00:00:29.843
+as we have already discussed the systems are also categorized as continuous time and discrete time
+
+00:00:29.843 --> 00:00:37.299
+a continuous time system transforms a continuous time input signal into a continuous time output signal
+
+00:00:37.299 --> 00:00:44.601
+a discrete time system transforms a discrete time input signal into a discrete time output signal
+
+00:00:44.601 --> 00:00:50.342
+many real systems are built as the interconnections of several subsystems
+
+00:00:51.136 --> 00:00:55.043
+these figures show some frequently used interconnections
+
+00:00:55.043 --> 00:00:59.238
+figure a shows a series or cascade interconnection
+
+00:00:59.238 --> 00:01:02.432
+figure b shows a parallel interconnection
+
+00:01:02.432 --> 00:01:06.256
+figure c shows a series parallel interconnection
+
+00:01:06.256 --> 00:01:10.968
+and the figure on the right hand side shows a feedback interconnection
+
+00:01:10.968 --> 00:01:14.237
+let's move to the basic system properties
+
+00:01:14.237 --> 00:01:17.346
+the first property is being memoryless
+
+00:01:17.346 --> 00:01:25.013
+a system is said to be memoryless if its output at any given time depends only on the input at the same time
+
+00:01:25.013 --> 00:01:27.999
+otherwise it is a system with memory
+
+00:01:27.999 --> 00:01:37.266
+for instance in the given system the output y only depends on the input x at the same time so this system is memoryless
+
+00:01:37.266 --> 00:01:40.501
+the second property is invertibility
+
+00:01:40.501 --> 00:01:47.034
+a system is said to be invertible if distinct inputs lead to distinct outputs
+
+00:01:47.034 --> 00:01:55.803
+if a system is invertible then any inverse system exists and if we cascade the inverse system to the original system
+
+00:01:55.803 --> 00:01:58.457
+we obtain the same input signal
+
+00:01:58.457 --> 00:02:00.699
+the figure shows this property
+
+00:02:00.699 --> 00:02:03.697
+the third property is causality
+
+00:02:03.697 --> 00:02:12.712
+a system is causal if the output at any time depends on values of the output at only the present and past times
+
+00:02:12.712 --> 00:02:16.605
+for instance the first system given here is causal
+
+00:02:16.605 --> 00:02:21.424
+however the second system the output depends on the future input
+
+00:02:21.424 --> 00:02:24.222
+therefore it is not a causal system
+
+00:02:24.222 --> 00:02:28.141
+note that all memoryless systems are causal
+
+00:02:28.141 --> 00:02:30.993
+the fourth property is stability
+
+00:02:30.993 --> 00:02:38.542
+a stable system in a stable system small inputs lead to responses that do not diverge
+
+00:02:38.542 --> 00:02:42.950
+an easy way of analyzing the stability of a system is to check
+
+00:02:42.950 --> 00:02:46.836
+if a bounded input results in a bounded output
+
+00:02:46.836 --> 00:02:49.860
+if that is the case then the system is stable
+
+00:02:49.860 --> 00:02:53.098
+an example stable system is given here
+
+00:02:53.098 --> 00:02:59.547
+if the input x of t is bounded then the output y of t is also bounded
+
+00:02:59.547 --> 00:03:02.180
+therefore the system is stable here
+
+00:03:02.180 --> 00:03:07.403
+the fifth and one of the most important properties is the time invariance
+
+00:03:07.403 --> 00:03:15.264
+informally a system is time invariant if the behavior and characteristics of the system are fixed over time
+
+00:03:15.264 --> 00:03:19.739
+more formally we can define a time invariant system as follows
+
+00:03:19.739 --> 00:03:27.915
+a system is time invariant if a time shift in the input signal results in an identical time shift in the output signal
+
+00:03:27.915 --> 00:03:35.192
+assume that we have a system where y of t is the output when x of t is the input
+
+00:03:35.192 --> 00:03:46.188
+the system is time invariant if y of t minus t zero is the output when x of t minus t zero is the input
+
+00:03:46.188 --> 00:03:51.241
+the last and the other important system property is linearity
+
+00:03:51.241 --> 00:04:03.347
+a system is linear if an input consists of the sum of several signals and the output is the superposition of the responses of the system to each of those inputs
+
+00:04:03.347 --> 00:04:09.096
+more formally if a system is linear the given two properties must hold
+
+00:04:11.045 --> 00:04:13.993
+the first one is the additivity property
+
+00:04:15.833 --> 00:04:19.007
+and the second one is the scaling property
+
+00:04:19.007 --> 00:04:27.236
+these two properties can be combined into a single statement known as the superposition property as given below
+
+00:04:27.236 --> 00:04:31.417
+in this video I have explained basic system properties
+
+00:04:31.417 --> 00:04:37.454
+among these properties time invariance and linearity have great importance because
+
+00:04:37.454 --> 00:04:43.370
+most of the systems encountered in nature can be modeled as linear and time invariant
+
+00:04:43.370 --> 00:04:50.921
+in the next videos we are going to analyze continuous time and discrete time linear time invariant systems in more detail
+
+00:04:50.921 --> 00:04:52.096
+thank you

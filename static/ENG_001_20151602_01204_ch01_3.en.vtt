@@ -1,0 +1,91 @@
+WEBVTT
+
+00:00:14.387 --> 00:00:18.272
+hi everyone welcome to signals and systems course
+
+00:00:18.272 --> 00:00:23.909
+in this video I am going to explain discrete time exponential and sinusoidal signals
+
+00:00:23.909 --> 00:00:28.307
+these signals are the basic building blocks for many other signals
+
+00:00:30.002 --> 00:00:34.853
+a discrete time complex exponential signal is defined as given here
+
+00:00:34.853 --> 00:00:39.028
+where capital c and alpha are in general complex numbers
+
+00:00:39.028 --> 00:00:42.461
+alternatively it is expressed as given below
+
+00:00:42.461 --> 00:00:48.102
+if c and alpha are real the signal is called real exponential signal
+
+00:00:48.102 --> 00:00:56.278
+the real exponential discrete time signal can have one of the behaviors given in the figure depending on the value of alpha
+
+00:00:56.278 --> 00:00:59.133
+in a complex exponential signal
+
+00:00:59.133 --> 00:01:04.651
+if beta is purely imaginary we obtain the signal given in the red box
+
+00:01:04.651 --> 00:01:10.510
+as in the continuous time case this signal is closely related with the sinusoidal signal
+
+00:01:10.510 --> 00:01:18.411
+these signals are the examples of discrete time signals with infinite total energy and finite average power
+
+00:01:18.411 --> 00:01:23.672
+some example discrete time sinusoidal signals are given in this figure
+
+00:01:23.672 --> 00:01:29.988
+if c and alpha are complex numbers here they are represented in polar form
+
+00:01:29.988 --> 00:01:35.151
+then we obtain the complex exponential in general form as given in the red box
+
+00:01:35.151 --> 00:01:41.209
+we obtain one of the behavior given in the figure depending on the sign of alpha
+
+00:01:41.209 --> 00:01:46.215
+even though there are similarities between continuous time and discrete time signals
+
+00:01:46.215 --> 00:01:49.096
+there are also many important differences
+
+00:01:49.096 --> 00:01:54.882
+this table shows the comparison of continuous time and discrete time complex exponentials
+
+00:01:54.882 --> 00:02:02.250
+the first difference is that distinct values of omega zero results in distinct signals in the time domain
+
+00:02:02.250 --> 00:02:09.053
+for instance higher values of omega zero result in higher rate of oscillations in the signal
+
+00:02:09.053 --> 00:02:13.908
+however it is not the case in discrete time complex exponentials
+
+00:02:13.908 --> 00:02:22.592
+in discrete time the signals are identical for values of omega zero separated by multiples of two pie
+
+00:02:22.592 --> 00:02:28.477
+second continuous time exponentials are periodic for any choice of omega zero
+
+00:02:28.477 --> 00:02:39.254
+however discrete time exponentials are periodic only if omega zero equals two pie times m over n for some integers m and n
+
+00:02:39.254 --> 00:02:44.803
+third fundamental frequency of omega zero for continuous time exponentials
+
+00:02:44.803 --> 00:02:50.416
+whereas it is omega zero divided by m for discrete time exponentials
+
+00:02:50.416 --> 00:02:56.178
+the fundamental periods for these signals are given in the below row
+
+00:02:56.178 --> 00:03:01.974
+in this video I have explained discrete time exponential and sinusoidal signals
+
+00:03:01.974 --> 00:03:06.000
+let me know if you have any questions

@@ -1,0 +1,124 @@
+WEBVTT
+
+00:00:13.758 --> 00:00:17.935
+hi everyone welcome to signals and systems course
+
+00:00:17.935 --> 00:00:24.623
+in this video I am going to explain continuous time exponential and sinusoidal signals
+
+00:00:24.623 --> 00:00:30.683
+exponential and sinusoidal signals are the basic building blocks of many other signals
+
+00:00:30.683 --> 00:00:39.759
+the continuous time complex exponential signal has the given form where the capital c and alpha are in general complex numbers
+
+00:00:39.759 --> 00:00:46.143
+if c and alpha are real numbers the signal is called real exponential signal
+
+00:00:46.143 --> 00:00:51.393
+if alpha is positive then the signal is a growing exponential signal
+
+00:00:51.393 --> 00:00:56.621
+if alpha is negative then the signal is a decaying exponential signal
+
+00:00:56.621 --> 00:01:02.752
+if alpha is purely imaginary the signal is said to be complex exponential
+
+00:01:02.752 --> 00:01:07.548
+an important property of this signal is that it is periodic
+
+00:01:07.548 --> 00:01:12.994
+a signal is periodic if it is unchanged by a time shift of t
+
+00:01:15.027 --> 00:01:20.296
+so if the last term here is equal to one than the signal is periodic
+
+00:01:20.296 --> 00:01:28.265
+if omega zero is zero then the signal is constant and it is periodic for any value of omega zero
+
+00:01:28.265 --> 00:01:37.103
+if omega zero is not equal to zero the fundamental period is two pie over absolute value of omega zero
+
+00:01:37.103 --> 00:01:43.575
+a signal closely related to the periodic complex exponential signal is the sinusoidal signal
+
+00:01:43.575 --> 00:01:53.410
+here a is the amplitude omega zero is the frequency and phi is the phase of the sinusoidal signal
+
+00:01:53.410 --> 00:02:00.049
+the unit of omega zero is radians per second and the unit of the phase is radians
+
+00:02:00.049 --> 00:02:04.466
+a sinusoidal signal is shown graphically on the right hand side
+
+00:02:04.466 --> 00:02:12.069
+here t zero is the fundamental period and it is equals to two pie over omega zero
+
+00:02:12.069 --> 00:02:20.365
+this slide shows the formulation used to compute the energy of a continuous time signal over an infinite time interval
+
+00:02:20.365 --> 00:02:26.773
+and the time averaged power of a continuous time signal over an infinite time interval
+
+00:02:26.773 --> 00:02:34.472
+for discrete time signals continuous time representation of the signal is replaced with discrete time representation
+
+00:02:34.472 --> 00:02:40.377
+and the integral is replaced with summation in order to compute energy and power
+
+00:02:40.377 --> 00:02:43.562
+for a periodic complex exponential signal
+
+00:02:43.562 --> 00:02:48.893
+the energy of the signal in one period is obtained as t zero
+
+00:02:48.893 --> 00:02:55.679
+since there are an infinite number of periods the total energy of that signal will be infinite
+
+00:02:55.679 --> 00:03:00.524
+the average power of the signal in one period is one
+
+00:03:00.524 --> 00:03:04.730
+and averaging the power over multiple periods also gives one
+
+00:03:04.730 --> 00:03:15.136
+therefore periodic complex exponential signal is an example of signals with infinite total energy and finite average power
+
+00:03:15.136 --> 00:03:19.204
+the same also holds for the sinusoidal signal
+
+00:03:19.204 --> 00:03:26.753
+so far we have examined exponential signals with real exponential and periodic complex exponential
+
+00:03:26.753 --> 00:03:35.530
+more generally we can define a complex exponential signal where both captial c and alpha are complex numbers
+
+00:03:35.530 --> 00:03:40.530
+if we define c in polar form and alpha in rectangular form
+
+00:03:40.530 --> 00:03:45.304
+we can define the complex exponential signal as given in the red box
+
+00:03:45.304 --> 00:03:54.634
+we can write down this signal as the complex summation of two sinusoidal signals as given below using euler's relation
+
+00:03:54.634 --> 00:03:57.293
+in a complex exponential signal
+
+00:03:57.293 --> 00:04:03.332
+if r equals zero then the real and imaginary parts of the signal are sinusoidal
+
+00:04:03.332 --> 00:04:06.050
+and depending on the sign of r
+
+00:04:06.050 --> 00:04:13.322
+the sinusoidal signals are multiplied either by a growing exponential or a deco  decaying exponential
+
+00:04:13.322 --> 00:04:19.308
+growing or the decaying exponential determines the envelope of the sinusoidal signal
+
+00:04:19.308 --> 00:04:24.799
+in this video I have explained continuous time exponential and sinusoidal signals
+
+00:04:24.799 --> 00:04:27.560
+let me know if you have any questions

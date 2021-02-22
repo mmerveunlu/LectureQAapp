@@ -1,0 +1,73 @@
+WEBVTT
+
+00:00:14.423 --> 00:00:18.554
+hi everyone welcome to signals and systems course
+
+00:00:18.554 --> 00:00:23.842
+in this video I am going to explain unit impulse and unit step functions
+
+00:00:23.842 --> 00:00:28.455
+these functions are very important in signal and system analysis
+
+00:00:28.455 --> 00:00:33.369
+discrete time unit impulse is one of the simplest discrete time signals
+
+00:00:33.369 --> 00:00:36.571
+unit impulse is also called unit sample
+
+00:00:36.571 --> 00:00:42.191
+mathematical and graphical representations of the unit impulse function are given here
+
+00:00:42.191 --> 00:00:48.889
+unit impulse function is one at time equals zero and it is zero at anywhere else
+
+00:00:48.889 --> 00:00:56.781
+note that unit impulse is a very important signal because it can be used to construct any discrete time signal
+
+00:00:56.781 --> 00:01:01.909
+another basic discrete time signal is discrete time unit step
+
+00:01:01.909 --> 00:01:07.610
+mathematical and graphical representations of the unit step function are given here
+
+00:01:08.539 --> 00:01:13.275
+unit impulse and unit step functions are closely related with each other
+
+00:01:13.275 --> 00:01:17.819
+the relationship between these two functions is summarized here
+
+00:01:17.819 --> 00:01:24.578
+for instance the discrete time unit impulse is the first difference of the discrete time unit step
+
+00:01:24.578 --> 00:01:30.502
+also the discrete time unit step is the running sum of discrete time unit sample
+
+00:01:30.502 --> 00:01:35.875
+we can write this equation in different forms by changing the variable of summation
+
+00:01:35.875 --> 00:01:42.227
+the unit impulse sequence can also be used to sample the value of a signal at any time
+
+00:01:42.227 --> 00:01:50.078
+continuous time unit step and unit impulse functions are defined in a similar way to their discrete time counterparts
+
+00:01:50.078 --> 00:01:56.604
+the unit step impulse can be thought of as the first derivative of the continuous time unit step
+
+00:01:56.604 --> 00:02:03.523
+the relationship between continuous time units step and unit impulse functions is summarized here
+
+00:02:03.523 --> 00:02:11.183
+as I said before the unit step impulse can be thought of as the first derivative of the continuous time unit step
+
+00:02:11.183 --> 00:02:16.479
+the continuous time unit step is the running integral of the unit sample
+
+00:02:16.479 --> 00:02:22.782
+additionally the unit impulse can be used to sample the value of a signal at any time
+
+00:02:22.782 --> 00:02:30.164
+in this video I have explained discrete time and continuous time unit impulse and unit step functions
+
+00:02:30.164 --> 00:02:32.883
+let me know if you have any questions
