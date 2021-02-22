@@ -15,17 +15,17 @@
     <section class="hero is-primary is-fullheight">
 
 
-      <div class="w3-sidebar w3-bar-block w3-card w3-animate-right w3-border-right  w3-light-grey" style="display:none;right:0" id="mySidebar">
-  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-  <a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Home</a>
+   <div class="w3-sidebar w3-bar-block w3-card w3-animate-right w3-border-right  w3-light-grey w3-large" style="display:none;right:0" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-button w3-padding-32 w3-center w3-large">Close &times;</button>
+  <a href="{{ url_for('index') }}" class="w3-bar-item w3-button w3-center w3-padding-16">Home</a>
   {% if current_user.is_authenticated %}
-  <a href="{{ url_for('main.list') }}" class="w3-bar-item w3-button">Lectures</a>
-  <a href="#" class="w3-bar-item w3-button">How To</a>
+  <a href="{{ url_for('main.list') }}" class="w3-bar-item w3-button w3-center w3-padding-16">Lectures</a>
+  <a href="#" class="w3-bar-item w3-button w3-center w3-padding-16">How To</a>
   {% endif %}
   {% if not current_user.is_authenticated %}
-  <a href="{{ url_for('auth.login') }}" class="w3-bar-item w3-button">Login</a>
+  <a href="{{ url_for('auth.login') }}" class="w3-bar-item w3-button w3-center w3-padding-16">Login</a>
   {% endif %}
-  <a href="{{ url_for('auth.logout') }}" class="w3-bar-item w3-button">Logout</a>
+  <a href="{{ url_for('auth.logout') }}" class="w3-bar-item w3-button w3-center w3-padding-16">Logout</a>
 </div>
 
    <div class="w3-teal">	
@@ -44,11 +44,11 @@
 
     <script>
 function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("mySidebar").style.display = "block";
 }
 
 function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("mySidebar").style.display = "none";
 }
 </script>
 </body>
