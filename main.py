@@ -34,7 +34,7 @@ def list():
     return render_template('list.html',name=current_user.name)
 
 
-@main.route('/lecture', methods=['GET', 'POST'])
+@main.route('/video', methods=['GET', 'POST'])
 @login_required
 def question():
     """
@@ -44,12 +44,12 @@ def question():
     if not request.form.get('ylink'):
         # if the page is accessed from list
         #  request.form will be empty
-        lecture_id = request.url.split("=")[1]
+        video_id = request.url.split("=")[1]
         # Init page will be lecture 1
-        ylink = lectures[lecture_id]["ylink"]
-        subtitle = lectures[lecture_id]["subtitle"]
-        chkey = lectures[lecture_id]["key"]
-        title = lectures[lecture_id]["title"]
+        ylink = lectures[video_id]["ylink"]
+        subtitle = lectures[video_id]["subtitle"]
+        chkey = lectures[video_id]["key"]
+        title = lectures[video_id]["title"]
 
     else:
         # if the apge is accessed from send another question button
