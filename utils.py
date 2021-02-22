@@ -19,6 +19,30 @@ def find_answer_in_video(subtitle,answer):
         if answer[:len(answer)//2] in caption.text:
             return caption.start_in_seconds
 
+def find_answer_in_video_advance(subtitle,answer):
+    """ 
+    returns the seconds where the answer starts in the video, 
+    first concatenate subtitle text and searches the answer 
+    more advance than find_answer_in_video
+    Args: 
+        subtitle: string, path of the subtitle file 
+        answer: string, the predicted answer
+    Returns: 
+        ; float, seconds where the answer starts
+    """
+    caption_text = ""
+    # concatenate the subtitle
+    for caption in webvtt.read(join(SPATH,subtitle)):
+        caption_text += caption.text + " "
+    ans_start = caption_text.find(answer)
+    char_nbr = 0
+    # looks for the character number
+    # which shows the first character of the answer text
+    for caption in webvtt.read(join(SPATH,subtitle)): 
+        char_nbr += len(caption.text) + 1  
+        if char_nbr > ans_start:
+            return caption.start_in_seconds
+    
 
 def get_questions(chapter_name, qpath):
     """ 

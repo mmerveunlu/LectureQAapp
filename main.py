@@ -9,7 +9,7 @@ sys.path.insert(1,'/var/www/LectureQAapp/LectureQAapp/')
 
 from flask import Flask, render_template, request
 from flask_login import login_required, current_user
-from .utils import get_questions, save_asked_questions, find_answer_in_video
+from .utils import get_questions, save_asked_questions, find_answer_in_video_advance
 from .statics import * 
 
 from .sockets.appclient import run_client
@@ -112,7 +112,7 @@ def answer():
         answer_text = "--"
     else:
         answer_text = response
-        start_second = find_answer_in_video(subtitle,answer_text)
+        start_second = find_answer_in_video_advance(subtitle,answer_text)
         ylink = ylink+"&start="+str(start_second)
 
     # save asked questions into a file
