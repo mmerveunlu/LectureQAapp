@@ -3,6 +3,7 @@ from datetime import datetime
 from .statics import * 
 import webvtt
 from os.path import join
+import string
 
 def find_answer_in_video(subtitle,answer):
     """ 
@@ -59,14 +60,14 @@ def get_questions(chapter_name, qpath):
         data = json.load(fp)
     return data[chapter_name]
 
-def save_asked_questions(chapter,question,userEmail,response,qpath):
+def save_asked_questions_answers(chapter,question,userEmail,response,qpath):
     """
-    saves asked questions into a file 
+    saves asked questions with answers into a file 
     Args:
       chapter: string, the key of the chapter
       question: string, the question text asked by user
-      username: string, the name and surname of the user 
-      userID: string, the student id of the user 
+      userEmail: string, the email of the user
+      reponse: string, the answer from the server
       qpath: string, the path of the question file
     """
     with open(qpath,"a+") as fp:
@@ -74,6 +75,29 @@ def save_asked_questions(chapter,question,userEmail,response,qpath):
                          chapter,question,response,userEmail,"\n"])
         fp.write(line)
 
+def save_asked_questions(chapter,question,userEmail,qpath):
+    """
+    saves asked questions into a file 
+    Args:
+      chapter: string, the key of the chapter
+      question: string, the question text asked by user
+      username: string, the name and surname of the user 
+      userID: string, the student id of the user 
+      qpath: string, the path of the question folder
+    """
+    # get the user name
+
+    # remove punctuations
+    table = str.maketrans(dict.fromkeys(string.punctuation))
+    no_punctuation= userEmail.split("@")[0].translate(table)
+    file_user = join(qpath,no_punctuation+".txt")
+    
+    with open(file_user,"a+") as fp:
+        line = SEP.join([datetime.now().strftime(format="%d:%m:%Y-%H:%M:%S"),
+                         chapter,question,"\n"])
+        fp.write(line)
+
+        
 def save_questions(datapath):
     """save the example questions into a file
     Args: 

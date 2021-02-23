@@ -9,7 +9,7 @@ sys.path.insert(1,'/var/www/LectureQAapp/LectureQAapp/')
 
 from flask import Flask, render_template, request
 from flask_login import login_required, current_user
-from .utils import get_questions, save_asked_questions, find_answer_in_video_advance
+from .utils import get_questions, save_asked_questions_answers, save_asked_questions, find_answer_in_video_advance
 from .statics import * 
 
 from .sockets.appclient import run_client
@@ -97,6 +97,11 @@ def answer():
         if v['ylink'] == ylink:
             chapter = v["key"]
             title = v["title"]
+    # save asked questions by user name
+    save_asked_questions(chapter,
+                         request.form['question'],
+                         current_user.email,
+                         STATFOLDER)
 
     # Run the client app to get the answer from the server
     # HOST, PORT comes from statics file
@@ -116,7 +121,7 @@ def answer():
         ylink = ylink+"&start="+str(start_second)
 
     # save asked questions into a file
-    save_asked_questions(chapter,
+    save_asked_questions_answers(chapter,
                          request.form['question'],
                          current_user.email,
                          answer_text,
