@@ -14,6 +14,16 @@ from .statics import *
 
 from .sockets.appclient import run_client
 
+def get_parameters(video_id,chapter):
+    """returns the values related to chapter and video number 
+    check from the static.dict object
+    """
+    lectures = lecture_dict[chapter]
+    return lectures[video_id]['ylink'],\
+        lectures[video_id]['subtitle'],\
+        lectures[video_id]['key'],\
+        lectures[video_id]['title'],\
+        lectures
 
 @main.route('/')
 def index():
@@ -31,7 +41,7 @@ def list():
     The function generates the manin page.
     Gives a lecture video and the form.
     """
-    return render_template('list.html',name=current_user.name)
+    return render_template('list.html',name=current_user.name,video_dict=video_dict,counts=counts)
 
 
 @main.route('/video', methods=['GET', 'POST'])
@@ -44,15 +54,20 @@ def question():
     if not request.form.get('ylink'):
         # if the page is accessed from list
         #  request.form will be empty
-        video_id = request.url.split("=")[1]
+        # video_id = request.url.split("=")[1]
+        video_id = request.args.get('video_id')
+        chapter = request.args.get('chapter')
+        if not video_id.startswith("video"):
+            video_id = "video"+video_id
+        ylink,subtitle,chkey,title,lectures = get_parameters(video_id,chapter)
         # Init page will be lecture 1
-        ylink = lectures[video_id]["ylink"]
-        subtitle = lectures[video_id]["subtitle"]
-        chkey = lectures[video_id]["key"]
-        title = lectures[video_id]["title"]
+        #ylink = lectures[video_id]["ylink"]
+        #subtitle = lectures[video_id]["subtitle"]
+        #chkey = lectures[video_id]["key"]
+        #title = lectures[video_id]["title"]
 
     else:
-        # if the apge is accessed from send another question button
+        # if the page is accessed from send another question button
         # url. will be empty
         ylink = request.form['ylink']
         subtitle = request.form['subtitle']
@@ -105,10 +120,10 @@ def answer():
 
     # Run the client app to get the answer from the server
     # HOST, PORT comes from statics file
-    response = run_client(HOST,PORT,subtitle,request.form['question'])
+    # response = run_client(HOST,PORT,subtitle,request.form['question'])
     
     # TODO: Test response remove before git
-    # response = "a continuous time system is a system where the input is a continuous time signal and this input results in an output"
+    response = "a continuous time system is a system where the input is a continuous time signal and this input results in an output"
 
     # Check if returned response is None    
     if not response:
@@ -133,4 +148,5 @@ def answer():
                            ylink=ylink,
                            subtitle=subtitle,
                            title=title,
-                           name=current_user.name)
+                           name=current_user.name,
+                           chapter=chapter)
