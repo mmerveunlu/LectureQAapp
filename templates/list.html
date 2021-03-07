@@ -40,26 +40,26 @@
   <h1>Chapters</h1>
 </div>
 
-<button class="collapsible">Chapter 1 </button>
-<div class="content">
-  <ul class="w3-ul">
-    <li><a href={{ url_for('main.question',video_id='video1')}}> Video 1 : Introduction to Signals and Systems</a></li>
+
+ 
+ {% for key,value in video_dict.items()%}
+ <!-- key is chapter title, value is a dict -->
+ <button class="collapsible">{{ key }} </button>
+ <div class="content">
+   <ul class="w3-ul">
+      {%for i in range(0,counts[key])%} 
+      <li><a href="{{ url_for('main.question',video_id=i+1,chapter=key)}}"> {{ value[i] }} </a></li>
+      {%endfor%}
+    <!--<li><a href={{ url_for('main.question',video_id='video1')}}> Video 1 : Introduction to Signals and Systems</a></li>
     <li><a href={{ url_for('main.question',video_id='video2')}}> Video 2 : Transformation of the Independent Variable</a></li>
     <li><a href={{ url_for('main.question',video_id='video3')}}> Video 3 : Continuous-Time Exponential and Sinusoidal Signals</a></li>
     <li><a href={{ url_for('main.question',video_id='video4')}}> Video 4 : Discrete-Time Exponential and Sinusoidal Signals</a></li>
     <li><a href={{ url_for('main.question',video_id='video5')}}> Video 5 : Unit Impulse and Unit Step Functions</a></li>
-    <li><a href={{ url_for('main.question',video_id='video6')}}> Video 6 : Basic System Properties</a></li>
+    <li><a href={{ url_for('main.question',video_id='video6')}}> Video 6 : Basic System Properties</a></li>-->
   </ul>
-</div>
-<button class="collapsible">Chapter 2</button>
-<div class="content">
-  <p></p>
-</div>
-<!-- <button class="collapsible">Chapter 3</button>
-<div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
--->
+ </div>
+ {%endfor%}
+
 </div> 
 <script>
 var coll = document.getElementsByClassName("collapsible");
