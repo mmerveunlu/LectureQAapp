@@ -164,24 +164,7 @@
      <div class="w3-container w3-cell w3-cell-top">
        <p class="w3-opacity"> <i> Please click the video to watch the answer. </i></p>
      </div>
-     <div class="w3-container w3-cell w3-cell-top">
-       <p class="w3-opacity"> <i> How did you find the answer? </i></p>
-     </div>
-     <div class="w3-container w3-cell w3-cell-top">
-       <div class="rate">
-       <input type="radio" id="star5" name="rate" value="5" />
-       <label for="star5" title="text">5 stars</label>
-       <input type="radio" id="star4" name="rate" value="4" />
-       <label for="star4" title="text">4 stars</label>
-       <input type="radio" id="star3" name="rate" value="3" />
-       <label for="star3" title="text">3 stars</label>
-       <input type="radio" id="star2" name="rate" value="2" />
-       <label for="star2" title="text">2 stars</label>
-       <input type="radio" id="star1" name="rate" value="1" />
-       <label for="star1" title="text">1 star</label>
-       </div>
-     </div>
-   </div>
+      </div>
       <form method="post" action="{{ url_for('main.question') }}">
       <p class="w3-large" > {{ question }} </p>
       <p class="w3-large"> <i> {{ answer }} </i> </p>
