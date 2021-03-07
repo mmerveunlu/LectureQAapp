@@ -58,7 +58,10 @@ def get_questions(chapter_name, qpath):
     """
     with open(qpath) as fp:
         data = json.load(fp)
-    return data[chapter_name]
+    if chapter_name in data.keys():
+        return data[chapter_name]
+    else:
+        return []
 
 def save_asked_questions_answers(chapter,question,userEmail,response,qpath):
     """
