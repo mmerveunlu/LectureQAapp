@@ -25,6 +25,12 @@ def get_parameters(video_id,chapter):
         lectures[video_id]['title'],\
         lectures
 
+def get_lectures(chapter):
+    """returns the related lectures dict 
+    
+    """
+    return lecture_dict[chapter]
+
 @main.route('/')
 def index():
     """
@@ -60,17 +66,13 @@ def question():
         if not video_id.startswith("video"):
             video_id = "video"+video_id
         ylink,subtitle,chkey,title,lectures = get_parameters(video_id,chapter)
-        # Init page will be lecture 1
-        #ylink = lectures[video_id]["ylink"]
-        #subtitle = lectures[video_id]["subtitle"]
-        #chkey = lectures[video_id]["key"]
-        #title = lectures[video_id]["title"]
-
     else:
         # if the page is accessed from send another question button
         # url. will be empty
         ylink = request.form['ylink']
         subtitle = request.form['subtitle']
+        chapter = request.args.get('chapter')
+        lectures = get_lectures(chapter)
         # find the chapter key from dict
         for k,v in lectures.items():
             # start is a substring added to the youtube links
@@ -97,7 +99,9 @@ def question():
                            subtitle=subtitle,
                            questions=questions,
                            title = title,
-                           name=current_user.name)
+                           name=current_user.name,
+                           videos=lectures,
+                           chkey=chapter)
 
 @main.route('/answer', methods=['GET', 'POST'])
 @login_required
@@ -105,15 +109,18 @@ def answer():
     """
     The function generates the page after a question is asked. 
     """
+
     ylink = request.form['ylink']
     subtitle = request.form['subtitle']
+    chapter = request.args.get('chapter')
+    lectures = get_lectures(request.args.get('chapter'))
     # find the chapter key from dict
     for k,v in lectures.items():
         if v['ylink'] == ylink:
-            chapter = v["key"]
+            chkey = v["key"]
             title = v["title"]
     # save asked questions by user name
-    save_asked_questions(chapter,
+    save_asked_questions(chkey,
                          request.form['question'],
                          current_user.email,
                          STATFOLDER)
@@ -136,7 +143,7 @@ def answer():
         ylink = ylink+"&start="+str(start_second)
 
     # save asked questions into a file
-    save_asked_questions_answers(chapter,
+    save_asked_questions_answers(chkey,
                          request.form['question'],
                          current_user.email,
                          answer_text,
@@ -149,4 +156,6 @@ def answer():
                            subtitle=subtitle,
                            title=title,
                            name=current_user.name,
+                           chkey=chkey,
+                           videos=lectures,
                            chapter=chapter)
