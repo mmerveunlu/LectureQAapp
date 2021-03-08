@@ -47,72 +47,72 @@ lectures2 = {
                  "key":"_ch02_0",
                  "title":"Convolution Sum and Convolution Integral"},
     'video2': {"ylink": "https://youtu.be/dpjbA1zDGXE",
-                 "subtitle": "static/ENG_001_20151602_01204_ch02_1.en.vtt",
-                 "key":"_ch02_1",
+                 "subtitle": "static/ENG_001_20151602_01204_ch02_2.en.vtt",
+                 "key":"_ch02_2",
                  "title":"Properties of LTI Systems"},
 }
 
 lectures31 = {
     'video1': {"ylink": "https://youtu.be/Mt0pnYVQRq8",
-                 "subtitle": "static/ENG_001_20151602_01204_ch03_0.en.vtt",
-                 "key":"_ch03_0",
-                 "title":"Response of LTI systems to complex exponentials"},
-    'video2': {"ylink": "https://youtu.be/HI2Hcw_tIK4",
                  "subtitle": "static/ENG_001_20151602_01204_ch03_1.en.vtt",
                  "key":"_ch03_1",
+                 "title":"Response of LTI systems to complex exponentials"},
+    'video2': {"ylink": "https://youtu.be/HI2Hcw_tIK4",
+                 "subtitle": "static/ENG_001_20151602_01204_ch03_2.en.vtt",
+                 "key":"_ch03_2",
                  "title":"Fourier series representation of continuous-time periodic signals"},
 }
 
 
 lectures32 = {
     'video1': {"ylink": "https://youtu.be/2Sfld9mg-no",
-                 "subtitle": "static/ENG_001_20151602_01204_ch03_0.en.vtt",
-                 "key":"_ch03_0",
+                 "subtitle": "static/ENG_001_20151602_01204_ch03_4.en.vtt",
+                 "key":"_ch03_4",
                  "title":"Fourier series representation of discrete-time periodic signals"},
 }
 
 lectures4 = {
     'video1': {"ylink": "https://youtu.be/F-8OlJYMXPk",
-                 "subtitle": "static/ENG_001_20151602_01204_ch04_0.en.vtt",
-                 "key":"_ch04_0",
+                 "subtitle": "static/ENG_001_20151602_01204_ch04_1.en.vtt",
+                 "key":"_ch04_1",
                "title":"Continuous-Time Fourier Transform"},
 }
 
 lectures5 = {
     'video1': {"ylink": "https://youtu.be/QUMJ8-dtsnI",
-                 "subtitle": "static/ENG_001_20151602_01204_ch05_0.en.vtt",
-                 "key":"_ch05_0",
+                 "subtitle": "static/ENG_001_20151602_01204_ch05_1.en.vtt",
+                 "key":"_ch05_1",
                "title":"Discrete-Time Fourier Transform"},
 }
 
 
 lectures7 = {
     'video1': {"ylink": "https://youtu.be/XhGEmrdthfY",
-                 "subtitle": "static/ENG_001_20151602_01204_ch07_0.en.vtt",
-                 "key":"_ch07_0",
-               "title":"Sampling"},
-    'video2': {"ylink": "https://youtu.be/geTD4_Ho89E",
                  "subtitle": "static/ENG_001_20151602_01204_ch07_1.en.vtt",
                  "key":"_ch07_1",
-               "title":"Interpolation"},
-    'video3': {"ylink": "https://youtu.be/uPd0fQr7-gY",
+               "title":"Sampling"},
+    'video2': {"ylink": "https://youtu.be/geTD4_Ho89E",
                  "subtitle": "static/ENG_001_20151602_01204_ch07_2.en.vtt",
                  "key":"_ch07_2",
-               "title":"Discrete-Time Processing of Continuous-Time Signals"},
-    'video4': {"ylink": "https://youtu.be/E4ukWO459M8",
+               "title":"Interpolation"},
+    'video3': {"ylink": "https://youtu.be/uPd0fQr7-gY",
                  "subtitle": "static/ENG_001_20151602_01204_ch07_3.en.vtt",
                  "key":"_ch07_3",
+               "title":"Discrete-Time Processing of Continuous-Time Signals"},
+    'video4': {"ylink": "https://youtu.be/E4ukWO459M8",
+                 "subtitle": "static/ENG_001_20151602_01204_ch07_4.en.vtt",
+                 "key":"_ch07_4",
                "title":"Sampling of Discrete-Time Signals"},
 }
 
 lectures9 = {
     'video1': {"ylink": "https://youtu.be/0pgpBrHANmg",
-                 "subtitle": "static/ENG_001_20151602_01204_ch09_0.en.vtt",
-                 "key":"_ch09_0",
-               "title":"The Laplace Transform"},
-    'video1': {"ylink": "https://youtu.be/ZtJQXSIB08A",
                  "subtitle": "static/ENG_001_20151602_01204_ch09_1.en.vtt",
                  "key":"_ch09_1",
+               "title":"The Laplace Transform"},
+    'video2': {"ylink": "https://youtu.be/ZtJQXSIB08A",
+                 "subtitle": "static/ENG_001_20151602_01204_ch09_2.en.vtt",
+                 "key":"_ch09_2",
                "title":"The Region of Convergence"},
 
 }
@@ -125,10 +125,10 @@ video_dict = {'Chapter 1': ['Video 1 : Introduction to Signals and Systems',\
               'Video 3 : Continuous-Time Exponential and Sinusoidal Signals',\
               'Video 4 : Discrete-Time Exponential and Sinusoidal Signals',\
               'Video 5 : Unit Impulse and Unit Step Functions',\
-                                        'Video 6 : Basic System Properties'],
+                'Video 6 : Basic System Properties'],
               'Chapter 2': ['Video 1 : Convolution Sum and Convolution Integral', \
                                        'Video 2 : Properties of LTI Systems'],
-              'Chapter 3-1': ['Video 1 : Response of LTI systems to complex exponentials',
+              'Chapter 3-1': ['Video 1 : Response of LTI systems to complex exponentials', \
                               'Video 2 : Fourier series representation of continuous-time periodic signals'],
               'Chapter 3-2': ['Video 1 : Fourier series representation of discrete-time periodic signals'],
               'Chapter 4': ['Video 1 : Continuous-Time Fourier Transform'],
@@ -140,7 +140,7 @@ video_dict = {'Chapter 1': ['Video 1 : Introduction to Signals and Systems',\
               'Chapter 9': ['Video 1 : The Laplace Transform',
                             'Video 2 : The Region of Convergence']}
 
-counts = {'Chapter 1':6,'Chapter 2':2,'Chapter 3-1':1,'Chapter 3-2':1,'Chapter 4':1,'Chapter 5':1,'Chapter 7':4,'Chapter 9':2}
+counts = {'Chapter 1':6,'Chapter 2':2,'Chapter 3-1':2,'Chapter 3-2':1,'Chapter 4':1,'Chapter 5':1,'Chapter 7':4,'Chapter 9':2}
 
 
 SEP=","
