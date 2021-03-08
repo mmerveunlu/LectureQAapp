@@ -41,7 +41,9 @@ class Message:
             if data:
                 self._recv_buffer += data
             else:
-                raise RuntimeError("Peer closed.")
+                #raise RuntimeError("Peer closed.")
+                time.wait(3)
+                pass
 
     def _write(self):
         if self._send_buffer:
@@ -134,7 +136,8 @@ class Message:
             )
 
         try:
-            self.sock.close()
+            if self.sock:
+                self.sock.close()
         except OSError as e:
             print(
                 "error: socket.close() exception for",
