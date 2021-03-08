@@ -62,7 +62,7 @@ def run_client(host,port,passage,question):
     start_connection(host, port, request)
     try:
         while True:
-            events = sel.select(timeout=1)
+            events = sel.select(timeout=10)
             for key, mask in events:
                 message = key.data
                 try:
@@ -71,8 +71,10 @@ def run_client(host,port,passage,question):
                         # print("Run ", message.response.get('result'))
                         response = message.response.get('result')
                 except Exception:
-                    print("main: error: exception for: ", "{message.addr}:\n{traceback.format_exc()}")
-                    message.close()
+                    # print("main: error: exception for: ", "{message.addr}:\n{traceback.format_exc()}")
+                    print("main: error: exception: Server is Busy!")
+                    response = "Please wait, the server is busy!"
+                    # message.close()
             # Check for a socket being monitored to continue.
             if not sel.get_map():
                 break
