@@ -1,6 +1,8 @@
 from flask import Blueprint
 from . import db
 
+import time
+
 main = Blueprint('main', __name__)
 
 import sys
@@ -120,22 +122,29 @@ def answer():
             chkey = v["key"]
             title = v["title"]
     # save asked questions by user name
-    save_asked_questions(chkey,
-                         request.form['question'],
-                         current_user.email,
-                         STATFOLDER)
+    # save_asked_questions(chkey,
+    #                     request.form['question'],
+    #                     current_user.email,
+    #                     STATFOLDER)
 
     # Run the client app to get the answer from the server
     # HOST, PORT comes from statics file
     # response = run_client(HOST,PORT,subtitle,request.form['question'])
-    
+    response = None
+    try_nbr = 1
+    while((not response) and (try_nbr<MAX_TRY_NBR)):
+        print("Trying to ask the server try: ",try_nbr)
+        response = run_client(HOST,PORT,subtitle,request.form['question'])
+        try_nbr += 1
+        time.sleep(3)
+
     # TODO: Test response remove before git
-    response = "a continuous time system is a system where the input is a continuous time signal and this input results in an output"
+    # response = "a continuous time system is a system where the input is a continuous time signal and this input results in an output"
 
     # Check if returned response is None    
     if not response:
         # TODO Error
-        print("No response")
+        print("No response from the server after %d calls " %(MAX_TRY_NBR))
         answer_text = "--"
     else:
         answer_text = response
