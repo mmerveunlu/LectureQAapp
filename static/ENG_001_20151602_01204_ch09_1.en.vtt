@@ -1,0 +1,259 @@
+WEBVTT
+
+00:00:05.148 --> 00:00:08.533
+hi everyone welcome to signals and systems course
+
+00:00:08.533 --> 00:00:12.646
+in this video I am going to explain the laplace transform
+
+00:00:13.431 --> 00:00:16.838
+as we all know from linear time invariant systems
+
+00:00:16.838 --> 00:00:21.283
+if the input to an lti system is a complex exponential
+
+00:00:21.283 --> 00:00:26.484
+the output of the system is the same complex exponential multiplied by a constant
+
+00:00:26.484 --> 00:00:31.921
+the complex constant h of s is computed as given in the equation
+
+00:00:31.921 --> 00:00:37.856
+in fourier analysis we only focus on purely imaginary values of s
+
+00:00:37.856 --> 00:00:40.669
+where s is equal to j omega
+
+00:00:40.669 --> 00:00:49.690
+when s is equal to j omega the complex constant is obtained by taking the fourier transform of the impulse response
+
+00:00:49.690 --> 00:00:56.255
+if s is chosen as a general complex number such as sigma plus j omega
+
+00:00:56.255 --> 00:01:03.598
+then we end up with the generalization of the continuous time fourier transform known as the laplace transform
+
+00:01:04.116 --> 00:01:10.569
+the laplace transform of a general signal x of t is defined as given in the equation
+
+00:01:10.569 --> 00:01:14.611
+where the laplace transform is denoted with x of s
+
+00:01:14.611 --> 00:01:25.284
+if s is purely imaginary or s is equal to j omega we obtain the fourier transform of x of t with the same equation
+
+00:01:25.284 --> 00:01:35.317
+here it is important to note that the fourier transform equation converges only when x of t is absolutely integrable
+
+00:01:36.270 --> 00:01:45.516
+there is also a straightforward relationship between the laplace and fourier transforms even when s is not purely imaginary
+
+00:01:45.516 --> 00:01:53.529
+if we rearrange the laplace transform equation by replacing s with sigma plus j omega
+
+00:01:53.529 --> 00:02:01.818
+the right side of the equation yields the fourier transform of the signal x of t times a real exponential signal
+
+00:02:01.818 --> 00:02:12.573
+note that this real exponential signal can be a decaying or growing exponential depending of whether sigma is positive or negative
+
+00:02:14.210 --> 00:02:22.641
+since the laplace transform is interpreted as the fourier transform of x of t times a real exponential signal
+
+00:02:22.641 --> 00:02:27.139
+we need to check the convergence of the given fourier transform expression
+
+00:02:27.139 --> 00:02:36.588
+therefore the laplace transform of the given signal exists if the fourier transform expression given above converges
+
+00:02:36.588 --> 00:02:43.199
+in other words if x of t times the real exponential signal is absolutely integrable
+
+00:02:43.199 --> 00:02:52.470
+the values of the complex variable s for which the laplace transform converges is referred to as the region of convergence
+
+00:02:54.295 --> 00:03:02.768
+in the previous lectures we learned that fourier analysis is extremely important and useful in analyzing signals and systems
+
+00:03:02.768 --> 00:03:11.135
+however fourier transform can not handle large and important classes of signals and unstable systems
+
+00:03:11.135 --> 00:03:22.581
+for instance we can not analyze a signal using fourier transform if it is not absolutely integrable since the fourier transform does not converge
+
+00:03:22.581 --> 00:03:29.873
+the same is true for unstable systems because the impulse response is not absolutely integrable
+
+00:03:31.116 --> 00:03:36.030
+laplace transform can be viewed as an extension of the fourier transform
+
+00:03:36.030 --> 00:03:44.377
+laplace transform allows analysis of broader class of signals and systems including unstable systems
+
+00:03:45.291 --> 00:03:47.318
+now let's look at an example
+
+00:03:47.318 --> 00:03:53.965
+let x of t be the one sided real exponential signal given in the equation
+
+00:03:53.965 --> 00:04:02.298
+if a is greater than zero x of t is a decaying exponential signal and the fourier transform converges
+
+00:04:02.298 --> 00:04:12.379
+note that the fourier transform of x of t is obtained as one over j omega plus a when a is greater than zero
+
+00:04:12.379 --> 00:04:17.810
+let's compute the laplace transform for the same decaying exponential signal
+
+00:04:17.810 --> 00:04:27.471
+by using the laplace transform formula and by substituting s with sigma plus j omaga we obtain the highlighted expression
+
+00:04:27.471 --> 00:04:33.895
+note that this expression is the fourier transform of another real exponential signal
+
+00:04:34.310 --> 00:04:41.238
+and this fourier transform converges only when the exponential signal is a decaying exponential
+
+00:04:41.238 --> 00:04:48.554
+in other words sigma plus a is greater than zero or sigma is greater than minus a
+
+00:04:48.554 --> 00:04:58.154
+since s is equal to sigma plus j omega the laplace transform of the signal x of t is obtained as given in the below equation
+
+00:04:58.154 --> 00:05:06.985
+this laplace transform equation is valid only when sigma or the real part of s is greater than minus a
+
+00:05:06.985 --> 00:05:13.161
+note that this condition is referred to as region of convergence of x of s
+
+00:05:14.457 --> 00:05:19.804
+this figure shows region of convergence plot for the decaying exponential signal
+
+00:05:19.804 --> 00:05:26.560
+the horizontal axis is the real axis and the vertical axis is the imaginary axis in the s plane
+
+00:05:26.560 --> 00:05:32.199
+the shaded area shows the region where the laplace transform integral converges
+
+00:05:33.193 --> 00:05:39.224
+here it is important to note that the j omega axis is inside the roc
+
+00:05:39.224 --> 00:05:49.528
+which means we can obtain the fourier transform of the signal x of t from its laplace transform by substituting s with j omega
+
+00:05:49.528 --> 00:05:55.323
+now let's perform the same analyses for the growing exponential signal x of t
+
+00:05:55.323 --> 00:06:07.898
+here the fourier transform does not converge since the growing exponential violates the absolute integrability condition required for the convergence of fourier transform
+
+00:06:07.898 --> 00:06:13.324
+in other words the fourier transform of that signal does not exist
+
+00:06:14.609 --> 00:06:19.439
+let's compute the laplace transform for the same growing exponential signal
+
+00:06:19.439 --> 00:06:26.508
+again we obtain the highlighted equation by substituting s with sigma plus j omaga
+
+00:06:26.508 --> 00:06:30.730
+which is the fourier transform of another real exponential signal
+
+00:06:30.730 --> 00:06:37.754
+this fourier transform converges only when the exponential signal is a decaying exponential
+
+00:06:37.754 --> 00:06:44.783
+in other words sigma plus a is greater than zero or sigma is greater than minus a
+
+00:06:44.783 --> 00:06:56.194
+the laplace transform expression for the growing exponential signal is given below which is valid only when the real part of s is greater than minus a
+
+00:06:56.194 --> 00:07:03.050
+note that we obtained the same expression with the laplace transform of the decaying exponential signal
+
+00:07:03.050 --> 00:07:06.907
+however the region of convergences are different
+
+00:07:08.316 --> 00:07:13.289
+this figure shows region of convergence plot for the growing exponential signal
+
+00:07:13.289 --> 00:07:18.863
+the shaded area shows the region where the laplace transform integral converges
+
+00:07:18.863 --> 00:07:24.039
+note that different than the roc of decaying exponential signal
+
+00:07:24.039 --> 00:07:29.946
+the roc does not include the imaginary axis in other words j omega axis
+
+00:07:29.946 --> 00:07:37.801
+this is a very important observation since the fourier transform does not exist for the growing exponential signal
+
+00:07:37.801 --> 00:07:49.071
+therefore the roc does not include the j omega axis since the laplace transform integral is not valid when s is equal to j omega
+
+00:07:49.980 --> 00:07:52.627
+now let's look at another example signal
+
+00:07:52.627 --> 00:07:57.413
+let x of t be the exponential signal given in the equation
+
+00:07:57.413 --> 00:08:02.490
+after taking the laplace transform we obtain the highlighted expression
+
+00:08:02.490 --> 00:08:12.980
+note that this result is valid if the laplace transform integral converges in other words if the real part of s is less than minus a
+
+00:08:13.456 --> 00:08:18.133
+let's compare the two exponential signals that we have discussed in this video
+
+00:08:18.133 --> 00:08:23.918
+these two signals resulted in identical expressions as their laplace transforms
+
+00:08:23.918 --> 00:08:27.624
+however their region of convergences are different
+
+00:08:27.624 --> 00:08:35.194
+we can distinguish the time domain signals from identical laplace transform expressions using their rocs
+
+00:08:35.194 --> 00:08:42.467
+therefore specifying both the algebraic expression and the roc is important in the laplace transform
+
+00:08:42.467 --> 00:08:50.791
+assuming that a is greater than zero we can plot the rocs for these two laplace transforms as given in the figure
+
+00:08:50.791 --> 00:08:54.595
+let me summarize what we have discussed until now
+
+00:08:54.595 --> 00:09:05.936
+first fourier transform does not converge for all signals and the absolute integrability condition should hold for the existence of the fourier transform for a given signal
+
+00:09:05.936 --> 00:09:12.736
+second laplace transform may convergence for some values of s and not for others
+
+00:09:12.736 --> 00:09:18.724
+the values for which the laplace transform converges are referred to as the region of convergence
+
+00:09:18.724 --> 00:09:23.246
+the region of convergence is determined by the real part of s
+
+00:09:24.031 --> 00:09:27.930
+third if j omega axis is inside the roc
+
+00:09:27.930 --> 00:09:36.449
+the fourier transform exists and can be obtained directly from the laplace transform by substituting s with j omega
+
+00:09:36.449 --> 00:09:44.527
+fourth if jey omega axis is not inside the roc the fourier transform does not exist for that signal
+
+00:09:44.527 --> 00:09:58.276
+fifth in specifying the laplace transform of a signal both the algebraic expression and the roc are required since laplace transforms of different signals may result in the same expression
+
+00:09:58.832 --> 00:10:06.326
+in this video I have explained the laplace transform integral and the region of convergence for the laplace transform
+
+00:10:06.326 --> 00:10:08.976
+let me know if you have any questions
+
+00:10:08.976 --> 00:10:09.681
+thank you

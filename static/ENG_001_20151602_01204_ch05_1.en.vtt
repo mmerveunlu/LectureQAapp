@@ -1,0 +1,115 @@
+WEBVTT
+
+00:00:14.580 --> 00:00:18.466
+hi everyone welcome to signals and systems course
+
+00:00:18.466 --> 00:00:22.898
+in this video I am going to explain discrete time fourier transform
+
+00:00:24.633 --> 00:00:36.447
+similar to the continuous time fourier transform we will developed the discrete time fourier transform starting from an aperiodic signal and taking its periodic extension
+
+00:00:36.447 --> 00:00:45.578
+we all know that we can represent a periodic discrete time signal as the linear combination of harmonically related complex exponentials
+
+00:00:45.578 --> 00:00:48.351
+which is called fourier series representation
+
+00:00:48.351 --> 00:00:56.519
+we can use a similar representation for aperiodic discrete time signals and it is called the discrete time fourier transform
+
+00:00:56.519 --> 00:01:05.804
+when we are given an aperiodic signal we can periodically repeat the signal for some period n and obtain a periodic signal
+
+00:01:05.804 --> 00:01:12.516
+this periodic signal is shown in the bottom of the slide and it is denoted by x tilda of n
+
+00:01:12.516 --> 00:01:22.981
+note that if the period n goes to infinity the periodic signal x tilda of n will be equal to the aperiodic signal x of n
+
+00:01:24.472 --> 00:01:29.611
+let's move on to the mathematical formulation of discrete time fourier transform
+
+00:01:29.611 --> 00:01:36.973
+since x tilda of n is a periodic signal we can define its fourier series representation
+
+00:01:36.973 --> 00:01:48.543
+then we can derive the equations for discrete time fourier transform pair from fourier series synthesis and analysis equations by assuming an infinite period
+
+00:01:48.543 --> 00:01:57.935
+the first equation is called the inverse discrete time fourier transform and the second equation is called the discrete time fourier transform
+
+00:01:57.935 --> 00:02:05.153
+here it is important to note that discrete time fourier transform is periodic with period two pie
+
+00:02:07.054 --> 00:02:16.324
+the discrete time fourier transform equation converges either if the discrete time signal x of n is absolutely summable
+
+00:02:16.324 --> 00:02:19.122
+or the sequence has finite energy
+
+00:02:19.122 --> 00:02:27.439
+since the integral is over a finite interval there are no convergence issues associated with inverse fourier transform
+
+00:02:30.401 --> 00:02:39.247
+as in the continuous time case we can incorporate discrete time periodic signals into the discrete time fourier transform framework
+
+00:02:39.247 --> 00:02:41.831
+as given in the below equation
+
+00:02:41.831 --> 00:02:49.062
+fourier transform of a periodic signal can be directly constructed from its fourier series coefficients
+
+00:02:50.722 --> 00:02:55.438
+let's move on to the properties of discrete time fourier transform
+
+00:02:55.438 --> 00:02:58.404
+this table summarizes the properties
+
+00:02:58.404 --> 00:03:03.171
+most of these properties are very similar to their continuous time counterparts
+
+00:03:03.171 --> 00:03:09.169
+here I will only emphasize the properties different than continuous time fourier transform
+
+00:03:11.056 --> 00:03:18.583
+in contrast to the continuous time fourier transform discrete time fourier transform is periodic with period two pie
+
+00:03:20.261 --> 00:03:25.115
+because of the discrete nature of the time index for discrete time signal
+
+00:03:25.115 --> 00:03:31.559
+the relation between time and frequency scaling is different than its continuous time counterpart
+
+00:03:31.559 --> 00:03:35.370
+while expanding a discrete time signal in time domain
+
+00:03:35.370 --> 00:03:43.298
+we insert zeros for the time indexes where the time index is not a multiple of the expansion factor
+
+00:03:43.298 --> 00:03:47.234
+this corresponds to compressing its fourier transform
+
+00:03:48.769 --> 00:03:56.401
+the multiplication of discrete time signals in time domain corresponds to periodic convolution in frequency domain
+
+00:03:56.401 --> 00:04:07.494
+note that the usual form of convolution has integral interval from minus infinity to plus infinity and it is often referred to as aperiodic convolution
+
+00:04:09.566 --> 00:04:17.112
+other properties different than their continuous time counterparts are differencing in time and accumulation
+
+00:04:17.112 --> 00:04:24.556
+you can think of these properties as discrete time counterparts of differentiation and integration properties
+
+00:04:24.556 --> 00:04:29.755
+the other properties are quite similar to their continuous time counterparts
+
+00:04:31.908 --> 00:04:38.022
+in this video I have explained discrete time fourier transform and its properties
+
+00:04:38.022 --> 00:04:40.592
+let me know if you have any questions
+
+00:04:40.592 --> 00:04:41.503
+thank you

@@ -1,0 +1,109 @@
+WEBVTT
+
+00:00:13.960 --> 00:00:17.598
+hi everyone welcome to signals and systems course
+
+00:00:17.598 --> 00:00:22.496
+in this video I am going to explain continuous time fourier transform
+
+00:00:24.522 --> 00:00:35.918
+in fourier series representation a continuous time periodic signal can be represented as linear combination of complex exponentials that are harmonically related
+
+00:00:35.918 --> 00:00:47.251
+we can develop a similar representation also for continuous time non periodic or aperiodic signals and this representation is called continuous time fourier transform
+
+00:00:47.251 --> 00:00:52.149
+while developing continuous time fourier transform of non periodic signals
+
+00:00:52.149 --> 00:00:54.630
+we are going to follow the given strategy
+
+00:00:56.365 --> 00:00:59.446
+we first start with a non periodic signal
+
+00:01:01.077 --> 00:01:09.242
+then we convert this non periodic signal into a periodic signal by periodically repeating the signal for some period t
+
+00:01:09.242 --> 00:01:16.375
+this gives us the periodic signal shown in the figure and it is denoted by x tilda of t
+
+00:01:18.680 --> 00:01:28.819
+note that if the period t goes to infinity the periodic signal x tilda of t will be equal to the non periodic signal x of t
+
+00:01:28.819 --> 00:01:36.246
+roughly you can think of the fourier transform as the fourier series representation of a periodic signal
+
+00:01:36.246 --> 00:01:38.254
+which has an infinite period
+
+00:01:38.254 --> 00:01:48.128
+in the upcoming slides we will see how this infinite period effects the synthesis and analysis equations of fourier series representation
+
+00:01:49.936 --> 00:01:53.588
+ok let's go back to our square wave example
+
+00:01:53.588 --> 00:01:56.512
+this figure shows a periodic square wave
+
+00:01:56.512 --> 00:02:00.829
+we can compute the fourier series coefficients as given here
+
+00:02:02.877 --> 00:02:09.766
+an alternative way of interpreting this equation is as samples of an envelope function
+
+00:02:11.135 --> 00:02:19.433
+if omega is thought as a continuous variable the envelope of t times a sub k is shown in the figure
+
+00:02:19.433 --> 00:02:27.585
+the bars in the figure correspond to the fourier series coefficients and they are separated by two pie over t
+
+00:02:29.053 --> 00:02:36.718
+in the figure on the right hand side we increase the period more and this results closer sample spacing
+
+00:02:38.065 --> 00:02:42.671
+if we increase the period further the spacing will decrease more
+
+00:02:42.671 --> 00:02:51.534
+and if the period goes to infinity the samples or the fourier series coefficients will approach the envelope function
+
+00:02:54.229 --> 00:02:59.230
+let's move on to the mathematical formulation of continuous time fourier transform
+
+00:02:59.230 --> 00:03:10.490
+from our previous discussion we know that x tilda of t is the periodic version of the non periodic signal x of t and it is periodic with period t
+
+00:03:10.490 --> 00:03:19.181
+so we can write down fourier series representation of x tilda of t and its fourier series coefficients as given here
+
+00:03:21.401 --> 00:03:30.998
+since x tilda of t equals x of t as t goes to infinity analysis and synthesis equations turn into the fourier transform pair
+
+00:03:30.998 --> 00:03:40.875
+the first equation is called the inverse fourier transform equation and capital x is referred to as the fourier transform of x of t
+
+00:03:42.636 --> 00:03:53.085
+if x of t has finite energy in other words if x of t is square integrable then we are guaranteed that its fourier transform is finite
+
+00:03:54.597 --> 00:04:01.093
+additionally the given set of dirichlet conditions also ensures the convergence
+
+00:04:03.123 --> 00:04:08.454
+we can also develop fourier transform representations for periodic signals
+
+00:04:08.454 --> 00:04:15.137
+this allows us to consider both periodic and non periodic signals within a unified framework
+
+00:04:15.137 --> 00:04:22.543
+the fourier transform of a periodic signal is given below which contains a train of impulses in the frequency domain
+
+00:04:22.543 --> 00:04:31.797
+these impulses are equally spaced in frequency and the areas of the impulses are proportional to the fourier series coefficients
+
+00:04:32.270 --> 00:04:36.477
+in this video I have explained continuous time fourier transform
+
+00:04:36.477 --> 00:04:38.963
+let me know if you have any questions
+
+00:04:38.963 --> 00:04:40.640
+thank you

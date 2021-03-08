@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00:14.679 --> 00:00:18.432
+hi everyone welcome to signals and systems course
+
+00:00:18.432 --> 00:00:25.157
+in this video I am going to explain the response of linear time invariant systems to complex exponentials
+
+00:00:26.665 --> 00:00:34.604
+assume that we have a linear time invariant system where the input is x of n and the output is y of n
+
+00:00:34.604 --> 00:00:39.777
+using the linearity property if the input is the sum of scaled signals
+
+00:00:39.777 --> 00:00:44.700
+the output will be the sum of scaled responses of these input signals
+
+00:00:44.700 --> 00:00:57.579
+as you might remember analysis of linear time invariant systems through convolution was developed by decomposing the input signal into the summation of basic signals which were shifted impulses
+
+00:00:57.579 --> 00:01:03.070
+the output to each shifted impulse was the shifted impulse response of the system
+
+00:01:03.070 --> 00:01:13.192
+currently we explore alternative representation of signals and linear time invariant systems using another set of basic signals
+
+00:01:13.192 --> 00:01:15.147
+which are complex exponentials
+
+00:01:15.147 --> 00:01:22.348
+in fourier analysis we are going to represent signals as linear combination of complex exponentials
+
+00:01:24.224 --> 00:01:27.205
+so why do we choose complex exponentials
+
+00:01:27.205 --> 00:01:32.696
+the answer is that as the basic signals they satisfy the given two properties
+
+00:01:32.696 --> 00:01:37.256
+the first one is that their system response is straightforward to compute
+
+00:01:37.256 --> 00:01:43.083
+the second one is that they can be used to construct a broad range of signals
+
+00:01:45.029 --> 00:01:52.390
+so let's apply a complex exponential as input to a linear time invariant system and compute its output
+
+00:01:52.390 --> 00:02:02.290
+when a complex exponential is applied as input the output of the system is the same complex exponential multiplied by a complex constant
+
+00:02:02.290 --> 00:02:06.865
+note that this is true both for the discrete and continuous time signals
+
+00:02:06.865 --> 00:02:11.530
+its derivation is quite straightforward using the convolution operation
+
+00:02:14.164 --> 00:02:22.034
+a signal for which the system output is a constant times input is referred to as an eigen function of the system
+
+00:02:22.034 --> 00:02:26.563
+and the amplitude is referred to as the system's eigen value
+
+00:02:26.563 --> 00:02:35.396
+this is a very important property stating that complex exponentials are eigenfunctions of linear time invariant systems
+
+00:02:35.396 --> 00:02:40.883
+eigenvalues h of s and h of z are computed as given here
+
+00:02:42.755 --> 00:02:52.333
+the eigen function property together with the superposition property leads to convenient expression for the response of a linear time invariant system
+
+00:02:52.333 --> 00:02:58.011
+if the input to a linear time invariant system is a linear combination of complex exponentials
+
+00:02:58.011 --> 00:03:07.244
+then the output is also represented as the linear complication combin  sorry linear combination of same complex exponential signals
+
+00:03:09.623 --> 00:03:16.357
+in this video I have explained response of linear time invariant systems to complex exponentials
+
+00:03:16.357 --> 00:03:23.550
+in the next video I am going to explain fourier series representation of continuous time periodic signals
+
+00:03:23.550 --> 00:03:24.418
+thank you

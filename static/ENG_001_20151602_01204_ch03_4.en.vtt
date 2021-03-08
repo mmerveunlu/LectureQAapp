@@ -1,0 +1,175 @@
+WEBVTT
+
+00:00:13.375 --> 00:00:17.154
+hi everyone welcome to signals and systems course
+
+00:00:17.154 --> 00:00:24.269
+in this video I am going to explain fourier series representation of discrete time periodic signals
+
+00:00:25.602 --> 00:00:30.891
+there are many similarities between continuous time and discrete time fourier series
+
+00:00:30.891 --> 00:00:33.992
+however there are also many differences
+
+00:00:33.992 --> 00:00:45.232
+as you might remember fourier series representation of continuous time periodic signals consists of linear combination of harmonically related complex exponentials
+
+00:00:45.232 --> 00:00:47.858
+the formulation is given here
+
+00:00:47.858 --> 00:00:53.678
+note that it is an infinite series because we are summing up infinite number of terms
+
+00:00:53.678 --> 00:01:00.004
+however fourier series representation of discrete time periodic signals is a finite series
+
+00:01:00.004 --> 00:01:05.255
+I am going to show how we obtain this representation in upcoming slides
+
+00:01:05.255 --> 00:01:09.798
+the infinite series representation leads to some converge issues
+
+00:01:09.798 --> 00:01:20.879
+we have discussed the convergence issues of continuous time fourier series and when a signal can or can not be represented with fourier series in the previous lectures
+
+00:01:20.879 --> 00:01:27.122
+since discrete time fourier series is a finite series there are no convergence issues
+
+00:01:27.122 --> 00:01:33.179
+the discrete time fourier series representation will also lead to periodic coefficients
+
+00:01:33.179 --> 00:01:38.460
+note that the coefficients are not periodic in continuous time fourier series
+
+00:01:39.248 --> 00:01:46.529
+a discrete time signal is periodic with period n if if it satisfies the above equation
+
+00:01:46.529 --> 00:01:58.199
+here fundamental period is the smallest positive integer n that satisfies the given equation and the fundamental frequency is computed as two pi over n
+
+00:01:58.199 --> 00:02:03.206
+if there is a complex exponential which is periodic with period n
+
+00:02:03.206 --> 00:02:12.527
+the set of all discrete time complex exponential signals periodic with period n is given below as phi sub k
+
+00:02:12.527 --> 00:02:23.776
+all of these signals have fundamental frequencies that are multiples of two pi over n and they are harmonically related complex exponentials
+
+00:02:26.156 --> 00:02:30.442
+note that there are only n distinct signals in the given set
+
+00:02:30.442 --> 00:02:38.879
+this is because of the fact that discrete time complex exponentials which differ by a factor of two pi are identical
+
+00:02:38.879 --> 00:02:47.645
+using the same fact we can show that phi sub k and phi sub k plus n are identical signals
+
+00:02:47.645 --> 00:02:49.778
+the proof is given below
+
+00:02:51.994 --> 00:03:01.420
+we can write down a general continuous time signal as the linear combination of harmonically related complex exponentials as given here
+
+00:03:01.420 --> 00:03:10.285
+since there are only n distinct harmonically related signals we can write down the summation for n successive values of k
+
+00:03:12.228 --> 00:03:20.260
+this representation is referred to as discrete time fourier series and a sub k's are fourier series coefficients
+
+00:03:20.260 --> 00:03:28.644
+note that this is a finite series composed of n terms and x of n is periodic with period n
+
+00:03:31.065 --> 00:03:35.435
+so how can we compute the discrete time fourier series coefficients
+
+00:03:35.435 --> 00:03:43.122
+fourier series coefficients are computed as given in the second equation which is called the synthesis equation
+
+00:03:43.122 --> 00:03:47.951
+note that fourier series representation is called the analysis equation
+
+00:03:47.951 --> 00:03:54.454
+I want you to derive the synthesis equation from the analysis equation using the given hints below
+
+00:03:56.505 --> 00:04:03.576
+ok we know that we can compute the discrete time fourier series coefficients using the synthesis equation
+
+00:04:03.576 --> 00:04:15.746
+here it is important to note that there are only n fourier series coefficients that need to be computed and the range for k can be any set of n consecutive integers
+
+00:04:15.746 --> 00:04:23.021
+as a result of that discrete time fourier series coefficients a sub k's are periodic with n
+
+00:04:25.364 --> 00:04:34.953
+while discussing convergence issues of continuous time fourier series we observed that as we increase the number of terms in a finite summation
+
+00:04:34.953 --> 00:04:39.312
+fourier series representation converges to the original signal
+
+00:04:39.312 --> 00:04:44.200
+however gibbs phenomenon occurs at the discontinuity points of the signal
+
+00:04:44.200 --> 00:04:56.436
+any discrete time periodic signal is completely specified by a finite number of parameters so that there are no convergence issues and there is no gibbs phenomenon
+
+00:04:58.299 --> 00:05:02.730
+let's move on to the properties of discrete time fourier series
+
+00:05:02.730 --> 00:05:05.319
+this table summarizes the properties
+
+00:05:05.319 --> 00:05:10.918
+the derivations of many of these properties are very similar to their continuous time counterparts
+
+00:05:10.918 --> 00:05:18.534
+here I will only explain some important properties that are different than their continuous time counterparts
+
+00:05:20.647 --> 00:05:23.518
+the first one is the multiplication property
+
+00:05:23.518 --> 00:05:30.819
+let's denote a sub k as fourier series coefficient of the discrete time periodic signal x of n
+
+00:05:30.819 --> 00:05:37.145
+and b sub k as fourier series coefficient of the discrete time periodic signal y of n
+
+00:05:37.145 --> 00:05:45.454
+if we multiply these two signals fourier series coefficients of the multiplied signal is computed as given in the below equation
+
+00:05:45.454 --> 00:05:55.792
+we refer to this type of operation as periodic convolution where the summation can be taken over any set of n consecutive values
+
+00:05:57.426 --> 00:06:05.095
+first difference property is the discrete time parallel to the differentiation property of the continuous time fourier series
+
+00:06:05.095 --> 00:06:12.089
+if a sub k is fourier series coefficient of the discrete time periodic signal x of n
+
+00:06:12.089 --> 00:06:19.223
+the fourier series coefficients corresponding to the first difference of x of n are computed as given below
+
+00:06:19.223 --> 00:06:25.672
+this equation can be obtained easily from time shifting and linearity properties
+
+00:06:26.665 --> 00:06:31.109
+the parseval relation for discrete time periodic signals is given here
+
+00:06:31.109 --> 00:06:38.488
+note that the left hand side of this equation is the average power in one period for periodic signal x of n
+
+00:06:38.488 --> 00:06:43.931
+at the right hand side is the average power in all of its harmonic components
+
+00:06:43.931 --> 00:06:55.146
+as a result parseval's relation states that the average power in a periodic signal equals the sum of the average powers in all of its harmonic components
+
+00:06:56.554 --> 00:07:05.691
+in this video I have explained fourier series representation of discrete time periodic signals and the properties of discrete time fourier series
+
+00:07:05.691 --> 00:07:07.970
+let me know if you have any questions
+
+00:07:07.970 --> 00:07:08.925
+thank you

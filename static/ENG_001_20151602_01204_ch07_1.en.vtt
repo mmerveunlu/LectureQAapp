@@ -1,0 +1,139 @@
+WEBVTT
+
+00:00:13.437 --> 00:00:17.224
+in this video I am going to explain sampling
+
+00:00:18.748 --> 00:00:27.514
+sampling is the process of representing a signal using its values or samples taken at equally spaced points in time
+
+00:00:27.514 --> 00:00:34.202
+reconstruction is the process of reconstructing a signal from its samples using interpolation
+
+00:00:34.202 --> 00:00:40.037
+sampling and reconstruction can be both applied to continuous time and discrete time signals
+
+00:00:42.389 --> 00:00:55.146
+because of the advances in digital technologies such as computers processing discrete time signals is more flexible and therefore it is more preferable to processing continuous time signals
+
+00:00:55.146 --> 00:01:03.705
+therefore sampling of continuous time signals is mainly used for discrete time processing of continuous time signals
+
+00:01:03.705 --> 00:01:08.546
+this figure shows the discrete time processing of continuous time signals
+
+00:01:08.546 --> 00:01:17.060
+here the continuous time signal x c of t is first converted to the discrete time signal x of n through sampling
+
+00:01:17.060 --> 00:01:31.908
+after processing the discrete time signal x of n in a discrete time system the system output y of n is again converted back to the continuous time signal y c of n with interpolation
+
+00:01:31.908 --> 00:01:40.019
+sampling of discrete time signals is mainly used for changing the sampling rate of discrete time signals
+
+00:01:40.019 --> 00:01:51.309
+for example different digital audio systems may use different sampling rates as a result it is important to convert the sampling rate of the signals for system compatibility
+
+00:01:51.309 --> 00:02:01.221
+in this video I am going to explain the basics of sampling for continuous time signals but most of these also hold for discrete time signals
+
+00:02:03.808 --> 00:02:06.315
+let's start with the sampling theorem
+
+00:02:06.315 --> 00:02:12.469
+as given in the figure an infinite number of signals can generate the same set of samples
+
+00:02:12.469 --> 00:02:21.657
+for instance if we take the samples at integer multiples of capital t both of the signals in the figure will share the same set of samples
+
+00:02:21.657 --> 00:02:31.783
+therefore we would not expect to uniquely specify a signal by a sequence of equally spaced samples in the absence of additional conditions
+
+00:02:31.783 --> 00:02:45.747
+if a signal is band limited and if the samples are taken sufficiently close together then the samples uniquely specify the signal and we can reconstruct the signal from its samples perfectly
+
+00:02:45.747 --> 00:02:56.473
+taking sufficiently close samples means choosing a sampling frequency that is greater than twice the highest frequency present in the signal
+
+00:02:56.473 --> 00:02:58.958
+this is known as the sampling theorem
+
+00:02:58.958 --> 00:03:04.024
+I am going to explain the sampling theorem in more detail in the upcoming slides
+
+00:03:06.368 --> 00:03:14.125
+a convenient way of taking equally spaced samples from the continuous time signal is using an impulse train
+
+00:03:14.125 --> 00:03:19.684
+if p of t represents a periodic impulse train with period capital t
+
+00:03:19.684 --> 00:03:27.316
+the multiplication of the continuous time signal with the impulse train results in the sampled signal x p of t
+
+00:03:27.316 --> 00:03:34.095
+here capital t represents the sampling period and omega s represents the sampling frequency
+
+00:03:34.095 --> 00:03:44.592
+the original signal the impulse train p of t and the sampled signals signal x p of t are shown graphically in the slide
+
+00:03:47.220 --> 00:03:51.839
+now let's analyze the frequency domain characteristics of these signals
+
+00:03:51.839 --> 00:03:58.387
+assume that the continuous time signal has the spectrum given on the upper right corner of the slide
+
+00:03:58.387 --> 00:04:05.916
+note that it is a band limited signal and the highest frequency component occurs at omega m
+
+00:04:05.916 --> 00:04:13.567
+as you know the fourier transform of a periodic impulse train is also a periodic impulse train in the frequency domain
+
+00:04:13.567 --> 00:04:21.468
+and from the multiplication property multiplication in the time domain corresponds to convolution in the frequency domain
+
+00:04:21.468 --> 00:04:32.089
+so when we convolve the spectrum of the continuous time signal with the spectrum of the impulse train we obtain the spectrum of the sampled signal as given below
+
+00:04:32.089 --> 00:04:39.771
+note that the spectrum of the sampled signal has replicas at the integer multiples of the sampling frequency
+
+00:04:39.771 --> 00:04:43.706
+if the replicas of the original signal do not overlap
+
+00:04:43.706 --> 00:04:54.349
+we can obtain the spectrum of the original signal from the sampled signal by applying a low pass filter with gain capital t and with a cuff off frequency
+
+00:04:54.349 --> 00:05:00.079
+which is greater than omega m and less than omega s minus omega m
+
+00:05:00.079 --> 00:05:08.831
+in other words the continuous time signal can be recovered perfectly from the sampled signal by means of a low pass filter
+
+00:05:08.831 --> 00:05:14.368
+if there is no overlap between the replicas in the spectrum of the sampled signal
+
+00:05:17.228 --> 00:05:26.030
+this condition is satisfied if the sampling frequency is greater than two times of the maximum frequency of the continuous time signal
+
+00:05:26.030 --> 00:05:29.821
+this result is referred to as the sampling theorem
+
+00:05:29.821 --> 00:05:35.894
+the frequency two omega m is commonly referred to as the nyquist rate
+
+00:05:39.186 --> 00:05:41.387
+if the sampling theorem is violated
+
+00:05:41.387 --> 00:05:49.558
+in other words if the sampling frequency is less than the nyquist rate we have ended up the below spectrum for the sampled signal
+
+00:05:49.558 --> 00:05:55.695
+here the shifted replicas overlap and this is referred to as aliasing
+
+00:05:57.196 --> 00:06:02.002
+in this video I have explained sampling in particular sampling theorem
+
+00:06:02.002 --> 00:06:09.164
+in the next video I am going to explain reconstruction of a signal from its samples using interpolation
+
+00:06:09.164 --> 00:06:09.888
+thank you

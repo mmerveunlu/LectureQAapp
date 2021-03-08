@@ -1,0 +1,112 @@
+WEBVTT
+
+00:00:14.967 --> 00:00:18.933
+hi everyone welcome to signals and systems course
+
+00:00:18.933 --> 00:00:25.332
+in this video I am going to explain fourier series representation of continuous time periodic signals
+
+00:00:26.448 --> 00:00:31.692
+assume that we have a periodic complex exponential signal y of t
+
+00:00:31.692 --> 00:00:37.356
+this signal has harmonically related signals shown with phi sub k here
+
+00:00:37.356 --> 00:00:44.417
+each harmonically related signal has a fundamental frequency that is a multiple of omega zero
+
+00:00:44.417 --> 00:00:50.520
+a linear combination of harmonically related complex exponentials has the form given below
+
+00:00:50.520 --> 00:00:54.647
+this signal is also periodic with a period of t
+
+00:00:54.647 --> 00:00:59.032
+here the term for k is equal to zero is constant
+
+00:00:59.032 --> 00:01:08.392
+and the terms for k is equal to plus one and k is equal to minus one are referred to as first harmonic components
+
+00:01:08.392 --> 00:01:17.378
+in a similar way when k equals minus two or plus two the components are called second harmonic components
+
+00:01:18.868 --> 00:01:29.964
+the representation of periodic signals as the linear combination of harmonically related complex exponentials is referred to as fourier series representation
+
+00:01:29.964 --> 00:01:34.148
+here two questions arise based on this representation
+
+00:01:34.148 --> 00:01:38.677
+first how can we determine the coefficients a sub k's
+
+00:01:38.677 --> 00:01:43.669
+second how broad class of signals can be represented in this way
+
+00:01:45.590 --> 00:01:47.836
+let's start with the first question
+
+00:01:47.836 --> 00:01:53.264
+fourier series coefficients are computed as given in the second equation
+
+00:01:53.264 --> 00:01:55.732
+which is called the synthesis equation
+
+00:01:55.732 --> 00:02:00.792
+note that fourier series representation is called the analysis equation
+
+00:02:00.792 --> 00:02:07.540
+I want you to derive the synthesis equation from the analysis equation using the given hints below
+
+00:02:09.792 --> 00:02:17.530
+so let's move to the second question which asks how broad class signals can be represented as fourier series
+
+00:02:17.530 --> 00:02:23.943
+the answer is that fourier series can be used to represent an extremely large class of signals
+
+00:02:23.943 --> 00:02:32.620
+in the next slides I am going to explain the conditions for the signals that guarantee the existence of fourier series representation
+
+00:02:35.203 --> 00:02:44.773
+let's first assume that we represent the signal x of t using finite series so that the summation is from minus n to plus n
+
+00:02:44.773 --> 00:02:52.024
+the error between the original signal and the finite series representation is called the approximation error
+
+00:02:52.024 --> 00:03:02.542
+if the signal x of t has a fourier series representation then the energy in the error over one period goes to zero when n goes to infinity
+
+00:03:04.075 --> 00:03:12.349
+one class of signals that have fourier series representation is the signals that have finite energy over one period
+
+00:03:12.349 --> 00:03:15.890
+in other words the signal is square integrable
+
+00:03:15.890 --> 00:03:27.861
+when this condition is satisfied we are guaranteed that the coefficients are finite and the energy in the error over one period goes to zero when n goes to infinity
+
+00:03:27.861 --> 00:03:36.816
+however this does not imply that x of t and its fourier series representation are equal at any value of t
+
+00:03:38.678 --> 00:03:43.289
+an alternative set of conditions is dirichlet conditions
+
+00:03:43.289 --> 00:03:48.921
+first condition states that x of t must be absolutely integrable
+
+00:03:48.921 --> 00:03:57.910
+second condition states that x of t has a finite number of maxima and minima in any finite interval of time
+
+00:03:57.910 --> 00:04:07.658
+and the third and the last condition states that there are only a finite number of discontinuities in any finite interval of time
+
+00:04:07.658 --> 00:04:17.316
+this set of conditions guarantees that x of t equals its fourier series representation except at discontinuities
+
+00:04:18.973 --> 00:04:25.569
+in this video I have explained fourier series representation of continuous time periodic signals
+
+00:04:25.569 --> 00:04:27.973
+let me know if you have any questions
+
+00:04:27.973 --> 00:04:28.678
+thank you

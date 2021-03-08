@@ -1,0 +1,136 @@
+WEBVTT
+
+00:00:04.547 --> 00:00:08.259
+hi everyone welcome to signals and systems course
+
+00:00:08.259 --> 00:00:13.570
+in this video I am going to explain the region of convergence for the laplace transform
+
+00:00:14.744 --> 00:00:24.951
+in the previous video we emphasized that a complete specification of laplace transform requires algebraic expression and region of convergence
+
+00:00:24.951 --> 00:00:27.965
+also using some example signals
+
+00:00:27.965 --> 00:00:40.513
+we showed that two different signals may have identical algebraic expression for x of s and their laplace transforms are distinguishable only by the region of convergence
+
+00:00:40.513 --> 00:00:51.746
+in this video we are going to discuss specific constraints on the region of convergence that are closely related with the time domain properties of the signal x of t
+
+00:00:53.253 --> 00:00:59.575
+before moving onto these constraints let's look at poles and zeros of a rational laplace transform
+
+00:00:59.575 --> 00:01:04.750
+since the region of convergence is closely related with the locations of the poles
+
+00:01:04.750 --> 00:01:17.248
+after taking the given integral for a function x of t we may end up with a rational laplace transform where n of s and d of s are the numerator and the denominator polynomials
+
+00:01:17.248 --> 00:01:27.433
+here the roots of the numerator polynomial are called the zeros of x of s and the roots of the denominator polynomial are called the poles of x of s
+
+00:01:27.433 --> 00:01:34.417
+in other words zeros are the values for s that make x of s is equal to zero
+
+00:01:34.417 --> 00:01:40.575
+and the poles are the values for s that make x of s is equal to infinite
+
+00:01:40.575 --> 00:01:49.375
+if the degree of the numerator and the denominator polynomials are not equal there can be also poles and zeros at infinity
+
+00:01:49.375 --> 00:01:57.968
+if the laplace transform is a rational function representing x of s in the s plane through its poles and zeros
+
+00:01:57.968 --> 00:02:03.629
+as well as its region of convergence will provide a more convenient representation
+
+00:02:03.629 --> 00:02:10.884
+this laplace transform has two zeros at one and two poles at minus one and two
+
+00:02:10.884 --> 00:02:15.797
+x of s has neither poles and zeros at infinity
+
+00:02:15.797 --> 00:02:20.395
+this figure shows the roc plot together with the pole zero plot
+
+00:02:20.395 --> 00:02:25.476
+a pole is marked with a cross sign and a zero is marked with a circle
+
+00:02:25.476 --> 00:02:33.152
+since there is a repeated zero in x of s there are two circles at one indicating these zeros
+
+00:02:33.152 --> 00:02:44.479
+for rational laplace transforms there is a close relationship between the locations of the poles and possible rocs that can be associated with a given pole zero plot
+
+00:02:46.511 --> 00:02:50.518
+now let's look at the constraints on the region of convergence
+
+00:02:50.518 --> 00:03:04.489
+note that these constraints allow us to specify or to reconstruct the roc from knowledge of only the algebraic laplace transform expression and certain characteristics of the time domain function
+
+00:03:04.489 --> 00:03:13.635
+the first property states that the roc of x of s contains strips parallel to the j omega axis in the s plane
+
+00:03:13.635 --> 00:03:21.341
+this property can be easily verified by using the fact that the roc only depends on the real part of s
+
+00:03:21.341 --> 00:03:29.447
+the second property states that for rational laplace transforms the roc does not contain any pole
+
+00:03:29.447 --> 00:03:33.518
+note that x of s is infinite at pole locations
+
+00:03:33.518 --> 00:03:38.815
+therefore the laplace transform integral does not converge at a pole
+
+00:03:40.747 --> 00:03:50.245
+the third property states that if x of t is finite duration and absolutely integrable then the roc is the entire s plane
+
+00:03:50.245 --> 00:03:55.012
+this figure shows a finite and absolutely integrable time domain function
+
+00:03:55.012 --> 00:04:01.522
+for this function the laplace transform integral converges for all values of s
+
+00:04:02.456 --> 00:04:15.187
+property four states that for a right sided signal if a point s is in the roc then all points to the right of s or all points with larger real parts are in the roc
+
+00:04:15.187 --> 00:04:20.744
+this figure shows a right sided signal and the roc of its laplace transform
+
+00:04:20.744 --> 00:04:26.634
+for a right sided signal the roc is commonly referred to as a right half plane
+
+00:04:27.997 --> 00:04:41.146
+property five states that for a left sided signal if a point s is in the roc then all points to the left of s or all points with smaller real parts are in the roc
+
+00:04:41.146 --> 00:04:46.556
+this figure shows a left sided signal and the roc of its laplace transform
+
+00:04:46.556 --> 00:04:52.214
+for a left sided signal the roc is commonly referred to as a left half plane
+
+00:04:53.600 --> 00:05:06.111
+property six states that if the time domain signal is two sided an example two sided signal is given in the figure the roc contains a single strip in the s plane
+
+00:05:07.703 --> 00:05:14.977
+if the laplace transform is rational then its roc is bounded by poles or extends to infinity
+
+00:05:14.977 --> 00:05:20.082
+in addition no poles of x of s are contained in the roc
+
+00:05:20.082 --> 00:05:29.872
+for a rational laplace transform if the time domain signal is right sided the roc is the region in the s plane to the right of the rightmost pole
+
+00:05:29.872 --> 00:05:38.152
+if the time domain signal is left sided then the roc is the region in the s plane to the left of the leftmost pole
+
+00:05:39.749 --> 00:05:48.584
+in this video I have explained the poles and zeros of a rational laplace transform and the constraints on the region of convergence
+
+00:05:48.584 --> 00:05:51.155
+let me know if you have any questions
+
+00:05:51.155 --> 00:05:52.277
+thank you

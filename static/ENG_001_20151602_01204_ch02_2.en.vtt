@@ -1,0 +1,85 @@
+WEBVTT
+
+00:00:15.301 --> 00:00:19.709
+hi everyone welcome to signals and systems course
+
+00:00:19.709 --> 00:00:25.391
+in this video I am going to explain the properties of linear time invariant systems
+
+00:00:25.391 --> 00:00:34.644
+as I have explained in the previous video characteristics of a linear time invariant system are determined by its impulse response
+
+00:00:34.644 --> 00:00:38.720
+if we know the impulse response of a linear time invariant system
+
+00:00:38.720 --> 00:00:44.386
+we can obtain the response of that system to any arbitrary input using convolution
+
+00:00:46.577 --> 00:00:50.601
+let's move to the properties of linear time invariant systems
+
+00:00:50.601 --> 00:01:01.826
+here we are going to explain these properties for discrete time linear time invariant systems but all these properties hold also for continuous time linear time invariant systems
+
+00:01:01.826 --> 00:01:07.034
+convolution has commutative distributive and associative properties
+
+00:01:07.034 --> 00:01:11.418
+these properties are expressed for discrete time systems
+
+00:01:13.706 --> 00:01:18.573
+another property of linear time invariant systems is being memoryless
+
+00:01:18.573 --> 00:01:28.337
+as we have defined earlier a system is said to be memoryless if its output at any given time depends only on the input at the same time
+
+00:01:28.337 --> 00:01:38.402
+for a discrete time linear time invariant system this condition holds only when the impulse response is zero when n is not equal to zero
+
+00:01:38.402 --> 00:01:47.399
+as a result of that the impulse response of a memoryless linear time invariant system is the scaled unit impulse response
+
+00:01:48.416 --> 00:01:51.274
+another property is invertibility
+
+00:01:51.274 --> 00:02:02.009
+if a system is invertible then an inverse system exists and if we cascade the inverse system to the original system we obtain the same input signal
+
+00:02:02.009 --> 00:02:12.964
+if h of n is the impulse response of a linear time invariant system and h sub one of n is the inverse of that system
+
+00:02:12.964 --> 00:02:17.738
+then the convolution of these two systems should yield the impulse function
+
+00:02:20.077 --> 00:02:22.485
+another property is causality
+
+00:02:22.485 --> 00:02:30.886
+a system is causal if the output at any time depends on values of the output at only the present and past times
+
+00:02:30.886 --> 00:02:36.006
+the impulse response of a causal system satisfies the below condition
+
+00:02:38.405 --> 00:02:40.681
+another property is stability
+
+00:02:40.681 --> 00:02:46.752
+a system is stable if every bounded input produces a bounded output
+
+00:02:46.752 --> 00:02:51.534
+the impulse response of a stable system satisfies the below condition
+
+00:02:54.055 --> 00:03:03.016
+the step response of a discrete time linear time invariant system is the convolution of unit step with the unit impulse response
+
+00:03:03.016 --> 00:03:11.601
+the step response of a discrete time linear time invariant system can also be defined as the running sum of its impulse response
+
+00:03:11.601 --> 00:03:19.696
+we can recover the impulse response from the unit step response by taking first difference of the unit step response
+
+00:03:19.696 --> 00:03:25.470
+in this video I have explained several properties of linear time invariant systems
+
+00:03:25.470 --> 00:03:29.720
+let me know if you have any questions
