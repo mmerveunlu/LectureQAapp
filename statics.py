@@ -9,6 +9,8 @@ STATFOLDER = "/var/www/LectureQAapp/LectureQAapp/static/"
 SERVERDPATH = "/work/merve/dataFromClient/"
 PREVPATH = ".."
 
+MAX_TRY_NBR = 4
+
 chapter_keys = ['_ch03_2','_ch07_1','_ch05_1','_ch09_2','_ch01_5',
                 '_ch01_3','_ch02_2','_ch03_1','_ch03_4','_ch01_4',
                 '_ch04_1','_ch09_1','_ch01_0','_ch01_1','_ch01_2']
