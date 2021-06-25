@@ -1,0 +1,652 @@
+ENG_001_20151602_01204_ch01_0-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch01_0-0002 in this video I am going to make an introduction to signals and systems
+ENG_001_20151602_01204_ch01_0-0003 signals are defined as functions of one or more independent variables that typically carry some type of information
+ENG_001_20151602_01204_ch01_0-0004 this figure shows a one dimensional signal
+ENG_001_20151602_01204_ch01_0-0005 here x axis is the time and y axis is the value of the function f of t
+ENG_001_20151602_01204_ch01_0-0006 for instance the y axis can represent the temperature or speed
+ENG_001_20151602_01204_ch01_0-0007 voltages and currents as a function of time in an electrical circuit are also examples of signals
+ENG_001_20151602_01204_ch01_0-0008 for instance this plot shows the variation of the inductor current as a function of time which is a one dimensional signal
+ENG_001_20151602_01204_ch01_0-0009 one very common example of a signal is a speech signal
+ENG_001_20151602_01204_ch01_0-0010 you can think of the speech signal as the fluctuations in acoustic pressure as a function of time
+ENG_001_20151602_01204_ch01_0-0011 a typical speech signal looks like as given in the figure
+ENG_001_20151602_01204_ch01_0-0012 here the speech signal corresponds to the word hello
+ENG_001_20151602_01204_ch01_0-0013 speech signal is also an example of one dimensional signals
+ENG_001_20151602_01204_ch01_0-0014 another common example signal is the image signal
+ENG_001_20151602_01204_ch01_0-0015 you can think of the image signal as the variations in brightness as a function of two spatial variables
+ENG_001_20151602_01204_ch01_0-0016 therefore image signal is an example of two dimensional signals
+ENG_001_20151602_01204_ch01_0-0017 this figure shows a binary felix cat image
+ENG_001_20151602_01204_ch01_0-0018 binary image means that the brightness values can be either one or zero
+ENG_001_20151602_01204_ch01_0-0019 you can think of this image as a thirty five by thirty five matrix where each component of the matrix is one or zero
+ENG_001_20151602_01204_ch01_0-0020 this figure also shows a popular gray scale image used in image processing
+ENG_001_20151602_01204_ch01_0-0021 the signals are categorized as continuous time signals and discrete time signals depending on the underlying independent variable
+ENG_001_20151602_01204_ch01_0-0022 in case of continuous time signals
+ENG_001_20151602_01204_ch01_0-0023 the independent variable is continuous and these signals are defined for a continuum of values of the independent variable
+ENG_001_20151602_01204_ch01_0-0024 temperature and speed as a function of time are some examples of continuous time signals
+ENG_001_20151602_01204_ch01_0-0025 however in discrete time signals independent variable takes on only a discrete set of values
+ENG_001_20151602_01204_ch01_0-0026 as a result these signals are defined only at discrete times
+ENG_001_20151602_01204_ch01_0-0027 stock market index as a function of weeks is and example of discrete time signal
+ENG_001_20151602_01204_ch01_0-0028 to distinguish between continuous time and discrete time signals
+ENG_001_20151602_01204_ch01_0-0029 we use different notations
+ENG_001_20151602_01204_ch01_0-0030 the independent variable in continuous time signal is denoted by t and it is enclosed in parenthesis
+ENG_001_20151602_01204_ch01_0-0031 on the other hand the independent variable in discrete time signal is denoted by n and it is enclosed in brackets
+ENG_001_20151602_01204_ch01_0-0032 these figures show continuous and discrete time signals graphically
+ENG_001_20151602_01204_ch01_0-0033 here it is important to note that discrete time signal is defined only for integer values of the independent variable
+ENG_001_20151602_01204_ch01_0-0034 a continuous time signal can be converted into a discrete time signal using sampling
+ENG_001_20151602_01204_ch01_0-0035 you are going to learn more about these concepts throughout the course
+ENG_001_20151602_01204_ch01_0-0036 the next important topic in this course is the systems
+ENG_001_20151602_01204_ch01_0-0037 systems are used to process signals
+ENG_001_20151602_01204_ch01_0-0038 for instance a camera is a system that receives light from different sources and produces a photograph
+ENG_001_20151602_01204_ch01_0-0039 an electrical circuit by itself is a system where it responds to applied voltages and currents
+ENG_001_20151602_01204_ch01_0-0040 also processing an image signal to produce its enhanced version is an example of a system
+ENG_001_20151602_01204_ch01_0-0041 systems are also categorized as continuous time and discrete time
+ENG_001_20151602_01204_ch01_0-0042 a continuous time system is a system where the input is a continuous time signal and this input results in an output
+ENG_001_20151602_01204_ch01_0-0043 which is also a continuous time signal
+ENG_001_20151602_01204_ch01_0-0044 the pictorial representation of such a system is given on the left hand side
+ENG_001_20151602_01204_ch01_0-0045 a discrete time system transforms a discrete time input signal into a discrete time output signal
+ENG_001_20151602_01204_ch01_0-0046 the pictorial representation of a discrete time signal is given on the right hand side
+ENG_001_20151602_01204_ch01_0-0047 in this video I have made an introduction to signals and systems
+ENG_001_20151602_01204_ch01_0-0048 let me know if you have any questions
+ENG_001_20151602_01204_ch01_0-0049 thank you
+ENG_001_20151602_01204_ch01_1-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch01_1-0002 in this video I am going to explain some important signal transformations that involve simple modifications of the independent variable
+ENG_001_20151602_01204_ch01_1-0003 an important example of transforming the independent variable of a signal is a time shift
+ENG_001_20151602_01204_ch01_1-0004 note that the independent variable is t in continuous time signals and n in discrete time signals
+ENG_001_20151602_01204_ch01_1-0005 this figure shows a discrete time signal and its shifted version
+ENG_001_20151602_01204_ch01_1-0006 here two signals are identical in shape but shifted relative to each other
+ENG_001_20151602_01204_ch01_1-0007 if n zero is greater than zero
+ENG_001_20151602_01204_ch01_1-0008 the signal shifts to the right and the shifted signal is said to be the delayed version of the original signal
+ENG_001_20151602_01204_ch01_1-0009 if n zero is less than zero
+ENG_001_20151602_01204_ch01_1-0010 the signal shifts to the left and the shifted signal is said to be the advanced version of the original signal
+ENG_001_20151602_01204_ch01_1-0011 the same principles apply while shifting a continuous time signal
+ENG_001_20151602_01204_ch01_1-0012 in the figure a continuous time signal and its shifted version are shown
+ENG_001_20151602_01204_ch01_1-0013 a second basic transformation of the time axis is the time reversal
+ENG_001_20151602_01204_ch01_1-0014 the reversed signal is obtained from the original signal by a reflection around n equals zero
+ENG_001_20151602_01204_ch01_1-0015 time reversal on a discrete time signal is shown in the figure
+ENG_001_20151602_01204_ch01_1-0016 for a continuous time signal the reversed signal is obtained from the original signal by a reflection around t equals zero
+ENG_001_20151602_01204_ch01_1-0017 the figure shows the original signal x of t and its reflection around t equals zero
+ENG_001_20151602_01204_ch01_1-0018 if x of t represents audio tape recording then its reflection is the same tape recording played backward
+ENG_001_20151602_01204_ch01_1-0019 another transformation is the time scale
+ENG_001_20151602_01204_ch01_1-0020 this figure shows three signals that are related by linear scale change in the independent variable
+ENG_001_20151602_01204_ch01_1-0021 if we think of x of t as a tape recording then x of two t is the same recording played twice speed of the original recording
+ENG_001_20151602_01204_ch01_1-0022 and x  of t over two is also the same recording played at half speed of the original recording
+ENG_001_20151602_01204_ch01_1-0023 assume that x of t is the original signal and it is transformed to another signal as x of alpha t plus beta
+ENG_001_20151602_01204_ch01_1-0024 depending on the values of alpha and beta the original signal goes through several transformations
+ENG_001_20151602_01204_ch01_1-0025 for instance the signal is stretched if the absolute value of alpha is less than one
+ENG_001_20151602_01204_ch01_1-0026 if it is larger than one the signal is compressed
+ENG_001_20151602_01204_ch01_1-0027 the signal is reversed in time if alpha is negative
+ENG_001_20151602_01204_ch01_1-0028 and it is shifted in time if beta is not equal to zero
+ENG_001_20151602_01204_ch01_1-0029 if there is more than one transformation
+ENG_001_20151602_01204_ch01_1-0030 the systematic approach is to delay or advance the signal in accordance with the value of beta first and than do the time scaling and reversal
+ENG_001_20151602_01204_ch01_1-0031 the plot on the right hand side shows the original signal x of t and the plots on the left hand side show various transformations
+ENG_001_20151602_01204_ch01_1-0032 the first transformation is the time shift where the original signal is advanced by one unit
+ENG_001_20151602_01204_ch01_1-0033 in other words it is shifted to left
+ENG_001_20151602_01204_ch01_1-0034 the second one is the time reversed version of x of t plus one
+ENG_001_20151602_01204_ch01_1-0035 the third one is the time scaled version of the original signal
+ENG_001_20151602_01204_ch01_1-0036 here the original signal is compressed by a factor of two over three
+ENG_001_20151602_01204_ch01_1-0037 and the last one is the time scaled version of of x of t plus one
+ENG_001_20151602_01204_ch01_1-0038 an important class of signals that we are going to use in this course is the periodic signals
+ENG_001_20151602_01204_ch01_1-0039 periodic continuous time and discrete time signals hold the given property
+ENG_001_20151602_01204_ch01_1-0040 in words a periodic signal has the property that it is unchanged by a time shift of t for continuous time signals
+ENG_001_20151602_01204_ch01_1-0041 and by a time shift of n for discrete time signals
+ENG_001_20151602_01204_ch01_1-0042 fundamental period is the smallest positive value of t or n for which the given equality holds
+ENG_001_20151602_01204_ch01_1-0043 here examples of continuous and discrete time signals are given
+ENG_001_20151602_01204_ch01_1-0044 fundamental period of the continuous time signal is t and fundamental period of the discrete time signal is three
+ENG_001_20151602_01204_ch01_1-0045 the property of being even or odd relates to the symmetry of signals under time reversal
+ENG_001_20151602_01204_ch01_1-0046 a signal is referred to as an even signal if it is identical to its time reversed counterpart
+ENG_001_20151602_01204_ch01_1-0047 a signal is referred to as an odd signal if it holds the given equality on the right hand side
+ENG_001_20151602_01204_ch01_1-0048 an odd signal must necessarily be zero at t or n equals zero
+ENG_001_20151602_01204_ch01_1-0049 examples of even and odd signals are given here
+ENG_001_20151602_01204_ch01_1-0050 in this video I first explained some important transformations of the independent variable such as time shift time reversal and time scaling
+ENG_001_20151602_01204_ch01_1-0051 these transformations will be useful in analyzing the properties of systems
+ENG_001_20151602_01204_ch01_1-0052 I also explained some important class of signals such as periodic signals and even and odd signals
+ENG_001_20151602_01204_ch01_1-0053 let me know if you have any question
+ENG_001_20151602_01204_ch01_1-0054 thank you
+ENG_001_20151602_01204_ch01_2-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch01_2-0002 in this video I am going to explain continuous time exponential and sinusoidal signals
+ENG_001_20151602_01204_ch01_2-0003 exponential and sinusoidal signals are the basic building blocks of many other signals
+ENG_001_20151602_01204_ch01_2-0004 the continuous time complex exponential signal has the given form where the capital c and alpha are in general complex numbers
+ENG_001_20151602_01204_ch01_2-0005 if c and alpha are real numbers the signal is called real exponential signal
+ENG_001_20151602_01204_ch01_2-0006 if alpha is positive then the signal is a growing exponential signal
+ENG_001_20151602_01204_ch01_2-0007 if alpha is negative then the signal is a decaying exponential signal
+ENG_001_20151602_01204_ch01_2-0008 if alpha is purely imaginary the signal is said to be complex exponential
+ENG_001_20151602_01204_ch01_2-0009 an important property of this signal is that it is periodic
+ENG_001_20151602_01204_ch01_2-0010 a signal is periodic if it is unchanged by a time shift of t
+ENG_001_20151602_01204_ch01_2-0011 so if the last term here is equal to one than the signal is periodic
+ENG_001_20151602_01204_ch01_2-0012 if omega zero is zero then the signal is constant and it is periodic for any value of omega zero
+ENG_001_20151602_01204_ch01_2-0013 if omega zero is not equal to zero the fundamental period is two pie over absolute value of omega zero
+ENG_001_20151602_01204_ch01_2-0014 a signal closely related to the periodic complex exponential signal is the sinusoidal signal
+ENG_001_20151602_01204_ch01_2-0015 here a is the amplitude omega zero is the frequency and phi is the phase of the sinusoidal signal
+ENG_001_20151602_01204_ch01_2-0016 the unit of omega zero is radians per second and the unit of the phase is radians
+ENG_001_20151602_01204_ch01_2-0017 a sinusoidal signal is shown graphically on the right hand side
+ENG_001_20151602_01204_ch01_2-0018 here t zero is the fundamental period and it is equals to two pie over omega zero
+ENG_001_20151602_01204_ch01_2-0019 this slide shows the formulation used to compute the energy of a continuous time signal over an infinite time interval
+ENG_001_20151602_01204_ch01_2-0020 and the time averaged power of a continuous time signal over an infinite time interval
+ENG_001_20151602_01204_ch01_2-0021 for discrete time signals continuous time representation of the signal is replaced with discrete time representation
+ENG_001_20151602_01204_ch01_2-0022 and the integral is replaced with summation in order to compute energy and power
+ENG_001_20151602_01204_ch01_2-0023 for a periodic complex exponential signal
+ENG_001_20151602_01204_ch01_2-0024 the energy of the signal in one period is obtained as t zero
+ENG_001_20151602_01204_ch01_2-0025 since there are an infinite number of periods the total energy of that signal will be infinite
+ENG_001_20151602_01204_ch01_2-0026 the average power of the signal in one period is one
+ENG_001_20151602_01204_ch01_2-0027 and averaging the power over multiple periods also gives one
+ENG_001_20151602_01204_ch01_2-0028 therefore periodic complex exponential signal is an example of signals with infinite total energy and finite average power
+ENG_001_20151602_01204_ch01_2-0029 the same also holds for the sinusoidal signal
+ENG_001_20151602_01204_ch01_2-0030 so far we have examined exponential signals with real exponential and periodic complex exponential
+ENG_001_20151602_01204_ch01_2-0031 more generally we can define a complex exponential signal where both captial c and alpha are complex numbers
+ENG_001_20151602_01204_ch01_2-0032 if we define c in polar form and alpha in rectangular form
+ENG_001_20151602_01204_ch01_2-0033 we can define the complex exponential signal as given in the red box
+ENG_001_20151602_01204_ch01_2-0034 we can write down this signal as the complex summation of two sinusoidal signals as given below using euler's relation
+ENG_001_20151602_01204_ch01_2-0035 in a complex exponential signal
+ENG_001_20151602_01204_ch01_2-0036 if r equals zero then the real and imaginary parts of the signal are sinusoidal
+ENG_001_20151602_01204_ch01_2-0037 and depending on the sign of r
+ENG_001_20151602_01204_ch01_2-0038 the sinusoidal signals are multiplied either by a growing exponential or a deco  decaying exponential
+ENG_001_20151602_01204_ch01_2-0039 growing or the decaying exponential determines the envelope of the sinusoidal signal
+ENG_001_20151602_01204_ch01_2-0040 in this video I have explained continuous time exponential and sinusoidal signals
+ENG_001_20151602_01204_ch01_2-0041 let me know if you have any questions
+ENG_001_20151602_01204_ch01_3-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch01_3-0002 in this video I am going to explain discrete time exponential and sinusoidal signals
+ENG_001_20151602_01204_ch01_3-0003 these signals are the basic building blocks for many other signals
+ENG_001_20151602_01204_ch01_3-0004 a discrete time complex exponential signal is defined as given here
+ENG_001_20151602_01204_ch01_3-0005 where capital c and alpha are in general complex numbers
+ENG_001_20151602_01204_ch01_3-0006 alternatively it is expressed as given below
+ENG_001_20151602_01204_ch01_3-0007 if c and alpha are real the signal is called real exponential signal
+ENG_001_20151602_01204_ch01_3-0008 the real exponential discrete time signal can have one of the behaviors given in the figure depending on the value of alpha
+ENG_001_20151602_01204_ch01_3-0009 in a complex exponential signal
+ENG_001_20151602_01204_ch01_3-0010 if beta is purely imaginary we obtain the signal given in the red box
+ENG_001_20151602_01204_ch01_3-0011 as in the continuous time case this signal is closely related with the sinusoidal signal
+ENG_001_20151602_01204_ch01_3-0012 these signals are the examples of discrete time signals with infinite total energy and finite average power
+ENG_001_20151602_01204_ch01_3-0013 some example discrete time sinusoidal signals are given in this figure
+ENG_001_20151602_01204_ch01_3-0014 if c and alpha are complex numbers here they are represented in polar form
+ENG_001_20151602_01204_ch01_3-0015 then we obtain the complex exponential in general form as given in the red box
+ENG_001_20151602_01204_ch01_3-0016 we obtain one of the behavior given in the figure depending on the sign of alpha
+ENG_001_20151602_01204_ch01_3-0017 even though there are similarities between continuous time and discrete time signals
+ENG_001_20151602_01204_ch01_3-0018 there are also many important differences
+ENG_001_20151602_01204_ch01_3-0019 this table shows the comparison of continuous time and discrete time complex exponentials
+ENG_001_20151602_01204_ch01_3-0020 the first difference is that distinct values of omega zero results in distinct signals in the time domain
+ENG_001_20151602_01204_ch01_3-0021 for instance higher values of omega zero result in higher rate of oscillations in the signal
+ENG_001_20151602_01204_ch01_3-0022 however it is not the case in discrete time complex exponentials
+ENG_001_20151602_01204_ch01_3-0023 in discrete time the signals are identical for values of omega zero separated by multiples of two pie
+ENG_001_20151602_01204_ch01_3-0024 second continuous time exponentials are periodic for any choice of omega zero
+ENG_001_20151602_01204_ch01_3-0025 however discrete time exponentials are periodic only if omega zero equals two pie times m over n for some integers m and n
+ENG_001_20151602_01204_ch01_3-0026 third fundamental frequency of omega zero for continuous time exponentials
+ENG_001_20151602_01204_ch01_3-0027 whereas it is omega zero divided by m for discrete time exponentials
+ENG_001_20151602_01204_ch01_3-0028 the fundamental periods for these signals are given in the below row
+ENG_001_20151602_01204_ch01_3-0029 in this video I have explained discrete time exponential and sinusoidal signals
+ENG_001_20151602_01204_ch01_3-0030 let me know if you have any questions
+ENG_001_20151602_01204_ch01_4-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch01_4-0002 in this video I am going to explain unit impulse and unit step functions
+ENG_001_20151602_01204_ch01_4-0003 these functions are very important in signal and system analysis
+ENG_001_20151602_01204_ch01_4-0004 discrete time unit impulse is one of the simplest discrete time signals
+ENG_001_20151602_01204_ch01_4-0005 unit impulse is also called unit sample
+ENG_001_20151602_01204_ch01_4-0006 mathematical and graphical representations of the unit impulse function are given here
+ENG_001_20151602_01204_ch01_4-0007 unit impulse function is one at time equals zero and it is zero at anywhere else
+ENG_001_20151602_01204_ch01_4-0008 note that unit impulse is a very important signal because it can be used to construct any discrete time signal
+ENG_001_20151602_01204_ch01_4-0009 another basic discrete time signal is discrete time unit step
+ENG_001_20151602_01204_ch01_4-0010 mathematical and graphical representations of the unit step function are given here
+ENG_001_20151602_01204_ch01_4-0011 unit impulse and unit step functions are closely related with each other
+ENG_001_20151602_01204_ch01_4-0012 the relationship between these two functions is summarized here
+ENG_001_20151602_01204_ch01_4-0013 for instance the discrete time unit impulse is the first difference of the discrete time unit step
+ENG_001_20151602_01204_ch01_4-0014 also the discrete time unit step is the running sum of discrete time unit sample
+ENG_001_20151602_01204_ch01_4-0015 we can write this equation in different forms by changing the variable of summation
+ENG_001_20151602_01204_ch01_4-0016 the unit impulse sequence can also be used to sample the value of a signal at any time
+ENG_001_20151602_01204_ch01_4-0017 continuous time unit step and unit impulse functions are defined in a similar way to their discrete time counterparts
+ENG_001_20151602_01204_ch01_4-0018 the unit step impulse can be thought of as the first derivative of the continuous time unit step
+ENG_001_20151602_01204_ch01_4-0019 the relationship between continuous time units step and unit impulse functions is summarized here
+ENG_001_20151602_01204_ch01_4-0020 as I said before the unit step impulse can be thought of as the first derivative of the continuous time unit step
+ENG_001_20151602_01204_ch01_4-0021 the continuous time unit step is the running integral of the unit sample
+ENG_001_20151602_01204_ch01_4-0022 additionally the unit impulse can be used to sample the value of a signal at any time
+ENG_001_20151602_01204_ch01_4-0023 in this video I have explained discrete time and continuous time unit impulse and unit step functions
+ENG_001_20151602_01204_ch01_4-0024 let me know if you have any questions
+ENG_001_20151602_01204_ch01_5-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch01_5-0002 in this video I am going to explain basic properties of continuous time and discrete time systems
+ENG_001_20151602_01204_ch01_5-0003 as we have already discussed the systems are also categorized as continuous time and discrete time
+ENG_001_20151602_01204_ch01_5-0004 a continuous time system transforms a continuous time input signal into a continuous time output signal
+ENG_001_20151602_01204_ch01_5-0005 a discrete time system transforms a discrete time input signal into a discrete time output signal
+ENG_001_20151602_01204_ch01_5-0006 many real systems are built as the interconnections of several subsystems
+ENG_001_20151602_01204_ch01_5-0007 these figures show some frequently used interconnections
+ENG_001_20151602_01204_ch01_5-0008 figure a shows a series or cascade interconnection
+ENG_001_20151602_01204_ch01_5-0009 figure b shows a parallel interconnection
+ENG_001_20151602_01204_ch01_5-0010 figure c shows a series parallel interconnection
+ENG_001_20151602_01204_ch01_5-0011 and the figure on the right hand side shows a feedback interconnection
+ENG_001_20151602_01204_ch01_5-0012 let's move to the basic system properties
+ENG_001_20151602_01204_ch01_5-0013 the first property is being memoryless
+ENG_001_20151602_01204_ch01_5-0014 a system is said to be memoryless if its output at any given time depends only on the input at the same time
+ENG_001_20151602_01204_ch01_5-0015 otherwise it is a system with memory
+ENG_001_20151602_01204_ch01_5-0016 for instance in the given system the output y only depends on the input x at the same time so this system is memoryless
+ENG_001_20151602_01204_ch01_5-0017 the second property is invertibility
+ENG_001_20151602_01204_ch01_5-0018 a system is said to be invertible if distinct inputs lead to distinct outputs
+ENG_001_20151602_01204_ch01_5-0019 if a system is invertible then any inverse system exists and if we cascade the inverse system to the original system
+ENG_001_20151602_01204_ch01_5-0020 we obtain the same input signal
+ENG_001_20151602_01204_ch01_5-0021 the figure shows this property
+ENG_001_20151602_01204_ch01_5-0022 the third property is causality
+ENG_001_20151602_01204_ch01_5-0023 a system is causal if the output at any time depends on values of the output at only the present and past times
+ENG_001_20151602_01204_ch01_5-0024 for instance the first system given here is causal
+ENG_001_20151602_01204_ch01_5-0025 however the second system the output depends on the future input
+ENG_001_20151602_01204_ch01_5-0026 therefore it is not a causal system
+ENG_001_20151602_01204_ch01_5-0027 note that all memoryless systems are causal
+ENG_001_20151602_01204_ch01_5-0028 the fourth property is stability
+ENG_001_20151602_01204_ch01_5-0029 a stable system in a stable system small inputs lead to responses that do not diverge
+ENG_001_20151602_01204_ch01_5-0030 an easy way of analyzing the stability of a system is to check
+ENG_001_20151602_01204_ch01_5-0031 if a bounded input results in a bounded output
+ENG_001_20151602_01204_ch01_5-0032 if that is the case then the system is stable
+ENG_001_20151602_01204_ch01_5-0033 an example stable system is given here
+ENG_001_20151602_01204_ch01_5-0034 if the input x of t is bounded then the output y of t is also bounded
+ENG_001_20151602_01204_ch01_5-0035 therefore the system is stable here
+ENG_001_20151602_01204_ch01_5-0036 the fifth and one of the most important properties is the time invariance
+ENG_001_20151602_01204_ch01_5-0037 informally a system is time invariant if the behavior and characteristics of the system are fixed over time
+ENG_001_20151602_01204_ch01_5-0038 more formally we can define a time invariant system as follows
+ENG_001_20151602_01204_ch01_5-0039 a system is time invariant if a time shift in the input signal results in an identical time shift in the output signal
+ENG_001_20151602_01204_ch01_5-0040 assume that we have a system where y of t is the output when x of t is the input
+ENG_001_20151602_01204_ch01_5-0041 the system is time invariant if y of t minus t zero is the output when x of t minus t zero is the input
+ENG_001_20151602_01204_ch01_5-0042 the last and the other important system property is linearity
+ENG_001_20151602_01204_ch01_5-0043 a system is linear if an input consists of the sum of several signals and the output is the superposition of the responses of the system to each of those inputs
+ENG_001_20151602_01204_ch01_5-0044 more formally if a system is linear the given two properties must hold
+ENG_001_20151602_01204_ch01_5-0045 the first one is the additivity property
+ENG_001_20151602_01204_ch01_5-0046 and the second one is the scaling property
+ENG_001_20151602_01204_ch01_5-0047 these two properties can be combined into a single statement known as the superposition property as given below
+ENG_001_20151602_01204_ch01_5-0048 in this video I have explained basic system properties
+ENG_001_20151602_01204_ch01_5-0049 among these properties time invariance and linearity have great importance because
+ENG_001_20151602_01204_ch01_5-0050 most of the systems encountered in nature can be modeled as linear and time invariant
+ENG_001_20151602_01204_ch01_5-0051 in the next videos we are going to analyze continuous time and discrete time linear time invariant systems in more detail
+ENG_001_20151602_01204_ch01_5-0052 thank you
+ENG_001_20151602_01204_ch02_2-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch02_2-0002 in this video I am going to explain the properties of linear time invariant systems
+ENG_001_20151602_01204_ch02_2-0003 as I have explained in the previous video characteristics of a linear time invariant system are determined by its impulse response
+ENG_001_20151602_01204_ch02_2-0004 if we know the impulse response of a linear time invariant system
+ENG_001_20151602_01204_ch02_2-0005 we can obtain the response of that system to any arbitrary input using convolution
+ENG_001_20151602_01204_ch02_2-0006 let's move to the properties of linear time invariant systems
+ENG_001_20151602_01204_ch02_2-0007 here we are going to explain these properties for discrete time linear time invariant systems but all these properties hold also for continuous time linear time invariant systems
+ENG_001_20151602_01204_ch02_2-0008 convolution has commutative distributive and associative properties
+ENG_001_20151602_01204_ch02_2-0009 these properties are expressed for discrete time systems
+ENG_001_20151602_01204_ch02_2-0010 another property of linear time invariant systems is being memoryless
+ENG_001_20151602_01204_ch02_2-0011 as we have defined earlier a system is said to be memoryless if its output at any given time depends only on the input at the same time
+ENG_001_20151602_01204_ch02_2-0012 for a discrete time linear time invariant system this condition holds only when the impulse response is zero when n is not equal to zero
+ENG_001_20151602_01204_ch02_2-0013 as a result of that the impulse response of a memoryless linear time invariant system is the scaled unit impulse response
+ENG_001_20151602_01204_ch02_2-0014 another property is invertibility
+ENG_001_20151602_01204_ch02_2-0015 if a system is invertible then an inverse system exists and if we cascade the inverse system to the original system we obtain the same input signal
+ENG_001_20151602_01204_ch02_2-0016 if h of n is the impulse response of a linear time invariant system and h sub one of n is the inverse of that system
+ENG_001_20151602_01204_ch02_2-0017 then the convolution of these two systems should yield the impulse function
+ENG_001_20151602_01204_ch02_2-0018 another property is causality
+ENG_001_20151602_01204_ch02_2-0019 a system is causal if the output at any time depends on values of the output at only the present and past times
+ENG_001_20151602_01204_ch02_2-0020 the impulse response of a causal system satisfies the below condition
+ENG_001_20151602_01204_ch02_2-0021 another property is stability
+ENG_001_20151602_01204_ch02_2-0022 a system is stable if every bounded input produces a bounded output
+ENG_001_20151602_01204_ch02_2-0023 the impulse response of a stable system satisfies the below condition
+ENG_001_20151602_01204_ch02_2-0024 the step response of a discrete time linear time invariant system is the convolution of unit step with the unit impulse response
+ENG_001_20151602_01204_ch02_2-0025 the step response of a discrete time linear time invariant system can also be defined as the running sum of its impulse response
+ENG_001_20151602_01204_ch02_2-0026 we can recover the impulse response from the unit step response by taking first difference of the unit step response
+ENG_001_20151602_01204_ch02_2-0027 in this video I have explained several properties of linear time invariant systems
+ENG_001_20151602_01204_ch02_2-0028 let me know if you have any questions
+ENG_001_20151602_01204_ch03_1-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch03_1-0002 in this video I am going to explain the response of linear time invariant systems to complex exponentials
+ENG_001_20151602_01204_ch03_1-0003 assume that we have a linear time invariant system where the input is x of n and the output is y of n
+ENG_001_20151602_01204_ch03_1-0004 using the linearity property if the input is the sum of scaled signals
+ENG_001_20151602_01204_ch03_1-0005 the output will be the sum of scaled responses of these input signals
+ENG_001_20151602_01204_ch03_1-0006 as you might remember analysis of linear time invariant systems through convolution was developed by decomposing the input signal into the summation of basic signals which were shifted impulses
+ENG_001_20151602_01204_ch03_1-0007 the output to each shifted impulse was the shifted impulse response of the system
+ENG_001_20151602_01204_ch03_1-0008 currently we explore alternative representation of signals and linear time invariant systems using another set of basic signals
+ENG_001_20151602_01204_ch03_1-0009 which are complex exponentials
+ENG_001_20151602_01204_ch03_1-0010 in fourier analysis we are going to represent signals as linear combination of complex exponentials
+ENG_001_20151602_01204_ch03_1-0011 so why do we choose complex exponentials
+ENG_001_20151602_01204_ch03_1-0012 the answer is that as the basic signals they satisfy the given two properties
+ENG_001_20151602_01204_ch03_1-0013 the first one is that their system response is straightforward to compute
+ENG_001_20151602_01204_ch03_1-0014 the second one is that they can be used to construct a broad range of signals
+ENG_001_20151602_01204_ch03_1-0015 so let's apply a complex exponential as input to a linear time invariant system and compute its output
+ENG_001_20151602_01204_ch03_1-0016 when a complex exponential is applied as input the output of the system is the same complex exponential multiplied by a complex constant
+ENG_001_20151602_01204_ch03_1-0017 note that this is true both for the discrete and continuous time signals
+ENG_001_20151602_01204_ch03_1-0018 its derivation is quite straightforward using the convolution operation
+ENG_001_20151602_01204_ch03_1-0019 a signal for which the system output is a constant times input is referred to as an eigen function of the system
+ENG_001_20151602_01204_ch03_1-0020 and the amplitude is referred to as the system's eigen value
+ENG_001_20151602_01204_ch03_1-0021 this is a very important property stating that complex exponentials are eigenfunctions of linear time invariant systems
+ENG_001_20151602_01204_ch03_1-0022 eigenvalues h of s and h of z are computed as given here
+ENG_001_20151602_01204_ch03_1-0023 the eigen function property together with the superposition property leads to convenient expression for the response of a linear time invariant system
+ENG_001_20151602_01204_ch03_1-0024 if the input to a linear time invariant system is a linear combination of complex exponentials
+ENG_001_20151602_01204_ch03_1-0025 then the output is also represented as the linear complication combin  sorry linear combination of same complex exponential signals
+ENG_001_20151602_01204_ch03_1-0026 in this video I have explained response of linear time invariant systems to complex exponentials
+ENG_001_20151602_01204_ch03_1-0027 in the next video I am going to explain fourier series representation of continuous time periodic signals
+ENG_001_20151602_01204_ch03_1-0028 thank you
+ENG_001_20151602_01204_ch03_2-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch03_2-0002 in this video I am going to explain fourier series representation of continuous time periodic signals
+ENG_001_20151602_01204_ch03_2-0003 assume that we have a periodic complex exponential signal y of t
+ENG_001_20151602_01204_ch03_2-0004 this signal has harmonically related signals shown with phi sub k here
+ENG_001_20151602_01204_ch03_2-0005 each harmonically related signal has a fundamental frequency that is a multiple of omega zero
+ENG_001_20151602_01204_ch03_2-0006 a linear combination of harmonically related complex exponentials has the form given below
+ENG_001_20151602_01204_ch03_2-0007 this signal is also periodic with a period of t
+ENG_001_20151602_01204_ch03_2-0008 here the term for k is equal to zero is constant
+ENG_001_20151602_01204_ch03_2-0009 and the terms for k is equal to plus one and k is equal to minus one are referred to as first harmonic components
+ENG_001_20151602_01204_ch03_2-0010 in a similar way when k equals minus two or plus two the components are called second harmonic components
+ENG_001_20151602_01204_ch03_2-0011 the representation of periodic signals as the linear combination of harmonically related complex exponentials is referred to as fourier series representation
+ENG_001_20151602_01204_ch03_2-0012 here two questions arise based on this representation
+ENG_001_20151602_01204_ch03_2-0013 first how can we determine the coefficients a sub k's
+ENG_001_20151602_01204_ch03_2-0014 second how broad class of signals can be represented in this way
+ENG_001_20151602_01204_ch03_2-0015 let's start with the first question
+ENG_001_20151602_01204_ch03_2-0016 fourier series coefficients are computed as given in the second equation
+ENG_001_20151602_01204_ch03_2-0017 which is called the synthesis equation
+ENG_001_20151602_01204_ch03_2-0018 note that fourier series representation is called the analysis equation
+ENG_001_20151602_01204_ch03_2-0019 I want you to derive the synthesis equation from the analysis equation using the given hints below
+ENG_001_20151602_01204_ch03_2-0020 so let's move to the second question which asks how broad class signals can be represented as fourier series
+ENG_001_20151602_01204_ch03_2-0021 the answer is that fourier series can be used to represent an extremely large class of signals
+ENG_001_20151602_01204_ch03_2-0022 in the next slides I am going to explain the conditions for the signals that guarantee the existence of fourier series representation
+ENG_001_20151602_01204_ch03_2-0023 let's first assume that we represent the signal x of t using finite series so that the summation is from minus n to plus n
+ENG_001_20151602_01204_ch03_2-0024 the error between the original signal and the finite series representation is called the approximation error
+ENG_001_20151602_01204_ch03_2-0025 if the signal x of t has a fourier series representation then the energy in the error over one period goes to zero when n goes to infinity
+ENG_001_20151602_01204_ch03_2-0026 one class of signals that have fourier series representation is the signals that have finite energy over one period
+ENG_001_20151602_01204_ch03_2-0027 in other words the signal is square integrable
+ENG_001_20151602_01204_ch03_2-0028 when this condition is satisfied we are guaranteed that the coefficients are finite and the energy in the error over one period goes to zero when n goes to infinity
+ENG_001_20151602_01204_ch03_2-0029 however this does not imply that x of t and its fourier series representation are equal at any value of t
+ENG_001_20151602_01204_ch03_2-0030 an alternative set of conditions is dirichlet conditions
+ENG_001_20151602_01204_ch03_2-0031 first condition states that x of t must be absolutely integrable
+ENG_001_20151602_01204_ch03_2-0032 second condition states that x of t has a finite number of maxima and minima in any finite interval of time
+ENG_001_20151602_01204_ch03_2-0033 and the third and the last condition states that there are only a finite number of discontinuities in any finite interval of time
+ENG_001_20151602_01204_ch03_2-0034 this set of conditions guarantees that x of t equals its fourier series representation except at discontinuities
+ENG_001_20151602_01204_ch03_2-0035 in this video I have explained fourier series representation of continuous time periodic signals
+ENG_001_20151602_01204_ch03_2-0036 let me know if you have any questions
+ENG_001_20151602_01204_ch03_2-0037 thank you
+ENG_001_20151602_01204_ch03_4-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch03_4-0002 in this video I am going to explain fourier series representation of discrete time periodic signals
+ENG_001_20151602_01204_ch03_4-0003 there are many similarities between continuous time and discrete time fourier series
+ENG_001_20151602_01204_ch03_4-0004 however there are also many differences
+ENG_001_20151602_01204_ch03_4-0005 as you might remember fourier series representation of continuous time periodic signals consists of linear combination of harmonically related complex exponentials
+ENG_001_20151602_01204_ch03_4-0006 the formulation is given here
+ENG_001_20151602_01204_ch03_4-0007 note that it is an infinite series because we are summing up infinite number of terms
+ENG_001_20151602_01204_ch03_4-0008 however fourier series representation of discrete time periodic signals is a finite series
+ENG_001_20151602_01204_ch03_4-0009 I am going to show how we obtain this representation in upcoming slides
+ENG_001_20151602_01204_ch03_4-0010 the infinite series representation leads to some converge issues
+ENG_001_20151602_01204_ch03_4-0011 we have discussed the convergence issues of continuous time fourier series and when a signal can or can not be represented with fourier series in the previous lectures
+ENG_001_20151602_01204_ch03_4-0012 since discrete time fourier series is a finite series there are no convergence issues
+ENG_001_20151602_01204_ch03_4-0013 the discrete time fourier series representation will also lead to periodic coefficients
+ENG_001_20151602_01204_ch03_4-0014 note that the coefficients are not periodic in continuous time fourier series
+ENG_001_20151602_01204_ch03_4-0015 a discrete time signal is periodic with period n if if it satisfies the above equation
+ENG_001_20151602_01204_ch03_4-0016 here fundamental period is the smallest positive integer n that satisfies the given equation and the fundamental frequency is computed as two pi over n
+ENG_001_20151602_01204_ch03_4-0017 if there is a complex exponential which is periodic with period n
+ENG_001_20151602_01204_ch03_4-0018 the set of all discrete time complex exponential signals periodic with period n is given below as phi sub k
+ENG_001_20151602_01204_ch03_4-0019 all of these signals have fundamental frequencies that are multiples of two pi over n and they are harmonically related complex exponentials
+ENG_001_20151602_01204_ch03_4-0020 note that there are only n distinct signals in the given set
+ENG_001_20151602_01204_ch03_4-0021 this is because of the fact that discrete time complex exponentials which differ by a factor of two pi are identical
+ENG_001_20151602_01204_ch03_4-0022 using the same fact we can show that phi sub k and phi sub k plus n are identical signals
+ENG_001_20151602_01204_ch03_4-0023 the proof is given below
+ENG_001_20151602_01204_ch03_4-0024 we can write down a general continuous time signal as the linear combination of harmonically related complex exponentials as given here
+ENG_001_20151602_01204_ch03_4-0025 since there are only n distinct harmonically related signals we can write down the summation for n successive values of k
+ENG_001_20151602_01204_ch03_4-0026 this representation is referred to as discrete time fourier series and a sub k's are fourier series coefficients
+ENG_001_20151602_01204_ch03_4-0027 note that this is a finite series composed of n terms and x of n is periodic with period n
+ENG_001_20151602_01204_ch03_4-0028 so how can we compute the discrete time fourier series coefficients
+ENG_001_20151602_01204_ch03_4-0029 fourier series coefficients are computed as given in the second equation which is called the synthesis equation
+ENG_001_20151602_01204_ch03_4-0030 note that fourier series representation is called the analysis equation
+ENG_001_20151602_01204_ch03_4-0031 I want you to derive the synthesis equation from the analysis equation using the given hints below
+ENG_001_20151602_01204_ch03_4-0032 ok we know that we can compute the discrete time fourier series coefficients using the synthesis equation
+ENG_001_20151602_01204_ch03_4-0033 here it is important to note that there are only n fourier series coefficients that need to be computed and the range for k can be any set of n consecutive integers
+ENG_001_20151602_01204_ch03_4-0034 as a result of that discrete time fourier series coefficients a sub k's are periodic with n
+ENG_001_20151602_01204_ch03_4-0035 while discussing convergence issues of continuous time fourier series we observed that as we increase the number of terms in a finite summation
+ENG_001_20151602_01204_ch03_4-0036 fourier series representation converges to the original signal
+ENG_001_20151602_01204_ch03_4-0037 however gibbs phenomenon occurs at the discontinuity points of the signal
+ENG_001_20151602_01204_ch03_4-0038 any discrete time periodic signal is completely specified by a finite number of parameters so that there are no convergence issues and there is no gibbs phenomenon
+ENG_001_20151602_01204_ch03_4-0039 let's move on to the properties of discrete time fourier series
+ENG_001_20151602_01204_ch03_4-0040 this table summarizes the properties
+ENG_001_20151602_01204_ch03_4-0041 the derivations of many of these properties are very similar to their continuous time counterparts
+ENG_001_20151602_01204_ch03_4-0042 here I will only explain some important properties that are different than their continuous time counterparts
+ENG_001_20151602_01204_ch03_4-0043 the first one is the multiplication property
+ENG_001_20151602_01204_ch03_4-0044 let's denote a sub k as fourier series coefficient of the discrete time periodic signal x of n
+ENG_001_20151602_01204_ch03_4-0045 and b sub k as fourier series coefficient of the discrete time periodic signal y of n
+ENG_001_20151602_01204_ch03_4-0046 if we multiply these two signals fourier series coefficients of the multiplied signal is computed as given in the below equation
+ENG_001_20151602_01204_ch03_4-0047 we refer to this type of operation as periodic convolution where the summation can be taken over any set of n consecutive values
+ENG_001_20151602_01204_ch03_4-0048 first difference property is the discrete time parallel to the differentiation property of the continuous time fourier series
+ENG_001_20151602_01204_ch03_4-0049 if a sub k is fourier series coefficient of the discrete time periodic signal x of n
+ENG_001_20151602_01204_ch03_4-0050 the fourier series coefficients corresponding to the first difference of x of n are computed as given below
+ENG_001_20151602_01204_ch03_4-0051 this equation can be obtained easily from time shifting and linearity properties
+ENG_001_20151602_01204_ch03_4-0052 the parseval relation for discrete time periodic signals is given here
+ENG_001_20151602_01204_ch03_4-0053 note that the left hand side of this equation is the average power in one period for periodic signal x of n
+ENG_001_20151602_01204_ch03_4-0054 at the right hand side is the average power in all of its harmonic components
+ENG_001_20151602_01204_ch03_4-0055 as a result parseval's relation states that the average power in a periodic signal equals the sum of the average powers in all of its harmonic components
+ENG_001_20151602_01204_ch03_4-0056 in this video I have explained fourier series representation of discrete time periodic signals and the properties of discrete time fourier series
+ENG_001_20151602_01204_ch03_4-0057 let me know if you have any questions
+ENG_001_20151602_01204_ch03_4-0058 thank you
+ENG_001_20151602_01204_ch04_1-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch04_1-0002 in this video I am going to explain continuous time fourier transform
+ENG_001_20151602_01204_ch04_1-0003 in fourier series representation a continuous time periodic signal can be represented as linear combination of complex exponentials that are harmonically related
+ENG_001_20151602_01204_ch04_1-0004 we can develop a similar representation also for continuous time non periodic or aperiodic signals and this representation is called continuous time fourier transform
+ENG_001_20151602_01204_ch04_1-0005 while developing continuous time fourier transform of non periodic signals
+ENG_001_20151602_01204_ch04_1-0006 we are going to follow the given strategy
+ENG_001_20151602_01204_ch04_1-0007 we first start with a non periodic signal
+ENG_001_20151602_01204_ch04_1-0008 then we convert this non periodic signal into a periodic signal by periodically repeating the signal for some period t
+ENG_001_20151602_01204_ch04_1-0009 this gives us the periodic signal shown in the figure and it is denoted by x tilda of t
+ENG_001_20151602_01204_ch04_1-0010 note that if the period t goes to infinity the periodic signal x tilda of t will be equal to the non periodic signal x of t
+ENG_001_20151602_01204_ch04_1-0011 roughly you can think of the fourier transform as the fourier series representation of a periodic signal
+ENG_001_20151602_01204_ch04_1-0012 which has an infinite period
+ENG_001_20151602_01204_ch04_1-0013 in the upcoming slides we will see how this infinite period effects the synthesis and analysis equations of fourier series representation
+ENG_001_20151602_01204_ch04_1-0014 ok let's go back to our square wave example
+ENG_001_20151602_01204_ch04_1-0015 this figure shows a periodic square wave
+ENG_001_20151602_01204_ch04_1-0016 we can compute the fourier series coefficients as given here
+ENG_001_20151602_01204_ch04_1-0017 an alternative way of interpreting this equation is as samples of an envelope function
+ENG_001_20151602_01204_ch04_1-0018 if omega is thought as a continuous variable the envelope of t times a sub k is shown in the figure
+ENG_001_20151602_01204_ch04_1-0019 the bars in the figure correspond to the fourier series coefficients and they are separated by two pie over t
+ENG_001_20151602_01204_ch04_1-0020 in the figure on the right hand side we increase the period more and this results closer sample spacing
+ENG_001_20151602_01204_ch04_1-0021 if we increase the period further the spacing will decrease more
+ENG_001_20151602_01204_ch04_1-0022 and if the period goes to infinity the samples or the fourier series coefficients will approach the envelope function
+ENG_001_20151602_01204_ch04_1-0023 let's move on to the mathematical formulation of continuous time fourier transform
+ENG_001_20151602_01204_ch04_1-0024 from our previous discussion we know that x tilda of t is the periodic version of the non periodic signal x of t and it is periodic with period t
+ENG_001_20151602_01204_ch04_1-0025 so we can write down fourier series representation of x tilda of t and its fourier series coefficients as given here
+ENG_001_20151602_01204_ch04_1-0026 since x tilda of t equals x of t as t goes to infinity analysis and synthesis equations turn into the fourier transform pair
+ENG_001_20151602_01204_ch04_1-0027 the first equation is called the inverse fourier transform equation and capital x is referred to as the fourier transform of x of t
+ENG_001_20151602_01204_ch04_1-0028 if x of t has finite energy in other words if x of t is square integrable then we are guaranteed that its fourier transform is finite
+ENG_001_20151602_01204_ch04_1-0029 additionally the given set of dirichlet conditions also ensures the convergence
+ENG_001_20151602_01204_ch04_1-0030 we can also develop fourier transform representations for periodic signals
+ENG_001_20151602_01204_ch04_1-0031 this allows us to consider both periodic and non periodic signals within a unified framework
+ENG_001_20151602_01204_ch04_1-0032 the fourier transform of a periodic signal is given below which contains a train of impulses in the frequency domain
+ENG_001_20151602_01204_ch04_1-0033 these impulses are equally spaced in frequency and the areas of the impulses are proportional to the fourier series coefficients
+ENG_001_20151602_01204_ch04_1-0034 in this video I have explained continuous time fourier transform
+ENG_001_20151602_01204_ch04_1-0035 let me know if you have any questions
+ENG_001_20151602_01204_ch04_1-0036 thank you
+ENG_001_20151602_01204_ch05_1-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch05_1-0002 in this video I am going to explain discrete time fourier transform
+ENG_001_20151602_01204_ch05_1-0003 similar to the continuous time fourier transform we will developed the discrete time fourier transform starting from an aperiodic signal and taking its periodic extension
+ENG_001_20151602_01204_ch05_1-0004 we all know that we can represent a periodic discrete time signal as the linear combination of harmonically related complex exponentials
+ENG_001_20151602_01204_ch05_1-0005 which is called fourier series representation
+ENG_001_20151602_01204_ch05_1-0006 we can use a similar representation for aperiodic discrete time signals and it is called the discrete time fourier transform
+ENG_001_20151602_01204_ch05_1-0007 when we are given an aperiodic signal we can periodically repeat the signal for some period n and obtain a periodic signal
+ENG_001_20151602_01204_ch05_1-0008 this periodic signal is shown in the bottom of the slide and it is denoted by x tilda of n
+ENG_001_20151602_01204_ch05_1-0009 note that if the period n goes to infinity the periodic signal x tilda of n will be equal to the aperiodic signal x of n
+ENG_001_20151602_01204_ch05_1-0010 let's move on to the mathematical formulation of discrete time fourier transform
+ENG_001_20151602_01204_ch05_1-0011 since x tilda of n is a periodic signal we can define its fourier series representation
+ENG_001_20151602_01204_ch05_1-0012 then we can derive the equations for discrete time fourier transform pair from fourier series synthesis and analysis equations by assuming an infinite period
+ENG_001_20151602_01204_ch05_1-0013 the first equation is called the inverse discrete time fourier transform and the second equation is called the discrete time fourier transform
+ENG_001_20151602_01204_ch05_1-0014 here it is important to note that discrete time fourier transform is periodic with period two pie
+ENG_001_20151602_01204_ch05_1-0015 the discrete time fourier transform equation converges either if the discrete time signal x of n is absolutely summable
+ENG_001_20151602_01204_ch05_1-0016 or the sequence has finite energy
+ENG_001_20151602_01204_ch05_1-0017 since the integral is over a finite interval there are no convergence issues associated with inverse fourier transform
+ENG_001_20151602_01204_ch05_1-0018 as in the continuous time case we can incorporate discrete time periodic signals into the discrete time fourier transform framework
+ENG_001_20151602_01204_ch05_1-0019 as given in the below equation
+ENG_001_20151602_01204_ch05_1-0020 fourier transform of a periodic signal can be directly constructed from its fourier series coefficients
+ENG_001_20151602_01204_ch05_1-0021 let's move on to the properties of discrete time fourier transform
+ENG_001_20151602_01204_ch05_1-0022 this table summarizes the properties
+ENG_001_20151602_01204_ch05_1-0023 most of these properties are very similar to their continuous time counterparts
+ENG_001_20151602_01204_ch05_1-0024 here I will only emphasize the properties different than continuous time fourier transform
+ENG_001_20151602_01204_ch05_1-0025 in contrast to the continuous time fourier transform discrete time fourier transform is periodic with period two pie
+ENG_001_20151602_01204_ch05_1-0026 because of the discrete nature of the time index for discrete time signal
+ENG_001_20151602_01204_ch05_1-0027 the relation between time and frequency scaling is different than its continuous time counterpart
+ENG_001_20151602_01204_ch05_1-0028 while expanding a discrete time signal in time domain
+ENG_001_20151602_01204_ch05_1-0029 we insert zeros for the time indexes where the time index is not a multiple of the expansion factor
+ENG_001_20151602_01204_ch05_1-0030 this corresponds to compressing its fourier transform
+ENG_001_20151602_01204_ch05_1-0031 the multiplication of discrete time signals in time domain corresponds to periodic convolution in frequency domain
+ENG_001_20151602_01204_ch05_1-0032 note that the usual form of convolution has integral interval from minus infinity to plus infinity and it is often referred to as aperiodic convolution
+ENG_001_20151602_01204_ch05_1-0033 other properties different than their continuous time counterparts are differencing in time and accumulation
+ENG_001_20151602_01204_ch05_1-0034 you can think of these properties as discrete time counterparts of differentiation and integration properties
+ENG_001_20151602_01204_ch05_1-0035 the other properties are quite similar to their continuous time counterparts
+ENG_001_20151602_01204_ch05_1-0036 in this video I have explained discrete time fourier transform and its properties
+ENG_001_20151602_01204_ch05_1-0037 let me know if you have any questions
+ENG_001_20151602_01204_ch05_1-0038 thank you
+ENG_001_20151602_01204_ch07_1-0001 in this video I am going to explain sampling
+ENG_001_20151602_01204_ch07_1-0002 sampling is the process of representing a signal using its values or samples taken at equally spaced points in time
+ENG_001_20151602_01204_ch07_1-0003 reconstruction is the process of reconstructing a signal from its samples using interpolation
+ENG_001_20151602_01204_ch07_1-0004 sampling and reconstruction can be both applied to continuous time and discrete time signals
+ENG_001_20151602_01204_ch07_1-0005 because of the advances in digital technologies such as computers processing discrete time signals is more flexible and therefore it is more preferable to processing continuous time signals
+ENG_001_20151602_01204_ch07_1-0006 therefore sampling of continuous time signals is mainly used for discrete time processing of continuous time signals
+ENG_001_20151602_01204_ch07_1-0007 this figure shows the discrete time processing of continuous time signals
+ENG_001_20151602_01204_ch07_1-0008 here the continuous time signal x c of t is first converted to the discrete time signal x of n through sampling
+ENG_001_20151602_01204_ch07_1-0009 after processing the discrete time signal x of n in a discrete time system the system output y of n is again converted back to the continuous time signal y c of n with interpolation
+ENG_001_20151602_01204_ch07_1-0010 sampling of discrete time signals is mainly used for changing the sampling rate of discrete time signals
+ENG_001_20151602_01204_ch07_1-0011 for example different digital audio systems may use different sampling rates as a result it is important to convert the sampling rate of the signals for system compatibility
+ENG_001_20151602_01204_ch07_1-0012 in this video I am going to explain the basics of sampling for continuous time signals but most of these also hold for discrete time signals
+ENG_001_20151602_01204_ch07_1-0013 let's start with the sampling theorem
+ENG_001_20151602_01204_ch07_1-0014 as given in the figure an infinite number of signals can generate the same set of samples
+ENG_001_20151602_01204_ch07_1-0015 for instance if we take the samples at integer multiples of capital t both of the signals in the figure will share the same set of samples
+ENG_001_20151602_01204_ch07_1-0016 therefore we would not expect to uniquely specify a signal by a sequence of equally spaced samples in the absence of additional conditions
+ENG_001_20151602_01204_ch07_1-0017 if a signal is band limited and if the samples are taken sufficiently close together then the samples uniquely specify the signal and we can reconstruct the signal from its samples perfectly
+ENG_001_20151602_01204_ch07_1-0018 taking sufficiently close samples means choosing a sampling frequency that is greater than twice the highest frequency present in the signal
+ENG_001_20151602_01204_ch07_1-0019 this is known as the sampling theorem
+ENG_001_20151602_01204_ch07_1-0020 I am going to explain the sampling theorem in more detail in the upcoming slides
+ENG_001_20151602_01204_ch07_1-0021 a convenient way of taking equally spaced samples from the continuous time signal is using an impulse train
+ENG_001_20151602_01204_ch07_1-0022 if p of t represents a periodic impulse train with period capital t
+ENG_001_20151602_01204_ch07_1-0023 the multiplication of the continuous time signal with the impulse train results in the sampled signal x p of t
+ENG_001_20151602_01204_ch07_1-0024 here capital t represents the sampling period and omega s represents the sampling frequency
+ENG_001_20151602_01204_ch07_1-0025 the original signal the impulse train p of t and the sampled signals signal x p of t are shown graphically in the slide
+ENG_001_20151602_01204_ch07_1-0026 now let's analyze the frequency domain characteristics of these signals
+ENG_001_20151602_01204_ch07_1-0027 assume that the continuous time signal has the spectrum given on the upper right corner of the slide
+ENG_001_20151602_01204_ch07_1-0028 note that it is a band limited signal and the highest frequency component occurs at omega m
+ENG_001_20151602_01204_ch07_1-0029 as you know the fourier transform of a periodic impulse train is also a periodic impulse train in the frequency domain
+ENG_001_20151602_01204_ch07_1-0030 and from the multiplication property multiplication in the time domain corresponds to convolution in the frequency domain
+ENG_001_20151602_01204_ch07_1-0031 so when we convolve the spectrum of the continuous time signal with the spectrum of the impulse train we obtain the spectrum of the sampled signal as given below
+ENG_001_20151602_01204_ch07_1-0032 note that the spectrum of the sampled signal has replicas at the integer multiples of the sampling frequency
+ENG_001_20151602_01204_ch07_1-0033 if the replicas of the original signal do not overlap
+ENG_001_20151602_01204_ch07_1-0034 we can obtain the spectrum of the original signal from the sampled signal by applying a low pass filter with gain capital t and with a cuff off frequency
+ENG_001_20151602_01204_ch07_1-0035 which is greater than omega m and less than omega s minus omega m
+ENG_001_20151602_01204_ch07_1-0036 in other words the continuous time signal can be recovered perfectly from the sampled signal by means of a low pass filter
+ENG_001_20151602_01204_ch07_1-0037 if there is no overlap between the replicas in the spectrum of the sampled signal
+ENG_001_20151602_01204_ch07_1-0038 this condition is satisfied if the sampling frequency is greater than two times of the maximum frequency of the continuous time signal
+ENG_001_20151602_01204_ch07_1-0039 this result is referred to as the sampling theorem
+ENG_001_20151602_01204_ch07_1-0040 the frequency two omega m is commonly referred to as the nyquist rate
+ENG_001_20151602_01204_ch07_1-0041 if the sampling theorem is violated
+ENG_001_20151602_01204_ch07_1-0042 in other words if the sampling frequency is less than the nyquist rate we have ended up the below spectrum for the sampled signal
+ENG_001_20151602_01204_ch07_1-0043 here the shifted replicas overlap and this is referred to as aliasing
+ENG_001_20151602_01204_ch07_1-0044 in this video I have explained sampling in particular sampling theorem
+ENG_001_20151602_01204_ch07_1-0045 in the next video I am going to explain reconstruction of a signal from its samples using interpolation
+ENG_001_20151602_01204_ch07_1-0046 thank you
+ENG_001_20151602_01204_ch09_1-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch09_1-0002 in this video I am going to explain the laplace transform
+ENG_001_20151602_01204_ch09_1-0003 as we all know from linear time invariant systems
+ENG_001_20151602_01204_ch09_1-0004 if the input to an lti system is a complex exponential
+ENG_001_20151602_01204_ch09_1-0005 the output of the system is the same complex exponential multiplied by a constant
+ENG_001_20151602_01204_ch09_1-0006 the complex constant h of s is computed as given in the equation
+ENG_001_20151602_01204_ch09_1-0007 in fourier analysis we only focus on purely imaginary values of s
+ENG_001_20151602_01204_ch09_1-0008 where s is equal to j omega
+ENG_001_20151602_01204_ch09_1-0009 when s is equal to j omega the complex constant is obtained by taking the fourier transform of the impulse response
+ENG_001_20151602_01204_ch09_1-0010 if s is chosen as a general complex number such as sigma plus j omega
+ENG_001_20151602_01204_ch09_1-0011 then we end up with the generalization of the continuous time fourier transform known as the laplace transform
+ENG_001_20151602_01204_ch09_1-0012 the laplace transform of a general signal x of t is defined as given in the equation
+ENG_001_20151602_01204_ch09_1-0013 where the laplace transform is denoted with x of s
+ENG_001_20151602_01204_ch09_1-0014 if s is purely imaginary or s is equal to j omega we obtain the fourier transform of x of t with the same equation
+ENG_001_20151602_01204_ch09_1-0015 here it is important to note that the fourier transform equation converges only when x of t is absolutely integrable
+ENG_001_20151602_01204_ch09_1-0016 there is also a straightforward relationship between the laplace and fourier transforms even when s is not purely imaginary
+ENG_001_20151602_01204_ch09_1-0017 if we rearrange the laplace transform equation by replacing s with sigma plus j omega
+ENG_001_20151602_01204_ch09_1-0018 the right side of the equation yields the fourier transform of the signal x of t times a real exponential signal
+ENG_001_20151602_01204_ch09_1-0019 note that this real exponential signal can be a decaying or growing exponential depending of whether sigma is positive or negative
+ENG_001_20151602_01204_ch09_1-0020 since the laplace transform is interpreted as the fourier transform of x of t times a real exponential signal
+ENG_001_20151602_01204_ch09_1-0021 we need to check the convergence of the given fourier transform expression
+ENG_001_20151602_01204_ch09_1-0022 therefore the laplace transform of the given signal exists if the fourier transform expression given above converges
+ENG_001_20151602_01204_ch09_1-0023 in other words if x of t times the real exponential signal is absolutely integrable
+ENG_001_20151602_01204_ch09_1-0024 the values of the complex variable s for which the laplace transform converges is referred to as the region of convergence
+ENG_001_20151602_01204_ch09_1-0025 in the previous lectures we learned that fourier analysis is extremely important and useful in analyzing signals and systems
+ENG_001_20151602_01204_ch09_1-0026 however fourier transform can not handle large and important classes of signals and unstable systems
+ENG_001_20151602_01204_ch09_1-0027 for instance we can not analyze a signal using fourier transform if it is not absolutely integrable since the fourier transform does not converge
+ENG_001_20151602_01204_ch09_1-0028 the same is true for unstable systems because the impulse response is not absolutely integrable
+ENG_001_20151602_01204_ch09_1-0029 laplace transform can be viewed as an extension of the fourier transform
+ENG_001_20151602_01204_ch09_1-0030 laplace transform allows analysis of broader class of signals and systems including unstable systems
+ENG_001_20151602_01204_ch09_1-0031 now let's look at an example
+ENG_001_20151602_01204_ch09_1-0032 let x of t be the one sided real exponential signal given in the equation
+ENG_001_20151602_01204_ch09_1-0033 if a is greater than zero x of t is a decaying exponential signal and the fourier transform converges
+ENG_001_20151602_01204_ch09_1-0034 note that the fourier transform of x of t is obtained as one over j omega plus a when a is greater than zero
+ENG_001_20151602_01204_ch09_1-0035 let's compute the laplace transform for the same decaying exponential signal
+ENG_001_20151602_01204_ch09_1-0036 by using the laplace transform formula and by substituting s with sigma plus j omaga we obtain the highlighted expression
+ENG_001_20151602_01204_ch09_1-0037 note that this expression is the fourier transform of another real exponential signal
+ENG_001_20151602_01204_ch09_1-0038 and this fourier transform converges only when the exponential signal is a decaying exponential
+ENG_001_20151602_01204_ch09_1-0039 in other words sigma plus a is greater than zero or sigma is greater than minus a
+ENG_001_20151602_01204_ch09_1-0040 since s is equal to sigma plus j omega the laplace transform of the signal x of t is obtained as given in the below equation
+ENG_001_20151602_01204_ch09_1-0041 this laplace transform equation is valid only when sigma or the real part of s is greater than minus a
+ENG_001_20151602_01204_ch09_1-0042 note that this condition is referred to as region of convergence of x of s
+ENG_001_20151602_01204_ch09_1-0043 this figure shows region of convergence plot for the decaying exponential signal
+ENG_001_20151602_01204_ch09_1-0044 the horizontal axis is the real axis and the vertical axis is the imaginary axis in the s plane
+ENG_001_20151602_01204_ch09_1-0045 the shaded area shows the region where the laplace transform integral converges
+ENG_001_20151602_01204_ch09_1-0046 here it is important to note that the j omega axis is inside the roc
+ENG_001_20151602_01204_ch09_1-0047 which means we can obtain the fourier transform of the signal x of t from its laplace transform by substituting s with j omega
+ENG_001_20151602_01204_ch09_1-0048 now let's perform the same analyses for the growing exponential signal x of t
+ENG_001_20151602_01204_ch09_1-0049 here the fourier transform does not converge since the growing exponential violates the absolute integrability condition required for the convergence of fourier transform
+ENG_001_20151602_01204_ch09_1-0050 in other words the fourier transform of that signal does not exist
+ENG_001_20151602_01204_ch09_1-0051 let's compute the laplace transform for the same growing exponential signal
+ENG_001_20151602_01204_ch09_1-0052 again we obtain the highlighted equation by substituting s with sigma plus j omaga
+ENG_001_20151602_01204_ch09_1-0053 which is the fourier transform of another real exponential signal
+ENG_001_20151602_01204_ch09_1-0054 this fourier transform converges only when the exponential signal is a decaying exponential
+ENG_001_20151602_01204_ch09_1-0055 in other words sigma plus a is greater than zero or sigma is greater than minus a
+ENG_001_20151602_01204_ch09_1-0056 the laplace transform expression for the growing exponential signal is given below which is valid only when the real part of s is greater than minus a
+ENG_001_20151602_01204_ch09_1-0057 note that we obtained the same expression with the laplace transform of the decaying exponential signal
+ENG_001_20151602_01204_ch09_1-0058 however the region of convergences are different
+ENG_001_20151602_01204_ch09_1-0059 this figure shows region of convergence plot for the growing exponential signal
+ENG_001_20151602_01204_ch09_1-0060 the shaded area shows the region where the laplace transform integral converges
+ENG_001_20151602_01204_ch09_1-0061 note that different than the roc of decaying exponential signal
+ENG_001_20151602_01204_ch09_1-0062 the roc does not include the imaginary axis in other words j omega axis
+ENG_001_20151602_01204_ch09_1-0063 this is a very important observation since the fourier transform does not exist for the growing exponential signal
+ENG_001_20151602_01204_ch09_1-0064 therefore the roc does not include the j omega axis since the laplace transform integral is not valid when s is equal to j omega
+ENG_001_20151602_01204_ch09_1-0065 now let's look at another example signal
+ENG_001_20151602_01204_ch09_1-0066 let x of t be the exponential signal given in the equation
+ENG_001_20151602_01204_ch09_1-0067 after taking the laplace transform we obtain the highlighted expression
+ENG_001_20151602_01204_ch09_1-0068 note that this result is valid if the laplace transform integral converges in other words if the real part of s is less than minus a
+ENG_001_20151602_01204_ch09_1-0069 let's compare the two exponential signals that we have discussed in this video
+ENG_001_20151602_01204_ch09_1-0070 these two signals resulted in identical expressions as their laplace transforms
+ENG_001_20151602_01204_ch09_1-0071 however their region of convergences are different
+ENG_001_20151602_01204_ch09_1-0072 we can distinguish the time domain signals from identical laplace transform expressions using their rocs
+ENG_001_20151602_01204_ch09_1-0073 therefore specifying both the algebraic expression and the roc is important in the laplace transform
+ENG_001_20151602_01204_ch09_1-0074 assuming that a is greater than zero we can plot the rocs for these two laplace transforms as given in the figure
+ENG_001_20151602_01204_ch09_1-0075 let me summarize what we have discussed until now
+ENG_001_20151602_01204_ch09_1-0076 first fourier transform does not converge for all signals and the absolute integrability condition should hold for the existence of the fourier transform for a given signal
+ENG_001_20151602_01204_ch09_1-0077 second laplace transform may convergence for some values of s and not for others
+ENG_001_20151602_01204_ch09_1-0078 the values for which the laplace transform converges are referred to as the region of convergence
+ENG_001_20151602_01204_ch09_1-0079 the region of convergence is determined by the real part of s
+ENG_001_20151602_01204_ch09_1-0080 third if j omega axis is inside the roc
+ENG_001_20151602_01204_ch09_1-0081 the fourier transform exists and can be obtained directly from the laplace transform by substituting s with j omega
+ENG_001_20151602_01204_ch09_1-0082 fourth if jey omega axis is not inside the roc the fourier transform does not exist for that signal
+ENG_001_20151602_01204_ch09_1-0083 fifth in specifying the laplace transform of a signal both the algebraic expression and the roc are required since laplace transforms of different signals may result in the same expression
+ENG_001_20151602_01204_ch09_1-0084 in this video I have explained the laplace transform integral and the region of convergence for the laplace transform
+ENG_001_20151602_01204_ch09_1-0085 let me know if you have any questions
+ENG_001_20151602_01204_ch09_1-0086 thank you
+ENG_001_20151602_01204_ch09_2-0001 hi everyone welcome to signals and systems course
+ENG_001_20151602_01204_ch09_2-0002 in this video I am going to explain the region of convergence for the laplace transform
+ENG_001_20151602_01204_ch09_2-0003 in the previous video we emphasized that a complete specification of laplace transform requires algebraic expression and region of convergence
+ENG_001_20151602_01204_ch09_2-0004 also using some example signals
+ENG_001_20151602_01204_ch09_2-0005 we showed that two different signals may have identical algebraic expression for x of s and their laplace transforms are distinguishable only by the region of convergence
+ENG_001_20151602_01204_ch09_2-0006 in this video we are going to discuss specific constraints on the region of convergence that are closely related with the time domain properties of the signal x of t
+ENG_001_20151602_01204_ch09_2-0007 before moving onto these constraints let's look at poles and zeros of a rational laplace transform
+ENG_001_20151602_01204_ch09_2-0008 since the region of convergence is closely related with the locations of the poles
+ENG_001_20151602_01204_ch09_2-0009 after taking the given integral for a function x of t we may end up with a rational laplace transform where n of s and d of s are the numerator and the denominator polynomials
+ENG_001_20151602_01204_ch09_2-0010 here the roots of the numerator polynomial are called the zeros of x of s and the roots of the denominator polynomial are called the poles of x of s
+ENG_001_20151602_01204_ch09_2-0011 in other words zeros are the values for s that make x of s is equal to zero
+ENG_001_20151602_01204_ch09_2-0012 and the poles are the values for s that make x of s is equal to infinite
+ENG_001_20151602_01204_ch09_2-0013 if the degree of the numerator and the denominator polynomials are not equal there can be also poles and zeros at infinity
+ENG_001_20151602_01204_ch09_2-0014 if the laplace transform is a rational function representing x of s in the s plane through its poles and zeros
+ENG_001_20151602_01204_ch09_2-0015 as well as its region of convergence will provide a more convenient representation
+ENG_001_20151602_01204_ch09_2-0016 this laplace transform has two zeros at one and two poles at minus one and two
+ENG_001_20151602_01204_ch09_2-0017 x of s has neither poles and zeros at infinity
+ENG_001_20151602_01204_ch09_2-0018 this figure shows the roc plot together with the pole zero plot
+ENG_001_20151602_01204_ch09_2-0019 a pole is marked with a cross sign and a zero is marked with a circle
+ENG_001_20151602_01204_ch09_2-0020 since there is a repeated zero in x of s there are two circles at one indicating these zeros
+ENG_001_20151602_01204_ch09_2-0021 for rational laplace transforms there is a close relationship between the locations of the poles and possible rocs that can be associated with a given pole zero plot
+ENG_001_20151602_01204_ch09_2-0022 now let's look at the constraints on the region of convergence
+ENG_001_20151602_01204_ch09_2-0023 note that these constraints allow us to specify or to reconstruct the roc from knowledge of only the algebraic laplace transform expression and certain characteristics of the time domain function
+ENG_001_20151602_01204_ch09_2-0024 the first property states that the roc of x of s contains strips parallel to the j omega axis in the s plane
+ENG_001_20151602_01204_ch09_2-0025 this property can be easily verified by using the fact that the roc only depends on the real part of s
+ENG_001_20151602_01204_ch09_2-0026 the second property states that for rational laplace transforms the roc does not contain any pole
+ENG_001_20151602_01204_ch09_2-0027 note that x of s is infinite at pole locations
+ENG_001_20151602_01204_ch09_2-0028 therefore the laplace transform integral does not converge at a pole
+ENG_001_20151602_01204_ch09_2-0029 the third property states that if x of t is finite duration and absolutely integrable then the roc is the entire s plane
+ENG_001_20151602_01204_ch09_2-0030 this figure shows a finite and absolutely integrable time domain function
+ENG_001_20151602_01204_ch09_2-0031 for this function the laplace transform integral converges for all values of s
+ENG_001_20151602_01204_ch09_2-0032 property four states that for a right sided signal if a point s is in the roc then all points to the right of s or all points with larger real parts are in the roc
+ENG_001_20151602_01204_ch09_2-0033 this figure shows a right sided signal and the roc of its laplace transform
+ENG_001_20151602_01204_ch09_2-0034 for a right sided signal the roc is commonly referred to as a right half plane
+ENG_001_20151602_01204_ch09_2-0035 property five states that for a left sided signal if a point s is in the roc then all points to the left of s or all points with smaller real parts are in the roc
+ENG_001_20151602_01204_ch09_2-0036 this figure shows a left sided signal and the roc of its laplace transform
+ENG_001_20151602_01204_ch09_2-0037 for a left sided signal the roc is commonly referred to as a left half plane
+ENG_001_20151602_01204_ch09_2-0038 property six states that if the time domain signal is two sided an example two sided signal is given in the figure the roc contains a single strip in the s plane
+ENG_001_20151602_01204_ch09_2-0039 if the laplace transform is rational then its roc is bounded by poles or extends to infinity
+ENG_001_20151602_01204_ch09_2-0040 in addition no poles of x of s are contained in the roc
+ENG_001_20151602_01204_ch09_2-0041 for a rational laplace transform if the time domain signal is right sided the roc is the region in the s plane to the right of the rightmost pole
+ENG_001_20151602_01204_ch09_2-0042 if the time domain signal is left sided then the roc is the region in the s plane to the left of the leftmost pole
+ENG_001_20151602_01204_ch09_2-0043 in this video I have explained the poles and zeros of a rational laplace transform and the constraints on the region of convergence
+ENG_001_20151602_01204_ch09_2-0044 let me know if you have any questions
+ENG_001_20151602_01204_ch09_2-0045 thank you
