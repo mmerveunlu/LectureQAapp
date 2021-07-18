@@ -4,9 +4,11 @@ from os.path import join
 import webvtt
 from datetime import datetime
 from appmodel import run_predict_on_model,run_predict_on_loaded_model
+from appscoring import run_predict_on_scoring_model
 
 PREVPATH = "../"
 SERVERDPATH = "../../dataFromClient/"
+SCORINGDPATH = "../../dataFromScoring/"
 
 def generate_json(ppath,question,path):
     """ from given passage and question generates json format
@@ -101,6 +103,20 @@ def run_model(passage,question):
     return get_predicted_answer(answer_path)
 
             
+def run_scoring_model(sentence1,sentence2,pretrained):
+    """runs the scoring model  """
+    
+    dt = datetime.now().strftime("%Y%m%d_%H%M_%S")
+    # where to save the 
+    path = join(SCORINGDPATH,"data-"+dt+".json")
+
+    # TODO: change output dir
+    data_dir = SCORINGDPATH
+    output_dir = "/work/merve/responses-scoring/"
+    score = run_predict_on_scoring_model(sentence1,sentence2,pretrained)
+    
+    # TODO: save results 
+    return score
 
 
         
