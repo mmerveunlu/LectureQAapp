@@ -85,6 +85,6 @@ def run_client(host,port,sentence1,sentence2):
 
 
 # Example run
-sentence1 = 'Sentences are passed as a list of string.'
-sentence2 = 'The quick brown fox jumps over the lazy dog'
-run_client('10.2.1.55',12345,sentence1,sentence2)
+#sentence1 = 'Sentences are passed as a list of string.'
+#sentence2 = 'The quick brown fox jumps over the lazy dog'
+#run_client('10.2.1.55',12345,sentence1,sentence2)
