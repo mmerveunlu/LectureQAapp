@@ -74,7 +74,7 @@ def run_client(host,port,passage,question):
                     # print("main: error: exception for: ", "{message.addr}:\n{traceback.format_exc()}")
                     print("main: error: exception: Server is Busy!")
                     response = "Please wait, the server is busy!"
-                    # message.close()
+                    message.close()
             # Check for a socket being monitored to continue.
             if not sel.get_map():
                 break
